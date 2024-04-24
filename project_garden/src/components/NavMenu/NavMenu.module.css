@@ -1,0 +1,26 @@
+:root {
+   --green: #92a134;
+   --sale: #f26d22;
+   --white: #fffff1;
+   --black: #424436;
+   --grey-divider: #ddd;
+   --grey: #8b8b8b;
+   --light-grey: #f2f6d3;
+   --txt-black: #424436;
+   --txt-white: #fff;
+   --txt-grey: #8b8b8b;
+}
+
+.nav_menu {
+   padding: 30px 40px 28px;
+   border-bottom: 1px solid var(--grey-divider);
+   background: var(--white);
+}
+
+.nav_menu a {
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 130%;
+   color: var(--black);
+}
