@@ -1,0 +1,36 @@
+.wrapper {
+   background-image: url('../../images/Banner/banner.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   padding: 80px 0 210px;
+}
+
+.titleContainer {
+   margin: 0 auto;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 96px;
+   line-height: 110%;
+   color: var(--txt-white);
+}
+
+.btn {
+   padding: 16px 56px;
+   background: var(--green);
+   border: transparent;
+   border-radius: 6px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   text-align: center;
+   color: var(--txt-white);
+}
+
+.btn:hover,
+.btn:focus {
+   opacity: 0.8;
+}
