@@ -1,4 +1,4 @@
-import { act } from "react-dom/test-utils";
+
 
 const LOAD_ALL_CATEGORIES = "LOAD_ALL_CATEGORIES";
 
