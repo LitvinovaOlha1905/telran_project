@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "./Banner.module.css";
-import { Link } from "react-router-dom";
+import React from "react"
+import styles from "./Banner.module.css"
+import { Link } from "react-router-dom"
 
 export default function Banner() {
 	return (
 		<div className={styles.wrapper}>
 			<div className='container'>
-				<div className={styles.titleContainer}>
+				<div>
 					<h1 className={styles.title}>
 						Amazing Discounts on Garden Products!
 					</h1>
@@ -16,5 +16,5 @@ export default function Banner() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
