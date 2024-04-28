@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import insta from '../../images/Footer/Insta.svg'
-import wa from '../../images/Footer/WA.svg'
+import insta from "../../images/Footer/Insta.svg";
+import wa from "../../images/Footer/WA.svg";
 import Map from "../Map/Map";
-
 
 export default function Footer() {
   return (
-    <div className="container">
-      <div className={styles.footer}>
+    <div className={styles.footer}>
+      <div className="container">
         <h2>Contact</h2>
         <div className={styles.infoContainer}>
           <div className={styles.infoBlock}>
@@ -40,10 +39,9 @@ export default function Footer() {
             <p>24 hours a day</p>
           </div>
         </div>
-            
-       </div>
-       
-      <Map/>
+      </div>
+
+      <Map />
     </div>
   );
 }
