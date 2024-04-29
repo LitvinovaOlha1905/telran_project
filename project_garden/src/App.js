@@ -8,6 +8,7 @@ import AllSalesPage from "./pages/AllSalesPage/AllSalesPage"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 import { useState } from "react"
 import { Context } from "./context"
+import Footer from "./components/Footer/Footer"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
@@ -23,6 +24,7 @@ function App() {
 					<Route path='/sales/all' element={<AllSalesPage />} />
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
+				<Footer />
 			</Context.Provider>
 		</div>
 	)
