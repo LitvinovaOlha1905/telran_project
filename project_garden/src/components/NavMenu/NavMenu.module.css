@@ -1,8 +1,8 @@
 .nav_menu {
-   padding: 30px 40px 28px;
-   border-bottom: 1px solid var(--grey-divider);
-   background: var(--white);
+   display: flex;
+   gap: 32px;
 }
+
 
 .nav_menu a {
    text-decoration: none;
