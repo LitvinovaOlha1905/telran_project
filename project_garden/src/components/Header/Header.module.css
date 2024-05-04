@@ -1,0 +1,26 @@
+
+  .wrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items:center ;
+    padding: 20px;
+
+  }
+  .logoBlock{
+    display:flex;
+    gap: 20px;
+    align-items:center ;
+  }
+
+  .cartBlock {
+    display: flex;
+    gap: 26px;
+    align-items:center ;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
+      padding: 10px; /* Меньшие отступы для мобильных устройств */
+    }
+  }
