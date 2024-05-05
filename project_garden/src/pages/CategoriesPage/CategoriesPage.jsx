@@ -4,7 +4,7 @@ import CategoriesContainer from './../../components/Categories/CategoriesContain
 export default function CategoriesPage() {
   return (
     <div>
-      <CategoriesContainer />
+        <CategoriesContainer />
     </div>
   );
 }
