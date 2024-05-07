@@ -1,0 +1,35 @@
+.titleBlock {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 64px;
+   line-height: 110%;
+   color: var(--black);
+}
+
+.line {
+   border: 1px solid var(--grey-divider);
+   width: 824px;
+   height: 0px;
+}
+
+.btn {
+   padding: 8px 16px;
+   border: 1px solid var(--grey-divider);
+   border-radius: 6px;
+   font-size: 16px;
+   line-height: 126%;
+   color: var(--grey);
+   background: transparent;
+}
+
+.cardBlock {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 32px;
+}
+

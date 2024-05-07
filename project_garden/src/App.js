@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
 import { useDispatch } from "react-redux"
 import { fetchAllCategories } from "./store/slices/categoriesSlice"
+import { fetchAllProducts } from "./store/slices/productsSlice"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
@@ -21,10 +22,14 @@ function App() {
     dispatch(fetchAllCategories());
   }, [dispatch]);
 
+	useEffect(() => {
+		dispatch(fetchAllProducts())
+	}, [])
+
 	return (
 		<div className='App'>
 			<Context.Provider value={{ modalActive, setModalActiv }}>
-				<Header/>
+				<Header />
 				<Routes>
 					<Route path='/' element={<MainPage />} />
 					<Route path='/categories/all' element={<CategoriesPage />} />
