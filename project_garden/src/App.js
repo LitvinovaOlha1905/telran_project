@@ -5,13 +5,21 @@ import CategoriesPage from "./pages/CategoriesPage/CategoriesPage"
 import AllProductsPage from "./pages/AllProductsPage/AllProductsPage"
 import AllSalesPage from "./pages/AllSalesPage/AllSalesPage"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Context } from "./context"
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
+import { useDispatch } from "react-redux"
+import { fetchAllCategories } from "./store/slices/categoriesSlice"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
+
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+    dispatch(fetchAllCategories());
+  }, [dispatch]);
 
 	return (
 		<div className='App'>
