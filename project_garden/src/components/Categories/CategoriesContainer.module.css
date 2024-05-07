@@ -1,0 +1,22 @@
+.wrapper{
+    margin-top: 50px;
+    margin-bottom: 110px;
+}
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleBlock h2 {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 110%;
+  color: var(--black);
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 32px;
+}

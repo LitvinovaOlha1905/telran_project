@@ -9,13 +9,18 @@ import { useEffect, useState } from "react"
 import { Context } from "./context"
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import { fetchAllProducts } from "./store/slices/productsSlice"
 import { useDispatch } from "react-redux"
+import { fetchAllCategories } from "./store/slices/categoriesSlice"
+import { fetchAllProducts } from "./store/slices/productsSlice"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
 
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+    dispatch(fetchAllCategories());
+  }, [dispatch]);
 
 	useEffect(() => {
 		dispatch(fetchAllProducts())
