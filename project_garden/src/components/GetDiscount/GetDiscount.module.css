@@ -1,12 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
   .wrapper {
     padding: 32px 32px 0 32px;
-    background: linear-gradient(-223deg, #339933 0%, #0B710B 100%);
+
+    
   }
   
   .container {
@@ -14,15 +11,16 @@
     flex-direction: column;
     align-items: center;
     gap: clamp(3.13rem, calc(1.25rem + 9.38vw), 12.5rem);
+    background: linear-gradient(37deg, #87933d 0%, #55610b 100%);
   
-    @media (max-width: 1105px) {
-      padding: 30px 0 0 0;
-      justify-content: center;
-    }
+ 
   }
   
   .image {
-    width:  clamp(18.125rem, 9.9464rem + 40.8929vw, 46.75rem);
+    
+    display: block;
+
+    width: 100%;
     height:  clamp(8.71875rem, 4.7813rem + 19.6875vw, 22.5rem);
   }
   
@@ -40,7 +38,7 @@
     gap: 32px;
     align-items: flex-end;
   }
-  
+
   @media (max-width: 1105px) {
     .wrapper {
       padding: 16px 16px 0 16px;
