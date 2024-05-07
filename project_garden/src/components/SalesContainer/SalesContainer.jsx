@@ -11,12 +11,13 @@ export default function SalesContainer() {
 	const shuffledProducts = discountedProducts?.sort(() => Math.random() - 0.5)
 
 	return (
-		<div className='container'>
-			<div>
+		<div className={styles.wrapper}>
+			<div className='container'>
 				<div className={styles.titleBlock}>
 					<h2 className={styles.title}>Sale</h2>
-					<div>
-						<hr className={styles.line} />
+
+					<div className={styles.titleLine}>
+						<div className={styles.line}></div>
 						<Link>
 							<button className={styles.btn}>All sales</button>
 						</Link>
@@ -24,7 +25,7 @@ export default function SalesContainer() {
 				</div>
 				<div className={styles.cardBlock}>
 					{shuffledProducts?.slice(0, 4).map(product => (
-						<Link key={product.id} to='/sales/all' className={styles.card}>
+						<Link key={product.id} to='/sales/all'>
 							<ProductCard {...product} productNameClass={styles.productName} />
 						</Link>
 					))}
