@@ -1,11 +1,9 @@
-.footer h2 {
+.title {
   margin-bottom: 40px;
-  font-weight: 700;
   font-size: 64px;
   line-height: 110%;
   color: var(--black);
 }
-
 .infoContainer {
   display: grid;
   grid-template-columns: 780px 548px;
@@ -13,36 +11,28 @@
   margin-bottom: 32px;
   background: var(--white);
 }
-
 .infoBlock {
   padding: 32px;
   border-radius: 12px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 110%;
   background-color: var(--light-grey);
 }
-
-.infoContainer div h6 {
+.infoTitle {
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;
   color: var(--grey);
 }
-
-.infoContainer div {
-  font-weight: 600;
-  font-size: 40px;
-  line-height: 110%;
-}
-
-.infoContainer div p {
+.description {
   color: var(--black);
 }
-
-.infoContainer div a {
+.link {
   text-decoration: none;
   color: var(--black);
 }
-
 .iconsBlock {
   display: flex;
   gap: 20px;

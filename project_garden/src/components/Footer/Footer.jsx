@@ -8,36 +8,46 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <h2>Contact</h2>
+        <h2 className={styles.title}>Contact</h2>
         <div>
           <div className={styles.infoContainer}>
             <div className={styles.infoBlock}>
-              <h6>Phone</h6>
-              <a href="tel:+499999999999">+49 999 999 99 99</a>
+              <h6 className={styles.infoTitle}>Phone</h6>
+              <a className={styles.link} href="tel:+499999999999">
+                +49 999 999 99 99
+              </a>
             </div>
 
             <div className={styles.infoBlock}>
-              <h6>Socials</h6>
+              <h6 className={styles.infoTitle}>Socials</h6>
 
               <div className={styles.iconsBlock}>
-                <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
+                <a
+                  className={styles.link}
+                  href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
+                >
                   <img src={insta} alt="Tel-Ran Instagram" />
                 </a>
 
-                <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
+                <a
+                  className={styles.link}
+                  href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
+                >
                   <img src={wa} alt="Tel-Ran Whats App" />
                 </a>
               </div>
             </div>
 
             <div className={styles.infoBlock}>
-              <h6>Address</h6>
-              <p>Linksraße 2, 8 OG, 10785, Berlin, Deutschland</p>
+              <h6 className={styles.infoTitle}>Address</h6>
+              <p className={styles.description}>
+                Linksraße 2, 8 OG, 10785, Berlin, Deutschland
+              </p>
             </div>
 
             <div className={styles.infoBlock}>
-              <h6>Working Hours</h6>
-              <p>24 hours a day</p>
+              <h6 className={styles.infoTitle}>Working Hours</h6>
+              <p className={styles.description}>24 hours a day</p>
             </div>
           </div>
 
