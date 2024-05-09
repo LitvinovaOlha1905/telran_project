@@ -3,7 +3,7 @@
     display:flex;
     justify-content: space-between;
     align-items:center ;
-    padding: 20px;
+    padding: 30px 0 28px;;
 
   }
   .logoBlock{
@@ -14,13 +14,13 @@
 
   .cartBlock {
     display: flex;
-    gap: 26px;
+    gap: 24px;
     align-items:center ;
   }
 
   @media (max-width: 768px) {
     .header {
       width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
-      padding: 10px; /* Меньшие отступы для мобильных устройств */
+      padding: 12px; /* Меньшие отступы для мобильных устройств */
     }
   }
