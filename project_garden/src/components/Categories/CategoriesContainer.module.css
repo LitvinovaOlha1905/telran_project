@@ -1,0 +1,20 @@
+.wrapper{
+    margin-top: 50px;
+    margin-bottom: 110px;
+}
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  margin-bottom: 40px;
+  font-size: 64px;
+  line-height: 110%;
+  color: var(--black);
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 32px;
+}

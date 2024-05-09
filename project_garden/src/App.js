@@ -5,18 +5,31 @@ import CategoriesPage from "./pages/CategoriesPage/CategoriesPage"
 import AllProductsPage from "./pages/AllProductsPage/AllProductsPage"
 import AllSalesPage from "./pages/AllSalesPage/AllSalesPage"
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Context } from "./context"
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
+import { useDispatch } from "react-redux"
+import { fetchAllCategories } from "./store/slices/categoriesSlice"
+import { fetchAllProducts } from "./store/slices/productsSlice"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
 
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+    dispatch(fetchAllCategories());
+  }, [dispatch]);
+
+	useEffect(() => {
+		dispatch(fetchAllProducts())
+	}, [])
+
 	return (
 		<div className='App'>
 			<Context.Provider value={{ modalActive, setModalActiv }}>
-				<Header/>
+				<Header />
 				<Routes>
 					<Route path='/' element={<MainPage />} />
 					<Route path='/categories/all' element={<CategoriesPage />} />
