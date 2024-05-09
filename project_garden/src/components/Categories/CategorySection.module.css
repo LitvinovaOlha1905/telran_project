@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.titleBlock h2 {
+.title {
   font-weight: 700;
   font-size: 64px;
   line-height: 110%;
@@ -39,5 +39,5 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 32px;
-  margin-top: 20px;
+  margin-top: 40px;
 }

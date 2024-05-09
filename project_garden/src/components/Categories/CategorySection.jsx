@@ -18,7 +18,7 @@ export default function CategorySection() {
       <div className={styles.wrapper}>
         <div className="container">
           <div className={styles.titleBlock}>
-            <h2>Categories</h2>
+            <h2 className={styles.title}>Categories</h2>
 
             <div className={styles.titleBlockLine}>
               <div className={styles.line}></div>
