@@ -6,7 +6,6 @@ export default function MainPage() {
 	return (
 		<div>
 			<Banner />
-			<Footer/>
 		</div>
 	);
 }
