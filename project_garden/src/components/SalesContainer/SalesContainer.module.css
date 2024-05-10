@@ -1,0 +1,50 @@
+.wrapper {
+   margin: 110px 0 80px;
+}
+
+.titleBlock {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 32px;
+   position: relative;
+}
+
+.title {
+   font-weight: 700;
+   font-size: 64px;
+   line-height: 110%;
+   color: var(--black);
+}
+
+
+
+.line::before {
+   content: '';
+   width: 80%;
+   height: 1px;
+   background-color: var(--grey-divider);
+   position: absolute;
+   top: 50%;
+   right: 93px;
+}
+
+.btn {
+   padding: 8px 16px;
+   border: 1px solid var(--grey-divider);
+   border-radius: 6px;
+   font-size: 16px;
+   line-height: 126%;
+   color: var(--grey);
+   background: transparent;
+}
+
+.cardBlock {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 32px;
+}
+
+.cardBlock a {
+   text-decoration: none;
+}
