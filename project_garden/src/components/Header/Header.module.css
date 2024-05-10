@@ -3,7 +3,7 @@
     display:flex;
     justify-content: space-between;
     align-items:center ;
-    padding: 30px 0 28px;;
+    padding: 30px 0 28px;
 
   }
   .logoBlock{
@@ -21,6 +21,6 @@
   @media (max-width: 768px) {
     .header {
       width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
-      padding: 12px; /* Меньшие отступы для мобильных устройств */
+      padding: 12px;    /* Меньшие отступы для мобильных устройств */
     }
   }
