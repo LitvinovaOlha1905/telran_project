@@ -8,8 +8,7 @@ export default function ProductCard({
 	price,
 	discont_price,
 }) {
-	const croppedTitle =
-		title.length > 20 ? title.substring(0, 17) + "..." : title
+	const croppedTitle = title.length > 20 ? title.substring(0, 17) + "..." : title
 
 	return (
 		<div className={styles.cardBlock}>

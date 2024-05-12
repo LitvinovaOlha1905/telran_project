@@ -1,28 +1,30 @@
 import React, { useEffect } from "react"
-import Sceleton from '../../components/Sceleton/Skeleton'
+import Sceleton from "../../components/Sceleton/Skeleton"
 import ProductCard from "../../components/ProductCard/ProductCard"
 import styles from "./AllSalesPage.module.css"
+import { useSelector } from "react-redux"
 
 export default function AllSalesPage() {
-  const discountedProducts = products?.filter(product => product.discont_price)
-  
-useEffect(() => {
-	window.scrollTo(0, 0)
-}, [])
-const [isLoading, setIsLoading] = React.useState(true)
+	const { products } = useSelector(state => state.products)
+	const discountedProducts = products?.filter(product => product.discont_price)
 
-React.useEffect(() => {
-	setIsLoading(true)
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
+	const [isLoading, setIsLoading] = React.useState(true)
 
-	setTimeout(() => {
-		setIsLoading(false)
-	}, 2000)
-}, [])
+	React.useEffect(() => {
+		setIsLoading(true)
 
-  return (
+		setTimeout(() => {
+			setIsLoading(false)
+		}, 2000)
+	}, [])
+
+	return (
 		<div className={styles.wrapper}>
 			<div className='container'>
-        <h1 className={styles.title}>Discounted items</h1>
+				<h1 className={styles.title}>Discounted items</h1>
 				{/* Price */}
 				<div className={styles.sortBlock}>
 					<form className={styles.formSortBlock}>
@@ -71,7 +73,7 @@ React.useEffect(() => {
 					))}
 				</div>
 
-				{isLoading ? <Sceleton /> : <SalesContainer />}
+				{isLoading ? <Sceleton /> : <ProductCard />}
 			</div>
 		</div>
 	)
