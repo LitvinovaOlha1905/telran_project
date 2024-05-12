@@ -67,13 +67,16 @@ export default function AllSalesPage() {
 				</div>
 
 				{/* Cards */}
-				<div className={styles.productsBlock}>
-					{discountedProducts.map(el => (
-						<ProductCard key={el.id} {...el} />
-					))}
-				</div>
 
-				{isLoading ? <Sceleton /> : <ProductCard />}
+				{isLoading ? (
+					<Sceleton />
+				) : (
+					<div className={styles.productsBlock}>
+						{discountedProducts.map(el => (
+							<ProductCard key={el.id} {...el} />
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	)
