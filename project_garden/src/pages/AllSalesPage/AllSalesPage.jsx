@@ -1,19 +1,28 @@
-import React from "react"
+import React, { useEffect } from "react"
+import Sceleton from '../../components/Sceleton/Skeleton'
 import ProductCard from "../../components/ProductCard/ProductCard"
 import styles from "./AllSalesPage.module.css"
-import { useSelector } from "react-redux"
 
 export default function AllSalesPage() {
-	const { products, status } = useSelector(state => state.products)
-	const discountedProducts = products?.filter(product => product.discont_price)
+  const discountedProducts = products?.filter(product => product.discont_price)
+  
+useEffect(() => {
+	window.scrollTo(0, 0)
+}, [])
+const [isLoading, setIsLoading] = React.useState(true)
 
-	if (status === "loading") {
-		return <h1>Loading...</h1>
-	}
-	return (
+React.useEffect(() => {
+	setIsLoading(true)
+
+	setTimeout(() => {
+		setIsLoading(false)
+	}, 2000)
+}, [])
+
+  return (
 		<div className={styles.wrapper}>
 			<div className='container'>
-				<h1 className={styles.title}>Discounted items</h1>
+        <h1 className={styles.title}>Discounted items</h1>
 				{/* Price */}
 				<div className={styles.sortBlock}>
 					<form className={styles.formSortBlock}>
@@ -61,6 +70,8 @@ export default function AllSalesPage() {
 						<ProductCard key={el.id} {...el} />
 					))}
 				</div>
+
+				{isLoading ? <Sceleton /> : <SalesContainer />}
 			</div>
 		</div>
 	)

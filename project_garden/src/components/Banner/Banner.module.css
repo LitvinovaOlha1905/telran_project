@@ -7,13 +7,13 @@
 }
 
 .title {
-   font-weight: 700;
    font-size: 96px;
    line-height: 110%;
    color: var(--txt-white);
 }
 
 .btn {
+   margin-top: 40px;
    padding: 16px 56px;
    background: var(--green);
    border: transparent;
@@ -22,7 +22,6 @@
    font-weight: 600;
    font-size: 20px;
    line-height: 130%;
-   text-align: center;
    color: var(--txt-white);
 }
 

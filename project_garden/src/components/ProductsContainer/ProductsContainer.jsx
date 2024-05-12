@@ -5,31 +5,11 @@ import styles from "./ProductsContainer.module.css"
 
 export default function ProductsContainer() {
 	const { products, status } = useSelector(state => state.products)
-	const [sortType, setSortType] = useState("") // State для типа сортировки
 
 	console.log(products)
 
 	if (status === "loading") {
 		return <h1>Loading...</h1>
-	}
-
-	// Функция для сортировки продуктов
-	const sortedProducts = () => {
-		switch (sortType) {
-			case "priceAsc":
-				return products.slice().sort((a, b) => a.price - b.price)
-			case "priceDesc":
-				return products.slice().sort((a, b) => b.price - a.price)
-			case "discounted":
-				return products.filter(product => product.discounted)
-			default:
-				return products
-		}
-	}
-
-	// Обработчик изменения типа сортировки
-	const handleSortChange = e => {
-		setSortType(e.target.value)
 	}
 
 	return (
@@ -68,9 +48,6 @@ export default function ProductsContainer() {
 					</label>
 					<select
 						className={styles.sortSelect}
-						id='sortSelect'
-						value={sortType}
-						onChange={handleSortChange}
 					>
 						<option value='default'>by default</option>
 						<option value='priceAsc'>low to High</option>
