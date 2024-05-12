@@ -3,6 +3,7 @@
 }
 
 .titleBlock {
+   margin-bottom: 40px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -11,13 +12,10 @@
 }
 
 .title {
-   font-weight: 700;
    font-size: 64px;
    line-height: 110%;
    color: var(--black);
 }
-
-
 
 .line::before {
    content: '';
