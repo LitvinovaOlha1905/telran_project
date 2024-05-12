@@ -18,7 +18,7 @@ export default function SalesContainer() {
 
 					<div className={styles.titleLine}>
 						<div className={styles.line}></div>
-						<Link>
+						<Link to='/sales/all'>
 							<button className={styles.btn}>All sales</button>
 						</Link>
 					</div>
