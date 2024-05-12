@@ -1,26 +1,24 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 28px;
+}
+.logoBlock {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
-  .wrapper{
-    display:flex;
-    justify-content: space-between;
-    align-items:center ;
-    padding: 30px 0 28px;
+.cartBlock {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
 
+@media (max-width: 768px) {
+  .header {
+    width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
+    padding: 12px; /* Меньшие отступы для мобильных устройств */
   }
-  .logoBlock{
-    display:flex;
-    gap: 20px;
-    align-items:center ;
-  }
-
-  .cartBlock {
-    display: flex;
-    gap: 24px;
-    align-items:center ;
-  }
-
-  @media (max-width: 768px) {
-    .header {
-      width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
-      padding: 12px;    /* Меньшие отступы для мобильных устройств */
-    }
-  }
+}
