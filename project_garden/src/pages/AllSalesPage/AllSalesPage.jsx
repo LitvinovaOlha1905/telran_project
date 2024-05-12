@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
 import Sceleton from '../../components/Sceleton/Skeleton'
-import SalesContainer from '../../components/SalesContainer/SalesContainer'
-import styles from './AllSalesPage.module.css'
 import ProductCard from "../../components/ProductCard/ProductCard"
+import styles from "./AllSalesPage.module.css"
 
 export default function AllSalesPage() {
+  const discountedProducts = products?.filter(product => product.discont_price)
+  
 useEffect(() => {
 	window.scrollTo(0, 0)
 }, [])
@@ -21,6 +22,7 @@ React.useEffect(() => {
   return (
 		<div className={styles.wrapper}>
 			<div className='container'>
+        <h1 className={styles.title}>Discounted items</h1>
 				{/* Price */}
 				<div className={styles.sortBlock}>
 					<form className={styles.formSortBlock}>
@@ -53,12 +55,7 @@ React.useEffect(() => {
 						<label className={styles.sortLabel} htmlFor='sortSelect'>
 							Sorted
 						</label>
-						<select
-							className={styles.sortSelect}
-							id='sortSelect'
-							value={sortType}
-							onChange={handleSortChange}
-						>
+						<select className={styles.sortSelect}>
 							<option value='default'>by default</option>
 							<option value='priceAsc'>low to High</option>
 							<option value='priceDesc'>high to Low</option>
@@ -69,7 +66,7 @@ React.useEffect(() => {
 
 				{/* Cards */}
 				<div className={styles.productsBlock}>
-					{products.map(el => (
+					{discountedProducts.map(el => (
 						<ProductCard key={el.id} {...el} />
 					))}
 				</div>
