@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ProductByCategoryCard from '../ProductByCategoryCard/ProductByCategoryCard';
 import { fetchProductsByCategory } from '../../store/slices/dataSlice';
 import { useParams } from 'react-router-dom';
+import styles from './ProductsByCategoryContainer.module.css'
 
 export default function ProductsByCategoryContainer() {
 
@@ -24,7 +25,7 @@ export default function ProductsByCategoryContainer() {
       {status === "loading" ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className={styles.productsBlock}>
           {products.map((el) => (
             <ProductByCategoryCard key={el.id} {...el} />
           ))}
