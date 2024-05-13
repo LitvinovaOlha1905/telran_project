@@ -12,7 +12,6 @@ import Header from "./components/Header/Header"
 import { useDispatch } from "react-redux"
 import { fetchAllCategories } from "./store/slices/categoriesSlice"
 import { fetchAllProducts } from "./store/slices/productsSlice"
-import { fetchProductsByCategory } from "./store/slices/dataSlice"
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage/ProductsByCategoryPage"
 
 function App() {
