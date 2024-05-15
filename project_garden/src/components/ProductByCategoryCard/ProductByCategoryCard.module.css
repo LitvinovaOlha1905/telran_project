@@ -1,0 +1,47 @@
+.cardBlock {
+   max-width: 100%;
+   border-radius: 12px;
+   border: 1px solid var(--grey-divider);
+   background: var(--txt-white);
+}
+
+.cardBlock img {
+   display: block;
+   width: 100%;
+   height: 284px;
+   border-bottom: 1px solid var(--grey-divider);
+}
+
+.descriptionBlock {
+   margin-top: 20px;
+   padding: 0px 32px 32px;
+}
+
+.descriptionBlock p {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+.priceBlock {
+   margin-top: 16px;
+   display: flex;
+   align-items: baseline;
+   gap: 16px;
+}
+
+.priceBlock p {
+   font-weight: 600;
+   font-size: 40px;
+   line-height: 110%;
+   color: var(--black);
+}
+
+.priceBlock span {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 130%;
+   text-decoration: line-through;
+   color: var(--grey);
+}

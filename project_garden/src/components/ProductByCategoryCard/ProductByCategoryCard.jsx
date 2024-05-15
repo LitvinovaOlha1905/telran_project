@@ -1,13 +1,14 @@
 import React from 'react'
+import styles from './ProductByCategoryCard.module.css'
 
 export default function ProductByCategoryCard({ id, image, title, price, discont_price }) {
     return (
-      <div>
+      <div className={styles.cardBlock}>
         <img src={`http://localhost:3333${image}`} alt={title} />
 
-        <div>
+        <div className={styles.descriptionBlock}>
           <p>{title}</p>
-          <div>
+          <div className={styles.priceBlock}>
             <p>
               {"\u0024"}
               {price}
