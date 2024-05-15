@@ -5,23 +5,24 @@ import { fetchProductsByCategory } from '../../store/slices/dataSlice';
 import { useParams } from 'react-router-dom';
 import styles from './ProductsByCategoryContainer.module.css'
 
-export default function ProductsByCategoryContainer() {
+export default function ProductsByCategoryContainer() { 
 
     const { categoryId } = useParams();
 
     const dispatch = useDispatch();
 
-    const {status, currentCategory, products } = useSelector(
-        (state) => state.data);
-
+    const { status, products, currentCategory } = useSelector(
+      (state) => state.data
+    );
+    
     useEffect(() => {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
 
-   console.log(categoryId);
+  
   return (
     <div>
-      {products && <h1>{products.title}</h1>}
+      <h1>{currentCategory.title}</h1>
       {status === "loading" ? (
         <p>Loading...</p>
       ) : (

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from "./CategoriesContainer.module.css";
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import CategoriesCard from './CategoriesCard';
 
 export default function CategoriesContainer() {
