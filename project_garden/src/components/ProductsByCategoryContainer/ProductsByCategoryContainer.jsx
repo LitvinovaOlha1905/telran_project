@@ -19,10 +19,12 @@ export default function ProductsByCategoryContainer() {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
 
-  
+  console.log(currentCategory);
   return (
     <div>
-      <h1>{currentCategory.title}</h1>
+      {currentCategory && (
+        <h1 className={styles.title}>{currentCategory.title}</h1>
+      )}
       {status === "loading" ? (
         <p>Loading...</p>
       ) : (

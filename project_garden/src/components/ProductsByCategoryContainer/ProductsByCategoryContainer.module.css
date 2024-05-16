@@ -4,3 +4,9 @@
    gap: 32px;
    margin-top: 40px;
 }
+.title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 110%;
+  color: var(--black);
+}
