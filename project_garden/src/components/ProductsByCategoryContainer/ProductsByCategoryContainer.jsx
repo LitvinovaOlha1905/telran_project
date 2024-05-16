@@ -19,7 +19,7 @@ export default function ProductsByCategoryContainer() {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
 
-  console.log(currentCategory);
+
   return (
     <div>
       {currentCategory && (
