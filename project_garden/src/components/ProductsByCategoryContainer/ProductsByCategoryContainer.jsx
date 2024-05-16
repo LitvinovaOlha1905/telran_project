@@ -18,6 +18,12 @@ export default function ProductsByCategoryContainer() {
     useEffect(() => {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
+  
+  
+  console.log(status);
+  console.log(products);
+  console.log(currentCategory);
+
 
 
   return (
