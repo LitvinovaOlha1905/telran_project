@@ -20,12 +20,6 @@ export default function ProductsByCategoryContainer() {
     }, [dispatch, categoryId]);
   
   
-  console.log(status);
-  console.log(products);
-  console.log(currentCategory);
-
-
-
   return (
     <div>
       {currentCategory && (

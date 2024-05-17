@@ -16,6 +16,7 @@ export default function AllProductsPage() {
             setIsLoading(false);
         }, 2000); 
     }, []);
+    
     return (
         <div className={styles.wrapper}>
             <div className='container'>
