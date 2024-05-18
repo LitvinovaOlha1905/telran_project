@@ -12,6 +12,7 @@ import Header from "./components/Header/Header"
 import { useDispatch } from "react-redux"
 import { fetchAllCategories } from "./store/slices/categoriesSlice"
 import { fetchAllProducts } from "./store/slices/productsSlice"
+import ProductsByCategoryPage from "./pages/ProductsByCategoryPage/ProductsByCategoryPage"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
@@ -35,6 +36,7 @@ function App() {
 					<Route path='/categories/all' element={<CategoriesPage />} />
 					<Route path='/products/all' element={<AllProductsPage />} />
 					<Route path='/sales/all' element={<AllSalesPage />} />
+					<Route path='/category/:categoryId' element={<ProductsByCategoryPage/>}/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 				<Footer />
