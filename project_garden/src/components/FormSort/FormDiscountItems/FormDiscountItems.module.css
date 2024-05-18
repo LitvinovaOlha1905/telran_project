@@ -1,0 +1,24 @@
+.sortLabel {
+   display: flex;
+   gap: 16px;
+   align-items: center;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+.sortDiscountInput {
+   display: none;
+}
+
+.sortDiscountCheckbox{
+   display: flex;
+   align-items: center;
+}
+
+.iconCheckbox{
+font-size: 36px;
+   text-align: center;
+   color: var(--green);
+}
