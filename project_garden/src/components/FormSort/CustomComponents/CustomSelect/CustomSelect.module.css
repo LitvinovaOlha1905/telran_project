@@ -1,0 +1,39 @@
+.customSelect {
+   position: relative;
+   user-select: none;
+}
+
+.text {
+   padding: 8px 8px 8px 16px;
+   width: 200px;
+   font-size: 16px;
+   border-radius: 6px;
+   border: 1px solid var(--grey-divider);
+   color: var(--black);
+   background: var(--txt-white);
+}
+
+.dropdown {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.dropdownContent {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   z-index: 1;
+   width: 200px;
+}
+
+.dropdownItem {
+   margin: 5px;
+   cursor: context-menu;
+   transition: all 0.2s;
+}
+
+.dropdownItem:hover {
+   color: var(--txt-white);
+   background: var(--green);
+}
