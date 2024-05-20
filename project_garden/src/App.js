@@ -41,7 +41,7 @@ function App() {
             path="/category/:categoryId"
             element={<ProductsByCategoryPage />}
           />
-					<Route path="/product/:product_id" element={<SingleProductPage/>} />
+		  <Route path="/product/:productId" element={<SingleProductPage/>} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
