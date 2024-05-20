@@ -20,7 +20,7 @@ export default function SingleProductPage() {
   const { status, product } = singleProductState;
   const { id, title, price, discont_price, description, image } = product;
 
-  console.log(singleProductState);
+
   console.log(product);
 
   return (
