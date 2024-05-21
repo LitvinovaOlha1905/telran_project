@@ -8,6 +8,7 @@ import modeNight from "../../images/Header/modeNight.svg"; // Импортиру
 import modeDay from "../../images/Header/modeDay.svg";
 import { useDispatch, useSelector } from "react-redux"
 import {toggleTheme} from "../../store/slices/themeSlice"
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -30,7 +31,8 @@ const Header = () => {
       <NavMenu />
       <div className={styles.cartBlock}>
         <img src={iconHeart} alt="First Image"/>
-        <img src={iconBag} alt="Second Image"/>
+       <Link to="/cart" ><img src={iconBag} alt="Second Image"/>
+       </Link>
       </div>
       </div>
       </div>
