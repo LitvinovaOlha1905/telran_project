@@ -3,8 +3,12 @@
   gap: 32px;
   margin-bottom: 85px;
 }
+.imgBlock{
+  flex-grow: 1; /* Картинка будет занимать всю доступную ширину */
+}
 .imgBlock img {
-  width: 100%;
+  width: 100%; 
+  height: auto;
   border: 1px solid var(--grey-divider);
   border-radius: 12px;
 }
@@ -67,7 +71,7 @@
 .countBlock {
   display: flex;
 }
-.countBlock button {
+.countBlock a {
   border: 1px solid var(--grey-divider);
   border-radius: 6px;
   width: 58px;
@@ -90,6 +94,7 @@
   font-weight: 600;
   font-size: 20px;
   color: var(--txt-white);
+  cursor: pointer;
 }
 .descriptionBlock h5 {
   font-weight: 600;
