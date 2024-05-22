@@ -1,13 +1,51 @@
 .nav_menu {
-   display: flex;
-   gap: 32px;
+  display: flex;
+  gap: 32px;
 }
 
-
 .nav_menu a {
-   text-decoration: none;
-   font-weight: 500;
-   font-size: 20px;
-   line-height: 130%;
-   color: var(--black);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--black);
+}
+.navBurger {
+
+}
+a.oneDaySaleButton {
+  background-color: #92a134; /* Красный фон для кнопки */
+  color: #ffffff; /* Белый цвет текста */
+  padding: 6px 16px; /* Отступы для кнопки */
+  text-decoration: none; /* Убрать подчеркивание */
+  border-radius: 6px; /* Слегка скругленные углы */
+  width: 151px;
+  height: 32px;
+  margin: auto;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.oneDaySaleButton:hover {
+  background-color: gray; /* Темнее красный при наведении */
+}
+
+@media (max-width: 1440px) {
+  .header {
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav_menu {
+    font-size: 16px;
+    gap: 20px;
+  }
+}
+/* Media Query для экранов шириной 480px и меньше */
+@media (max-width: 769px) {
+  .nav_menu {
+    font-size: 16px;
+  }
 }

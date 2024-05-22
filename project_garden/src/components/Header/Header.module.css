@@ -4,21 +4,104 @@
   align-items: center;
   padding: 30px 0 28px;
 }
+
 .logoBlock {
   display: flex;
   gap: 20px;
   align-items: center;
+  cursor: pointer;
 }
 
 .cartBlock {
   display: flex;
   gap: 24px;
-  align-items: center;
+  align-items: end;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
+.cartBlock:nth-last-child{
+  gap: 26px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+@media (max-width: 1440px) {
   .header {
-    width: 100%; /* Для адаптивности, ширина становится 100% на мобильных устройствах */
-    padding: 12px; /* Меньшие отступы для мобильных устройств */
+
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    font-size: 16px;
+  }
+
+  .cartBlock{
+    gap: 11px;
+  }
+
+}
+/* Media Query для экранов шириной 480px и меньше */
+@media (max-width: 769px) {
+  .header {
+    font-size: 14px;
+    height: 68px;
+    font-size: 16px;
+  }
+  .logoBlock {
+    flex-grow: 1;
+    gap: 20px;
+  }
+    .cartBlock{
+    gap: 11px;
+  }
+
+  .burger {
+    display: flex;
+    gap:20px;
+  }
+
+  .hideMenu {
+    display: none;
+  }
+
+  .hideMenu.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+  }
+
+  .hideMenu.open ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hideMenu.open li {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .hideMenu.open li:last-child {
+    border-bottom: none;
+  }
+
+  .hideMenu.open a {
+    color: #fff;
+    text-decoration: none;
   }
 }
