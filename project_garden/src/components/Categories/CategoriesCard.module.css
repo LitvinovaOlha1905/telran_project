@@ -3,6 +3,7 @@
     max-width: 100%;
 }
 .title {
+  text-decoration: none;
   margin-top: 16px;
   font-weight: 500;
   font-size: 20px;
@@ -17,3 +18,4 @@
   height: 350px;
   object-fit: cover;
 }
+

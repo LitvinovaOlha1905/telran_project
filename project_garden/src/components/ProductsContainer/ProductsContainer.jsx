@@ -1,68 +1,34 @@
-import React, { useState } from "react"
-import { useSelector } from "react-redux"
-import ProductCard from "../ProductCard/ProductCard"
-import styles from "./ProductsContainer.module.css"
+import React from "react";
+import { useSelector } from "react-redux";
+import ProductCard from "../ProductCard/ProductCard";
+import styles from "./ProductsContainer.module.css";
+import FormSelect from "./../FormSort/FormSelect/FormSelect";
+import FormDiscountItems from "./../FormSort/FormDiscountItems/FormDiscountItems";
+import FormSortPrice from "./../FormSort/FormSortPrice/FormSortPrice";
+import { selectFilteredProducts } from "../../store/slices/filterSlice";
 
 export default function ProductsContainer() {
-	const { products, status } = useSelector(state => state.products)
+	const products = useSelector(selectFilteredProducts);
 
-	console.log(products)
-
-	if (status === "loading") {
-		return <h1>Loading...</h1>
-	}
+	// console.log(products);
 
 	return (
 		<div>
-			{/* Price */}
 			<div className={styles.sortBlock}>
-				<form className={styles.formSortBlock}>
-					<label className={styles.sortLabel}>Price</label>
-					<input
-						className={[styles.input, styles.sortPriceInput].join(" ")}
-						type='number'
-						pattern='[0-9]*'
-						placeholder='from'
-					/>
-					<input
-						className={[styles.input, styles.sortPriceInput].join(" ")}
-						type='number'
-						pattern='[0-9]*'
-						placeholder='to'
-					/>
-				</form>
+				{/* Price */}
+				<FormSortPrice />
 
-				{/* Discounted items */}
-				<form className={styles.formSortBlock}>
-					<label className={styles.sortLabel}>Discounted items</label>
-					<input
-						className={[styles.input, styles.sortDiscountInput].join(" ")}
-						type='checkbox'
-					/>
-				</form>
+				{/* DiscountItems */}
+				<FormDiscountItems />
 
-				{/* Select - уточнить у Нелли как стилизрвать option */}
-				<form className={styles.formSortBlock}>
-					<label className={styles.sortLabel} htmlFor='sortSelect'>
-						Sorted
-					</label>
-					<select
-						className={styles.sortSelect}
-					>
-						<option value='default'>by default</option>
-						<option value='priceAsc'>low to High</option>
-						<option value='priceDesc'>high to Low</option>
-						<option value='discounted'>discounted items</option>
-					</select>
-				</form>
+				{/* Select */}
+				<FormSelect />
 			</div>
 
 			{/* Cards */}
 			<div className={styles.productsBlock}>
-				{products.map(el => (
-					<ProductCard key={el.id} {...el} />
-				))}
+				{products.map(el => el.visible && <ProductCard key={el.id} {...el} />)}
 			</div>
 		</div>
-	)
+	);
 }

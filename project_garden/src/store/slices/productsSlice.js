@@ -42,7 +42,11 @@ export const fetchProduct = createAsyncThunk(
 const productsSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllProducts.pending, (state) => {
@@ -51,6 +55,7 @@ const productsSlice = createSlice({
       .addCase(fetchAllProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.status = "ready";
+		  state.products = action.payload.map(el => ({ ...el, visible: true }));
       })
       .addCase(fetchAllProducts.rejected, (state) => {
         state.status = "error";
@@ -60,6 +65,7 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProduct.fulfilled, (state, action) => {
         state.currentProduct = action.payload; // Changed from state.products to state.currentProduct
+        state.products = action.payload;
         state.status = "ready";
       })
       .addCase(fetchProduct.rejected, (state) => {
@@ -68,5 +74,8 @@ const productsSlice = createSlice({
   },
 });
 
-export default productsSlice.reducer;
+export const { setProducts } = productsSlice.actions;
 
+export const selectProducts = (state) => state.products.products;
+
+export default productsSlice.reducer;
