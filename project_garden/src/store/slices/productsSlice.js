@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
-  currentProducts: null,
+  currentProduct: null, // Changed from currentProducts to currentProduct
   status: "",
   error: "",
 };
@@ -27,9 +27,9 @@ export const fetchProduct = createAsyncThunk(
   "products/fetchProduct",
   async (productId) => {
     try {
-      const res = await fetch(`http://localhost:3333/categories/${productId}`);
+      const res = await fetch(`http://localhost:3333/products/${productId}`); // Changed endpoint from categories to products
       if (!res.ok) {
-        throw new Error("Failed to fetch users!");
+        throw new Error("Failed to fetch product!");
       }
       const json = await res.json();
       return json;
@@ -64,6 +64,7 @@ const productsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchProduct.fulfilled, (state, action) => {
+        state.currentProduct = action.payload; // Changed from state.products to state.currentProduct
         state.products = action.payload;
         state.status = "ready";
       })

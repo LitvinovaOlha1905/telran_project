@@ -6,13 +6,10 @@ import iconHeart from "../../images/Header/heart.svg";
 import iconBag from "../../images/Header/bag.svg";
 import modeNight from "../../images/Header/modeNight.svg";
 import modeDay from "../../images/Header/modeDay.svg";
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
-import { toggleTheme } from "../../store/slices/themeSlice";
+import { useDispatch, useSelector } from "react-redux"
+import {toggleTheme} from "../../store/slices/themeSlice"
+import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -64,12 +61,12 @@ const Header = () => {
           <div className={styles.cartBlock}>
             <img
               src={iconHeart}
-              alt="First Image"
+              alt="Like"
             />
-            <img
+            <Link to="/cart" ><img
               src={iconBag}
-              alt="Second Image"
-            />
+              alt="Bag"
+            /></Link>
             <RxHamburgerMenu
               className={styles.burger}
               onClick={toggleMenu}
