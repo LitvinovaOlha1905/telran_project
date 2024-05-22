@@ -1,35 +1,60 @@
 .singleProductCard {
   display: flex;
+  gap: 32px;
   margin-bottom: 85px;
 }
-.ingBlock img {
-  /* display: block; */
+.imgBlock{
+  flex-grow: 1; /* Картинка будет занимать всю доступную ширину */
+ }
+.imgBlock img {
+  display: block;
   width: 100%;
+  height: auto;
   border: 1px solid var(--grey-divider);
   border-radius: 12px;
+  object-fit: cover;
 }
 .infoBlock {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  max-width: 548px;
+}
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
 }
 .titleBlock h2 {
   font-weight: 700;
   font-size: 40px;
   color: var(--black);
 }
+.icon {
+  width: 48px;
+  fill: var(--txt-white);
+}
+.icon:hover {
+  fill: var(--black);
+}
 .priceBlock {
   display: flex;
+  gap: 16px;
+}
+.prices {
+  display: flex;
+  gap: 32px;
+  align-items: end;
 }
 .price {
-  font-weight: 600;
-  font-size: 40px;
+  font-weight: 700;
+  font-size: 64px;
   line-height: 110%;
   color: var(--black);
 }
-.priceBlock span {
+.prices span {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 40px;
   line-height: 130%;
   text-decoration: line-through;
   color: var(--grey);
@@ -37,10 +62,9 @@
 .discount {
   border-radius: 6px;
   padding: 4px 8px;
-  width: 63px;
-  height: 34px;
   font-weight: 600;
   font-size: 20px;
+  line-height: 130%;
   background: var(--sale);
   color: var(--txt-white);
 }
@@ -51,11 +75,12 @@
 .countBlock {
   display: flex;
 }
-.countBlock button {
+.countBlock a {
   border: 1px solid var(--grey-divider);
   border-radius: 6px;
   width: 58px;
   height: 58px;
+  cursor: pointer;
 }
 .countBlock p {
   border-bottom: 1px solid var(--grey-divider);
@@ -73,6 +98,7 @@
   font-weight: 600;
   font-size: 20px;
   color: var(--txt-white);
+  cursor: pointer;
 }
 .descriptionBlock h5 {
   font-weight: 600;

@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useParams } from "react-router-dom"
 import "./App.css"
 import MainPage from "./pages/MainPage/MainPage"
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage"
@@ -14,9 +14,12 @@ import { fetchAllCategories } from "./store/slices/categoriesSlice"
 import { fetchAllProducts } from "./store/slices/productsSlice"
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage/ProductsByCategoryPage"
 import SingleProductPage from './pages/SingleProductPage/SingleProductPage';
+import { fetchSingleProducts } from "./store/slices/singleProductSlice"
 
 function App() {
 	const [modalActive, setModalActiv] = useState()
+
+	
 
 	const dispatch = useDispatch();
 
@@ -28,6 +31,7 @@ function App() {
 		dispatch(fetchAllProducts())
 	}, [])
 
+	
 	return (
     <div className="App">
       <Context.Provider value={{ modalActive, setModalActiv }}>
