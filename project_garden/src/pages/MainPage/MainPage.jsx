@@ -1,12 +1,16 @@
-import React from "react";
-import Banner from "../../components/Banner/Banner";
-import Footer from "../../components/Footer/Footer";
+import React from "react"
+import Banner from "../../components/Banner/Banner"
+import CategorySection from "../../components/Categories/CategorySection";
+import GetDiscount from "../../components/GetDiscount/GetDiscount"
+import SalesContainer from "../../components/SalesContainer/SalesContainer"
 
 export default function MainPage() {
 	return (
 		<div>
 			<Banner />
-			<Footer/>
+			<CategorySection/>
+			<GetDiscount />
+			<SalesContainer />
 		</div>
-	);
+	)
 }

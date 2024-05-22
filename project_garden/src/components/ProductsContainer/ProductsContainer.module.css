@@ -1,0 +1,21 @@
+.productsBlock {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap: 32px;
+   margin-top: 40px;
+}
+
+.sortBlock {
+   display: flex;
+   align-items: center;
+   gap: 40px;
+}
+
+.formSortBlock {
+   display: flex;
+   gap: 16px;
+   align-items: center;
+}
+
+
+

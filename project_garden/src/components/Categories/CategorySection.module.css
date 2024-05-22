@@ -1,0 +1,44 @@
+.wrapper {
+  margin-top: 50px;
+  margin-bottom: 110px;
+}
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 110%;
+  color: var(--black);
+}
+.titleBlockLine {
+  display: flex;
+  position: relative;
+}
+.line::before {
+  content: "";
+  width: 650%;
+  height: 1px;
+  background-color: var(--grey-divider);
+  position: absolute;
+  top: 50%;
+  right: 130px;
+}
+.btn {
+  border: 1px solid var(--grey-divider);
+  color: var(--txt-grey);
+  background-color: transparent;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 126%;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+  margin-top: 40px;
+}
