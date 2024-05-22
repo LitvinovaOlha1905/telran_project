@@ -5,17 +5,20 @@
 }
 .imgBlock{
   flex-grow: 1; /* Картинка будет занимать всю доступную ширину */
-}
+ }
 .imgBlock img {
-  width: 100%; 
+  display: block;
+  width: 100%;
   height: auto;
   border: 1px solid var(--grey-divider);
   border-radius: 12px;
+  object-fit: cover;
 }
 .infoBlock {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  max-width: 548px;
 }
 .titleBlock {
   display: flex;
@@ -41,6 +44,7 @@
 .prices {
   display: flex;
   gap: 32px;
+  align-items: end;
 }
 .price {
   font-weight: 700;
@@ -48,7 +52,7 @@
   line-height: 110%;
   color: var(--black);
 }
-.priceBlock span {
+.prices span {
   font-weight: 500;
   font-size: 40px;
   line-height: 130%;
