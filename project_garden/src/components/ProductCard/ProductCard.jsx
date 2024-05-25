@@ -5,6 +5,8 @@ import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
 import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, countTotalSum,  } from "../../store/slices/cartSlice";
 
 export default function ProductCard({id,
 	image,
@@ -14,6 +16,18 @@ export default function ProductCard({id,
 }) {
 	const [heartActive, setHeartActive] = useState(false);
 	const [bagActive, setBagActive] = useState(false);
+
+	const { productsInCart } = useSelector((store) => store.cart);
+
+	const dispatch = useDispatch();
+	const product ={ id:id, title:title, image:image, price:price, discont_price:discont_price};
+	const handleAddToCart = (event) => {
+		// event.preventDefault();
+		console.log(product);
+	  dispatch(addProduct(product));
+	  dispatch(countTotalSum());
+	  console.log(productsInCart);
+	};
 
 	return (
 		<div>
@@ -53,7 +67,10 @@ export default function ProductCard({id,
 								/>
 							)}
 						</Link>
-						<Link onClick={() => setBagActive(!bagActive)}>
+						<Link onClick={(event) => {event.preventDefault(); setBagActive(!bagActive); handleAddToCart()}}>
+
+
+
 							{bagActive ? (
 								<IconBagActive className={styles.icon} size='48' />
 							) : (

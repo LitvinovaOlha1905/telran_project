@@ -5,6 +5,7 @@ import themeReducer from "./slices/themeSlice"
 import dataReducer from './slices/dataSlice'
 import filtersReducer from "./slices/filterSlice";
 import singleProductReducer from './slices/singleProductSlice'
+import cartReducer from './slices/cartSlice'
 
 export const store = configureStore({
 	reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
 		theme: themeReducer,
 		data: dataReducer,
     filters: filtersReducer,
-		singleProduct: singleProductReducer
+		singleProduct: singleProductReducer, 
+		cart: cartReducer
 	},
 });

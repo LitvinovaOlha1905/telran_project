@@ -28,7 +28,9 @@
     color: var(--white);
     margin-top: 16px;
     border: transparent;
+    
   }
+  
   .btn:active {
     position: relative;
     top: 1px;

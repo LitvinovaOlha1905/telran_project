@@ -1,0 +1,31 @@
+.txt {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--grey);
+  }
+  .smallText {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    text-decoration: line-through;
+    color: var(--grey);
+  }
+  
+  /* Mobile */
+  @media (max-width: 999px) {
+    .txt {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .txt {
+      font-size: 28px;
+    }
+    .smallText {
+      font-size: 18px;
+    }
+  }
+  
