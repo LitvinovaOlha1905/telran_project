@@ -8,7 +8,8 @@ import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.sv
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct, countTotalSum,  } from "../../store/slices/cartSlice";
 
-export default function ProductCard({id,
+export default function ProductCard({
+	id,
 	image,
 	title,
 	price,
@@ -32,28 +33,24 @@ export default function ProductCard({id,
 	return (
 		<div>
 			<div className={styles.cardBlock}>
-				
-				<img src={`http://localhost:3333${image}`} alt={title} />
+				<Link to={`/product/${id}`}>
+					<img src={`http://localhost:3333${image}`} alt={title} />
 
-				{/* Description Block */}
-				<div className={styles.descriptionBlock}>
-					<p className={styles.description}>
-						{title.length > 20
-							? `${title.substring(0, 17)}...`
-							: title}
-					</p>
-					<div className={styles.priceBlock}>
-						<p className={styles.price}>
-							{"\u0024"}
-							{price}
-						</p>
-						{discont_price ? (
-							<span>
+					{/* Description Block */}
+					<div className={styles.descriptionBlock}>
+						<p className={styles.description}>{title}</p>
+						<div className={styles.priceBlock}>
+							<p className={styles.price}>
 								{"\u0024"}
-								{discont_price}
-							</span>
-						) : null}
-					</div>
+								{price}
+							</p>
+							{discont_price ? (
+								<span>
+									{"\u0024"}
+									{discont_price}
+								</span>
+							) : null}
+						</div>
 
 					{/* Icons Block */}
 					<div className={styles.cartBlock}>
@@ -69,8 +66,6 @@ export default function ProductCard({id,
 						</Link>
 						<Link onClick={(event) => {event.preventDefault(); setBagActive(!bagActive); handleAddToCart()}}>
 
-
-
 							{bagActive ? (
 								<IconBagActive className={styles.icon} size='48' />
 							) : (
@@ -79,17 +74,14 @@ export default function ProductCard({id,
 						</Link>
 					</div>
 
-					{/* Sale Block */}
-					{discont_price && (
-						<p className={styles.discount}>
-							{(
-								((price - discont_price) / price) *
-								100
-							).toFixed()}
-							%
-						</p>
-					)}
-				</div>
+						{/* Sale Block */}
+						{discont_price && (
+							<p className={styles.discount}>
+								{(((price - discont_price) / price) * 100).toFixed()}%
+							</p>
+						)}
+					</div>
+				</Link>
 			</div>
 		</div>
 	);

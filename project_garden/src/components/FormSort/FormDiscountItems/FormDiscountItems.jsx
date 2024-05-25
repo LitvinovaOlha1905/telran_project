@@ -1,50 +1,44 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FormDiscountItems.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectProducts } from "../../../store/slices/productsSlice";
+import { ReactComponent as IconCheckbox } from "../../../images/Icons/checkbox.svg";
+import { ReactComponent as IconCheckboxActive } from "../../../images/Icons/checkboxActive.svg";
 import {
 	getCheapProducts,
+	selectProducts,
 	setFilteredProducts,
-} from "../../../store/slices/filterSlice";
-import { ReactComponent as IconCheckbox } from "../../../images/Icons/checkbox.svg";
-import { IoIosCheckboxOutline } from "react-icons/io";
+} from "../../../store/slices/productsSlice";
 
 export default function FormDiscountItems() {
-	const [checked, setChecked] = useState(false);
-	const [checkboxActive, setCheckboxActive] = useState(false);
+	const [isActive, setIsActive] = useState(false);
 
 	const dispatch = useDispatch();
 	const products = useSelector(selectProducts);
 
 	useEffect(() => {
-		dispatch(setFilteredProducts(products));
-	}, [products, dispatch]);
+		if (isActive) {
+			dispatch(getCheapProducts({ checked: true }));
+		} else {
+			dispatch(setFilteredProducts(products));
+		}
+	}, [isActive, dispatch]);
 
 	const handleCheck = () => {
-		const newChecked = !checked;
-		setChecked(newChecked);
-		dispatch(getCheapProducts({ checked: newChecked }));
+		setIsActive(prev => !prev);
 	};
 
 	return (
-		<form>
-			<label className={styles.sortLabel}>
-				Discounted items
+		<form className={styles.sortBlock}>
+			<h1 className={styles.sortTitle}>Discounted items</h1>
+			<label>
 				<input
 					className={styles.sortDiscountInput}
 					type='checkbox'
-					checked={checked}
+					checked={isActive}
 					onChange={handleCheck}
 				/>
-				<span
-					className={styles.sortDiscountCheckbox}
-					onClick={() => setCheckboxActive(!checkboxActive)}
-				>
-					{checkboxActive ? (
-						<IoIosCheckboxOutline className={styles.iconCheckbox} />
-					) : (
-						<IconCheckbox />
-					)}
+				<span className={styles.sortDiscountCheckbox}>
+					{isActive ? <IconCheckboxActive /> : <IconCheckbox />}
 				</span>
 			</label>
 		</form>
