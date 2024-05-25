@@ -5,8 +5,14 @@
    margin-top: 40px;
 }
 .title {
+  margin-bottom: 40px;
   font-weight: 700;
   font-size: 64px;
   line-height: 110%;
   color: var(--black);
+}
+.sortBlock {
+   display: flex;
+   align-items: center;
+   gap: 40px;
 }

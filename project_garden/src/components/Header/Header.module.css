@@ -36,11 +36,11 @@
   margin: 4px 0;
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   .header {
 
   }
-}
+} */
 
 @media (max-width: 1000px) {
   .header {
