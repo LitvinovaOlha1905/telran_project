@@ -9,8 +9,9 @@ export default function CustomSelect({ onChange, selected }) {
 
 	const options = [
 		{ value: "default", label: "by default" },
-		{ value: "priceAsc", label: "price: low-high" },
+		{ value: "dateAdded", label: "newest" },
 		{ value: "priceDesc", label: "price: high-low" },
+		{ value: "priceAsc", label: "price: low-high" },
 		{ value: "name", label: "by name" },
 	];
 
@@ -45,13 +46,8 @@ export default function CustomSelect({ onChange, selected }) {
 								key={option.value}
 								onClick={() => handleOptionClick(option)}
 							>
-								<option
-									value={option.value}
-									disabled={option.value === "default"}
-									selected={option.value === "default"}
-								>
-									{option.label}
-								</option>
+								
+								{option.label}
 							</div>
 						))}
 					</div>

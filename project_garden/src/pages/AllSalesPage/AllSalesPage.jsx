@@ -1,49 +1,49 @@
-import React, { useEffect } from "react"
-import Sceleton from "../../components/Sceleton/Skeleton"
-import ProductCard from "../../components/ProductCard/ProductCard"
-import styles from "./AllSalesPage.module.css"
-import { useSelector } from "react-redux"
-import FormSortPrice from "../../components/FormSort/FormSortPrice/FormSortPrice"
-import FormSelect from "../../components/FormSort/FormSelect/FormSelect"
+import React, { useEffect } from "react";
+import Sceleton from "../../components/Sceleton/Skeleton";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import styles from "./AllSalesPage.module.css";
+import { useSelector } from "react-redux";
+import FormSortPrice from "../../components/FormSort/FormSortPrice/FormSortPrice";
+import FormSelect from "../../components/FormSort/FormSelect/FormSelect";
 
 export default function AllSalesPage() {
-	const { products } = useSelector(state => state.products)
-	const discountedProducts = products?.filter(product => product.discont_price)
+	const { products } = useSelector(state => state.products);
+	const discountedProducts = products?.filter(product => product.discont_price);
 
-	console.log(discountedProducts);
+	// console.log(discountedProducts);
 
 	useEffect(() => {
-		window.scrollTo(0, 0)
-	}, [])
-	const [isLoading, setIsLoading] = React.useState(true)
+		window.scrollTo(0, 0);
+	}, []);
+	const [isLoading, setIsLoading] = React.useState(true);
 
 	React.useEffect(() => {
-		setIsLoading(true)
+		setIsLoading(true);
 
 		setTimeout(() => {
-			setIsLoading(false)
-		}, 2000)
-	}, [])
+			setIsLoading(false);
+		}, 2000);
+	}, []);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className='container'>
 				<h1 className={styles.title}>Discounted items</h1>
 
-				{/* Price */}
-				<FormSortPrice />
-
-				{/* Select */}
-				<FormSelect />
-
-				{/* Cards */}
 				{isLoading ? (
 					<Sceleton />
 				) : (
-					<div className={styles.productsBlock}>
-						{discountedProducts.map(
-							el => el.visible && <ProductCard key={el.id} {...el} />
-						)}
+					<div>
+						<div className={styles.sortBlock}>
+							<FormSortPrice />
+							<FormSelect />
+						</div>
+
+						<div className={styles.productsBlock}>
+							{discountedProducts.map(
+								el => el.visible && <ProductCard key={el.id} {...el} />
+							)}
+						</div>
 					</div>
 				)}
 			</div>

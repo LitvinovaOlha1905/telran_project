@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./FormSelect.module.css";
 import { useDispatch } from "react-redux";
-import { sortProducts } from "../../../store/slices/filterSlice";
 import CustomSelect from "../CustomComponents/CustomSelect/CustomSelect";
+import { sortProducts } from "../../../store/slices/productsSlice";
 
 export default function FormSelect() {
 	const [selectedOption, setSelectedOption] = useState("default");
@@ -19,7 +19,10 @@ export default function FormSelect() {
 		<div>
 			<form className={styles.formSortBlock}>
 				<label className={styles.sortLabel} htmlFor='sortSelect'>
-					<CustomSelect selected={selectedOption} onChange={sort} />
+					<CustomSelect
+						selected={selectedOption}
+						onChange={sort}
+					/>
 				</label>
 			</form>
 		</div>

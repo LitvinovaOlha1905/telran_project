@@ -3,5 +3,8 @@
 }
 
 .title {
-   margin-bottom: 40px;
+   margin: 40px 0;
+   font-size: 64px;
+   line-height: 110%;
+   color: var(--black);
 }
