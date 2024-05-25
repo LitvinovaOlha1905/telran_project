@@ -38,7 +38,7 @@ export default function ProductCard({
 
 					{/* Description Block */}
 					<div className={styles.descriptionBlock}>
-						<p className={styles.description}>{title}</p>
+						<p className={styles.description}>{title.length > 20 ? `${title.substring(0, 17)}...` : title}</p>
 						<div className={styles.priceBlock}>
 							<p className={styles.price}>
 								{"\u0024"}
