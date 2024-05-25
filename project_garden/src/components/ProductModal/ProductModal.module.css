@@ -1,0 +1,87 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(40, 40, 40, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.content,
+.discountModal {
+  border-radius: 10px;
+  max-height: 610px;
+  max-width: 900px;
+  background-color: #fff;
+  transition: 0.4s all;
+  transform: scale(0.5);
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.discountModal {
+  max-width: 548px;
+  max-height: 664px;
+}
+
+.content.active,
+.discountModal.active {
+  transform: scale(1);
+}
+
+.content > * {
+  max-height: 610px;
+}
+
+/* Mobile */
+
+@media (max-width: 999px) {
+  .content {
+    width: 728px;
+    height: 493px;
+  }
+  .content > * {
+    max-height: 493px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    width: 440px;
+    max-height: 298px;
+    overflow: hidden;
+  }
+  .content > * {
+    max-height: 298px;
+  }
+  .discountModal {
+    max-width: 440px;
+    max-height: 634px;
+  }
+}
+
+@media (max-width: 479px) {
+  .content {
+    width: 320px;
+  }
+
+  .discountModal {
+    max-width: 320px;
+    max-height: 564px;
+  }
+}
