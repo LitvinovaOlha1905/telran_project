@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./FormSortPrice.module.css";
 import { useDispatch } from "react-redux";
-import { filterProducts } from "../../../store/slices/filterSlice";
+import {filterProducts} from '../../../store/slices/productsSlice'
 
 export default function FormSortPrice() {
 	const dispatch = useDispatch();
@@ -22,6 +22,7 @@ export default function FormSortPrice() {
 	};
 	return (
 		<form className={styles.formSortBlock} onSubmit={filter}>
+			{/* <form className={styles.formSortBlock} onSubmit={filter}> */}
 			<label className={styles.sortLabel}>Price</label>
 			<input
 				className={[styles.input, styles.sortPriceInput].join(" ")}

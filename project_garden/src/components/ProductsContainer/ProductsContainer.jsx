@@ -5,10 +5,10 @@ import styles from "./ProductsContainer.module.css";
 import FormSelect from "./../FormSort/FormSelect/FormSelect";
 import FormDiscountItems from "./../FormSort/FormDiscountItems/FormDiscountItems";
 import FormSortPrice from "./../FormSort/FormSortPrice/FormSortPrice";
-import { selectFilteredProducts } from "../../store/slices/filterSlice";
+import { selectProducts } from "../../store/slices/productsSlice";
 
 export default function ProductsContainer() {
-	const products = useSelector(selectFilteredProducts);
+	const products = useSelector(selectProducts);
 
 	// console.log(products);
 
