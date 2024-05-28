@@ -15,10 +15,13 @@ import { fetchAllProducts } from "./store/slices/productsSlice"
 import CartPage from "./pages/CartPage/CartPage"
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage/ProductsByCategoryPage"
 import SingleProductPage from './pages/SingleProductPage/SingleProductPage';
-import { fetchSingleProducts } from "./store/slices/singleProductSlice"
+import ModalProductImg from "./components/ModalProductImg/ModalProductImg"
+import ModalDayProduct from "./components/ModalDayProduct/ModalDayProduct"
 
 function App() {
-	const [modalActive, setModalActiv] = useState()
+  const [modalActive, setModalActive] = useState(false)
+  
+  const [modalDayActive, setModalDayActive] = useState(false);
 
 	const dispatch = useDispatch();
 
@@ -32,16 +35,28 @@ function App() {
 	
 	return (
     <div className="App">
-      <Context.Provider value={{ modalActive, setModalActiv }}>
+      <Context.Provider
+        value={{
+          modalActive,
+          setModalActive,
+          modalDayActive,
+          setModalDayActive,
+        }}
+      >
+        <ModalProductImg />
+        <ModalDayProduct />
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/categories/all" element={<CategoriesPage />} />
           <Route path="/products/all" element={<AllProductsPage />} />
           <Route path="/sales/all" element={<AllSalesPage />} />
-          <Route path="/category/:categoryId" element={<ProductsByCategoryPage />} />
-		      <Route path="/product/:productId" element={<SingleProductPage/>} />
-          <Route path='/cart' element={<CartPage/>} />
+          <Route
+            path="/category/:categoryId"
+            element={<ProductsByCategoryPage />}
+          />
+          <Route path="/product/:productId" element={<SingleProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
