@@ -1,32 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./SingleProductPage.module.css";
 import { Link, useParams } from "react-router-dom";
-import { ReactComponent as IconPlus } from '../../images/Icons/plus.svg';
+import { ReactComponent as IconPlus } from "../../images/Icons/plus.svg";
 import { ReactComponent as IconMinus } from "../../images/Icons/minus.svg";
 import { ReactComponent as Heart } from "../../images/Icons/heart.svg";
 import { fetchSingleProducts } from "../../store/slices/singleProductSlice";
+import { Context } from "../../context";
 
 export default function SingleProductPage() {
+  const { setModalActive } = useContext(Context);
+
   const dispatch = useDispatch();
 
   const { productId } = useParams();
 
   const singleProductState = useSelector((store) => store.singleProduct);
-   
+
   useEffect(() => {
     dispatch(fetchSingleProducts(productId));
   }, [dispatch, productId]);
 
-
   const { status, product } = singleProductState;
 
   const [{ id, title, price, discont_price, description, image }] = product;
-
-  console.log(singleProductState);
-  console.log(product);
-  console.log(title);
-
 
   return (
     <div className="container">
@@ -34,7 +31,12 @@ export default function SingleProductPage() {
         <p>Loading...</p>
       ) : (
         <div className={styles.singleProductCard}>
-          <div className={styles.imgBlock}>
+          <div
+            className={styles.imgBlock}
+            onClick={() => {
+              setModalActive(true);
+            }}
+          >
             <img src={`http://localhost:3333${image}`} alt={title} />
           </div>
 
