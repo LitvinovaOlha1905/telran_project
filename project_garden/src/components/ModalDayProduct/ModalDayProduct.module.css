@@ -15,6 +15,7 @@
   position: relative;
 }
 .title h5 {
+  margin-bottom: 16px;
   font-weight: 600;
   font-size: 40px;
   line-height: 110%;
@@ -38,12 +39,6 @@
   height: 664px;
 }
 
-/* .modal_content img {
-  display: block;
-  object-fit: cover;
-  width: 900px;
-  height: 610px;
-} */
 .modal.active {
   display: flex;
 }
@@ -51,6 +46,101 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.cardBlock {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-width: 316px;
+   border-radius: 12px;
+   border: 1px solid var(--grey-divider);
+   background: var(--txt-white);
+}
+.cardBlock img {
+   display: block;
+   width: 100%;
+   height: 284px;
+   border-bottom: 1px solid var(--grey-divider);
+   object-fit: cover;
+}
+
+.descriptionBlock {
+   margin-top: 20px;
+   padding: 0px 32px 32px;
+}
+
+/* Description Block */
+
+.description {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+.priceBlock {
+   margin-top: 16px;
+   display: flex;
+   align-items: baseline;
+   gap: 16px;
+}
+
+.price {
+   font-weight: 600;
+   font-size: 40px;
+   line-height: 110%;
+   color: var(--black);
+}
+
+.priceBlock span {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 130%;
+   text-decoration: line-through;
+   color: var(--grey);
+}
+
+/* Icons Block */
+
+.cartBlock {
+   position: absolute;
+   top: 18px;
+   right: 18px;
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+}
+
+.iconHeart {
+   display: block;
+   stroke: var(--black);
+}
+
+.icon {
+   display: block;
+   width: 48px;
+   fill: var(--txt-white);
+}
+
+.icon:hover {
+   fill: var(--black);
+}
+
+/* Sale Block */
+
+.discount {
+   position: absolute;
+   top: 16px;
+   left: 22px;
+   padding: 4px 8px;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+   border-radius: 6px;
+   color: var(--txt-white);
+   background: var(--sale);
 }
 .btn {
   font-family: "Montserrat", sans-serif;
@@ -63,4 +153,9 @@
   line-height: 130%;
   text-align: center;
   color: var(--black);
+}
+.btn:hover{
+  cursor: pointer;
+  background: var(--black);
+  color: var(--txt-white);
 }
