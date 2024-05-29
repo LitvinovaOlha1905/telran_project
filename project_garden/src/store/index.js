@@ -1,10 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit"
-import categoriesReducer from "./slices/categoriesSlice"
-import productsReducer from "./slices/productsSlice"
-import themeReducer from "./slices/themeSlice"
-import dataReducer from './slices/dataSlice'
-import singleProductReducer from './slices/singleProductSlice'
-import cartReducer from './slices/cartSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import categoriesReducer from "./slices/categoriesSlice";
+import productsReducer from "./slices/productsSlice";
+import themeReducer from "./slices/themeSlice";
+import dataReducer from "./slices/dataSlice";
+import singleProductReducer from "./slices/singleProductSlice";
+import cartReducer from "./slices/cartSlice";
+import favoritesReducer from "./slices/favoritesSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -12,7 +13,8 @@ export const store = configureStore({
 		products: productsReducer,
 		theme: themeReducer,
 		data: dataReducer,
-		singleProduct: singleProductReducer, 
-		cart: cartReducer
+		singleProduct: singleProductReducer,
+		cart: cartReducer,
+		favorites: favoritesReducer,
 	},
 });

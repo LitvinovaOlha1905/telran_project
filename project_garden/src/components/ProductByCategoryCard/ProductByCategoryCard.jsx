@@ -30,7 +30,6 @@ export default function ProductByCategoryCard({ id, image, title, price, discont
     console.log(productsInCart);
   };
   
-  
   return (
     <div className={styles.cardBlock}>
       <Link to={`/product/${id}`}>
