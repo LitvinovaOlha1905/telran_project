@@ -27,11 +27,12 @@ function App() {
 
 	useEffect(() => {
     dispatch(fetchAllCategories());
+    dispatch(fetchAllProducts());
   }, [dispatch]);
 
-	useEffect(() => {
-		dispatch(fetchAllProducts())
-	}, [])
+	// useEffect(() => {
+	// 	dispatch(fetchAllProducts())
+	// }, [])
 	
 	return (
     <div className="App">
