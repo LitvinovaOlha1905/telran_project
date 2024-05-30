@@ -7,6 +7,8 @@ import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { addProduct, countTotalSum } from '../../store/slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+
+
 export default function ProductByCategoryCard({ id, image, title, price, discont_price }) {
    
   const [heartActive, setHeartActive] = useState(false);
@@ -29,7 +31,6 @@ export default function ProductByCategoryCard({ id, image, title, price, discont
     dispatch(countTotalSum());
     console.log(productsInCart);
   };
-  
   
   return (
     <div className={styles.cardBlock}>
