@@ -4,6 +4,10 @@ import ProductByCategoryCard from '../ProductByCategoryCard/ProductByCategoryCar
 import { fetchProductsByCategory } from '../../store/slices/dataSlice';
 import { useParams } from 'react-router-dom';
 import styles from './ProductsByCategoryContainer.module.css'
+import FormSortPrice from '../FormSort/FormSortPrice/FormSortPrice';
+import FormDiscountItems from '../FormSort/FormDiscountItems/FormDiscountItems';
+import FormSelect from '../FormSort/FormSelect/FormSelect';
+import { selectProducts } from '../../store/slices/productsSlice';
 
 export default function ProductsByCategoryContainer() { 
 
@@ -11,7 +15,8 @@ export default function ProductsByCategoryContainer() {
 
     const dispatch = useDispatch();
 
-    const { status, products, currentCategory } = useSelector(
+   const products = useSelector(selectProducts);
+    const { currentCategory } = useSelector(
       (state) => state.data
     );
     
@@ -25,15 +30,22 @@ export default function ProductsByCategoryContainer() {
       {currentCategory && (
         <h1 className={styles.title}>{currentCategory.title}</h1>
       )}
-      {status === "loading" ? (
-        <p>Loading...</p>
-      ) : (
-        <div className={styles.productsBlock}>
-          {products.map((el) => (
-            <ProductByCategoryCard key={el.id} {...el} />
-          ))}
-        </div>
-      )}
+      <div className={styles.sortBlock}>
+        {/* Price */}
+        <FormSortPrice />
+
+        {/* DiscountItems */}
+        <FormDiscountItems />
+
+        {/* Select */}
+        <FormSelect />
+      </div>
+
+      <div className={styles.productsBlock}>
+        {products.map(
+          (el) => el.visible && <ProductByCategoryCard key={el.id} {...el} />
+        )}
+      </div>
     </div>
   );
 }

@@ -1,20 +1,68 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(40, 40, 40, 0.4);
+  z-index: 100;
+}
+.title {
+  display: flex;
+  position: relative;
+}
+.title h5 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 110%;
+  color: var(--txt-white);
+}
+.cross {
+  fill: var(--txt-white);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.cross:hover {
+  cursor: pointer;
+}
+
+.modal_content {
+  background: var(--green);
+  border-radius: 12px;
+  padding: 32px;
+  width: 548px;
+  height: 664px;
+}
+
+.modal.active {
+  display: flex;
+}
+.product_card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .cardBlock {
    position: relative;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   gap: 20px;
    min-width: 316px;
    border-radius: 12px;
    border: 1px solid var(--grey-divider);
    background: var(--txt-white);
 }
-
 .cardBlock img {
    display: block;
    width: 100%;
    height: 284px;
    border-bottom: 1px solid var(--grey-divider);
+   object-fit: cover;
 }
 
 .descriptionBlock {
@@ -93,4 +141,21 @@
    border-radius: 6px;
    color: var(--txt-white);
    background: var(--sale);
+}
+.btn {
+  font-family: "Montserrat", sans-serif;
+  border-radius: 6px;
+  padding: 16px 32px;
+  background-color: var(--txt-white);
+  border: transparent;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--black);
+}
+.btn:hover{
+  cursor: pointer;
+  background: var(--black);
+  color: var(--txt-white);
 }

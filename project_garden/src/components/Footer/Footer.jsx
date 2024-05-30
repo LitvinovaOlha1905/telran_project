@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import insta from "../../images/Footer/Insta.svg";
-import wa from "../../images/Footer/WA.svg";
 import Map from "../Map/Map";
+import { ReactComponent as IconInsta } from "../../images/Icons/insta.svg";
+import { ReactComponent as IconWA } from "../../images/Icons/whatsApp.svg";
 
 export default function Footer() {
   return (
@@ -26,14 +26,14 @@ export default function Footer() {
                   className={styles.link}
                   href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
                 >
-                  <img src={insta} alt="Tel-Ran Instagram" />
+                  <IconInsta />
                 </a>
 
                 <a
                   className={styles.link}
                   href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
                 >
-                  <img src={wa} alt="Tel-Ran Whats App" />
+                  <IconWA />
                 </a>
               </div>
             </div>

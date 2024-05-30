@@ -7,11 +7,7 @@ import { Link } from 'react-router-dom';
 export default function CategorySection() {
   const { categories, status } = useSelector((state) => state.categories);
 
-  if (status === "loading") {
-    return <h1>Loading...</h1>;
-  }
-
-  const limitedCategories = categories.slice(0, 4);
+    const limitedCategories = categories.slice(0, 4);
   // Создаем новый массив, содержащий только первые 4 категории
 
     return (
