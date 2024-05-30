@@ -6,8 +6,11 @@ import dataReducer from "./slices/dataSlice";
 import singleProductReducer from "./slices/singleProductSlice";
 import cartReducer from "./slices/cartSlice";
 import favoritesReducer from "./slices/favoritesSlice";
+import { loadState, saveState } from "./slices/localStorage";
 
-export const store = configureStore({
+const preloadedState = loadState();
+
+const store = configureStore({
 	reducer: {
 		categories: categoriesReducer,
 		products: productsReducer,
@@ -17,4 +20,11 @@ export const store = configureStore({
 		cart: cartReducer,
 		favorites: favoritesReducer,
 	},
+	preloadedState,
 });
+
+store.subscribe(() => {
+	saveState(store.getState());
+});
+
+export default store;

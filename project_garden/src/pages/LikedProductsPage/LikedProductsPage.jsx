@@ -4,6 +4,7 @@ import Sceleton from "../../components/Sceleton/Skeleton";
 import FavoritesProductsContainer from "../../components/FavoritesProductContainer/FavoritesProductContainer";
 
 export default function LikedProductsPage() {
+
    useEffect(() => {
 			window.scrollTo(0, 0);
 		}, []);

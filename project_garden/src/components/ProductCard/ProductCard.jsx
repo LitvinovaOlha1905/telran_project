@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProductCard.module.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
@@ -6,8 +6,12 @@ import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, countTotalSum } from "../../store/slices/cartSlice";
-import { addFavorite } from "../../store/slices/favoritesSlice";
+import {
+	addProduct,
+	deleteProduct,
+	countTotalSum,
+} from "../../store/slices/cartSlice";
+import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
 
 export default function ProductCard({
 	id,
@@ -16,33 +20,54 @@ export default function ProductCard({
 	price,
 	discont_price,
 }) {
-	const [heartActive, setHeartActive] = useState(false);
-	const [bagActive, setBagActive] = useState(false);
-
-	// const { productsInCart } = useSelector(store => store.cart);
-	// const { productsInFavorite } = useSelector(store => store.favorites);
-
 	const dispatch = useDispatch();
 	const product = { id, title, image, price, discont_price };
 
+	const { productsInCart } = useSelector(store => store.cart);
+	const { favorites } = useSelector(store => store.favorites);
+
+	const isProductInCart = productsInCart.some(
+		cartProduct => cartProduct.id === id
+	);
+	const isProductInFavorite = favorites.some(
+		favoriteProduct => favoriteProduct.id === id
+	);
+
+	const [heartActive, setHeartActive] = useState(isProductInFavorite);
+	const [bagActive, setBagActive] = useState(isProductInCart);
+
+	useEffect(() => {
+		setHeartActive(isProductInFavorite);
+	}, [isProductInFavorite]);
+
+	useEffect(() => {
+		setBagActive(isProductInCart);
+	}, [isProductInCart]);
+
 	const handleAddToCart = event => {
-		// event.preventDefault();
-		console.log(product);
-		dispatch(addProduct(product));
+		event.preventDefault();
+		if (isProductInCart) {
+			dispatch(deleteProduct(product));
+		} else {
+			dispatch(addProduct(product));
+		}
 		dispatch(countTotalSum());
-		// console.log(productsInCart);
 	};
 
-	const handleAddToFavorites = () =>{
-		dispatch(addFavorite(product))
-	}
+	const handleAddToFavorites = event => {
+		event.preventDefault();
+		if (isProductInFavorite) {
+			dispatch(removeFavorite(product));
+		} else {
+			dispatch(addFavorite(product));
+		}
+	};
 
 	return (
 		<div>
 			<div className={styles.cardBlock}>
 				<Link to={`/product/${id}`}>
 					<img src={`http://localhost:3333${image}`} alt={title} />
-
 					{/* Description Block */}
 					<div className={styles.descriptionBlock}>
 						<p className={styles.description}>
@@ -60,13 +85,9 @@ export default function ProductCard({
 								</span>
 							) : null}
 						</div>
-
 						{/* Icons Block */}
 						<div className={styles.cartBlock}>
-							<Link onClick={(event) => {
-								event.preventDefault();
-								setHeartActive(!heartActive);
-								handleAddToFavorites()}}>
+							<Link onClick={handleAddToFavorites}>
 								{heartActive ? (
 									<IconHertActive className={styles.iconHeart} size='48' />
 								) : (
@@ -76,13 +97,7 @@ export default function ProductCard({
 									/>
 								)}
 							</Link>
-							<Link
-								onClick={event => {
-									event.preventDefault();
-									setBagActive(!bagActive);
-									handleAddToCart();
-								}}
-							>
+							<Link onClick={handleAddToCart}>
 								{bagActive ? (
 									<IconBagActive className={styles.icon} size='48' />
 								) : (
@@ -90,7 +105,6 @@ export default function ProductCard({
 								)}
 							</Link>
 						</div>
-
 						{/* Sale Block */}
 						{discont_price && (
 							<p className={styles.discount}>

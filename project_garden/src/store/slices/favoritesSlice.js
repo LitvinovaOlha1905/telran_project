@@ -12,12 +12,12 @@ const favoritesSlice = createSlice({
 			state.favorites.push(action.payload);
 		},
 		removeFavorite: (state, action) => {
-			return state.favorites.filter(
-				(product => product.id !== action.payload.id)
+			state.favorites = state.favorites.filter(
+				product => product.id !== action.payload.id
 			);
 		},
 	},
 });
 
-export const {addFavorite, removeFavorite} = favoritesSlice.actions
-export default favoritesSlice.reducer
+export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export default favoritesSlice.reducer;
