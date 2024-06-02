@@ -17,6 +17,7 @@ import ProductsByCategoryPage from "./pages/ProductsByCategoryPage/ProductsByCat
 import SingleProductPage from './pages/SingleProductPage/SingleProductPage';
 import ModalProductImg from "./components/ModalProductImg/ModalProductImg"
 import ModalDayProduct from "./components/ModalDayProduct/ModalDayProduct"
+import LikedProductsPage from "./pages/LikedProductsPage/LikedProductsPage"
 
 function App() {
 
@@ -36,35 +37,36 @@ function App() {
 	}, [])
 	
 	return (
-    <div className="App">
-      <Context.Provider
-        value={{
-          modalActive,
-          setModalActive,
-          modalDayActive,
-          setModalDayActive,
-        }}
-      >
-        <ModalProductImg />
-        {/* <ModalDayProduct /> */}
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/categories/all" element={<CategoriesPage />} />
-          <Route path="/products/all" element={<AllProductsPage />} />
-          <Route path="/sales/all" element={<AllSalesPage />} />
-          <Route
-            path="/category/:categoryId"
-            element={<ProductsByCategoryPage />}
-          />
-          <Route path="/product/:productId" element={<SingleProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        <Footer />
-      </Context.Provider>
-    </div>
-  );
+		<div className='App'>
+			<Context.Provider
+				value={{
+					modalActive,
+					setModalActive,
+					modalDayActive,
+					setModalDayActive,
+				}}
+			>
+				<ModalProductImg />
+				<ModalDayProduct />
+				<Header />
+				<Routes>
+					<Route path='/' element={<MainPage />} />
+					<Route path='/categories/all' element={<CategoriesPage />} />
+					<Route path='/products/all' element={<AllProductsPage />} />
+					<Route path='/sales/all' element={<AllSalesPage />} />
+					<Route
+						path='/category/:categoryId'
+						element={<ProductsByCategoryPage />}
+					/>
+					<Route path='/product/:productId' element={<SingleProductPage />} />
+					<Route path='/cart' element={<CartPage />} />
+					<Route path='/favorites_products' element={<LikedProductsPage />} />
+					<Route path='*' element={<NotFoundPage />} />
+				</Routes>
+				<Footer />
+			</Context.Provider>
+		</div>
+	);
 }
 
 export default App

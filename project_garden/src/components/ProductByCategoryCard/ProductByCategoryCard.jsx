@@ -5,15 +5,13 @@ import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
 import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
-import { addProduct, countTotalSum } from "../../store/slices/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
-export default function ProductByCategoryCard({
-  id,
-  image,
-  title,
-  price,
-  discont_price,
-}) {
+import { addProduct, countTotalSum } from '../../store/slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+export default function ProductByCategoryCard({ id, image, title, price, discont_price }) {
+   
+
   const [heartActive, setHeartActive] = useState(false);
   const [bagActive, setBagActive] = useState(false);
 
