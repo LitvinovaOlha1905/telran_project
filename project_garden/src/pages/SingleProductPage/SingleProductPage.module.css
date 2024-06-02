@@ -88,7 +88,14 @@
   width: 96px;
   height: 58px;
 }
-
+.count {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--black);
+  text-align: center;
+  padding-top: 15px;
+}
 .cartBtn {
   background: var(--green);
   border: transparent;
