@@ -1,4 +1,5 @@
 .cardBlock {
+  position: relative;
   max-width: 100%;
   border-radius: 12px;
   border: 1px solid var(--grey-divider);
@@ -47,4 +48,42 @@
   line-height: 130%;
   text-decoration: line-through;
   color: var(--grey);
+}
+.cartBlock {
+   position: absolute;
+   top: 18px;
+   right: 18px;
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+}
+
+.iconHeart {
+   display: block;
+   stroke: var(--black);
+}
+
+.icon {
+   display: block;
+   width: 48px;
+   fill: var(--txt-white);
+}
+
+.icon:hover {
+   fill: var(--black);
+}
+/* Sale Block */
+
+.discount {
+   position: absolute;
+   top: 16px;
+   left: 22px;
+   padding: 4px 8px;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+   border-radius: 6px;
+   color: var(--txt-white);
+   background: var(--sale);
 }

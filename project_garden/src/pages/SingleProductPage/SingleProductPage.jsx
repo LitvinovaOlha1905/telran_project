@@ -11,6 +11,7 @@ import { Context } from "../../context";
 
 export default function SingleProductPage() {
   const { setModalActive } = useContext(Context);
+  
   const dispatch = useDispatch();
   const { productId } = useParams();
   const singleProductState = useSelector((store) => store.singleProduct);
@@ -56,7 +57,6 @@ export default function SingleProductPage() {
             }}
           >
          <img src={`http://localhost:3333${image}`} alt={title} />
-
 
           </div>
 

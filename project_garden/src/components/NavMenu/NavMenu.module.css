@@ -10,10 +10,10 @@
   line-height: 130%;
   color: var(--black);
 }
-.navBurger {
+/* .navBurger {
 
-}
-a.oneDaySaleButton {
+} */
+.oneDaySaleButton {
   background-color: #92a134; /* Красный фон для кнопки */
   color: #ffffff; /* Белый цвет текста */
   padding: 6px 16px; /* Отступы для кнопки */
@@ -32,10 +32,10 @@ a.oneDaySaleButton {
   background-color: gray; /* Темнее красный при наведении */
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   .header {
   }
-}
+} */
 
 @media (max-width: 1000px) {
   .nav_menu {
