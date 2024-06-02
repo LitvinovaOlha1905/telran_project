@@ -5,13 +5,9 @@ import CategoriesCard from './CategoriesCard';
 
 export default function CategoriesContainer() {
   
-  const { categories, status } = useSelector((state) => state.categories);
+  const { categories } = useSelector((state) => state.categories);
   
-  if (status === "loading") {
-    return <h1>Loading...</h1>;
-  }
-
-  return (
+    return (
     <div className={styles.wrapper}>
       <div className="container">
         

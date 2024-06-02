@@ -7,24 +7,27 @@ import styles from './ProductsByCategoryContainer.module.css'
 import FormSortPrice from '../FormSort/FormSortPrice/FormSortPrice';
 import FormDiscountItems from '../FormSort/FormDiscountItems/FormDiscountItems';
 import FormSelect from '../FormSort/FormSelect/FormSelect';
-import { selectProducts } from '../../store/slices/productsSlice';
+
 
 export default function ProductsByCategoryContainer() { 
 
     const { categoryId } = useParams();
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  
+  // const { products } = useSelector((state) => state.products);
 
-   const products = useSelector(selectProducts);
-    const { currentCategory } = useSelector(
-      (state) => state.data
-    );
+  const { currentCategory, products } = useSelector((state) => state.data);
+  
     
     useEffect(() => {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
   
-  
+  console.log(categoryId);
+  console.log(products);
+  console.log(currentCategory);
+
   return (
     <div>
       {currentCategory && (

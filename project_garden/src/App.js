@@ -19,6 +19,7 @@ import ModalProductImg from "./components/ModalProductImg/ModalProductImg"
 import ModalDayProduct from "./components/ModalDayProduct/ModalDayProduct"
 
 function App() {
+
   const [modalActive, setModalActive] = useState(false)
   
   const [modalDayActive, setModalDayActive] = useState(false);
@@ -26,13 +27,13 @@ function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-    dispatch(fetchAllCategories());
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllCategories())
+    // dispatch(fetchAllProducts())
   }, [dispatch]);
 
-	// useEffect(() => {
-	// 	dispatch(fetchAllProducts())
-	// }, [])
+	useEffect(() => {
+		dispatch(fetchAllProducts())
+	}, [])
 	
 	return (
     <div className="App">
@@ -45,7 +46,7 @@ function App() {
         }}
       >
         <ModalProductImg />
-        <ModalDayProduct />
+        {/* <ModalDayProduct /> */}
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
