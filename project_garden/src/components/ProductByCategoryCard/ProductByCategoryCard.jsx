@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import styles from './ProductByCategoryCard.module.css'
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styles from "./ProductByCategoryCard.module.css";
+import { Link } from "react-router-dom";
 import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
 import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function ProductByCategoryCard({ id, image, title, price, discont_price }) {
    
+
   const [heartActive, setHeartActive] = useState(false);
   const [bagActive, setBagActive] = useState(false);
 
@@ -31,7 +32,7 @@ export default function ProductByCategoryCard({ id, image, title, price, discont
     dispatch(countTotalSum());
     console.log(productsInCart);
   };
-  
+
   return (
     <div className={styles.cardBlock}>
       <Link to={`/product/${id}`}>
@@ -79,7 +80,7 @@ export default function ProductByCategoryCard({ id, image, title, price, discont
             )}
           </Link>
         </div>
-        
+
         {/* Sale Block */}
         {discont_price && (
           <p className={styles.discount}>

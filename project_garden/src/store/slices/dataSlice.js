@@ -35,9 +35,12 @@ const dataSlice = createSlice({
       })
       .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
         state.currentCategory = action.payload.category;
-        state.products = action.payload.data;
+        state.products = action.payload.data.map((el) => ({
+          ...el,
+          visible: true,
+        }));
         state.status = "ready";
-    })
+      })
       .addCase(fetchProductsByCategory.rejected, (state) => {
         state.status = "error";
       });

@@ -20,6 +20,7 @@ import ModalDayProduct from "./components/ModalDayProduct/ModalDayProduct"
 import LikedProductsPage from "./pages/LikedProductsPage/LikedProductsPage"
 
 function App() {
+
   const [modalActive, setModalActive] = useState(false)
   
   const [modalDayActive, setModalDayActive] = useState(false);
@@ -27,13 +28,13 @@ function App() {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-    dispatch(fetchAllCategories());
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllCategories())
+    // dispatch(fetchAllProducts())
   }, [dispatch]);
 
-	// useEffect(() => {
-	// 	dispatch(fetchAllProducts())
-	// }, [])
+	useEffect(() => {
+		dispatch(fetchAllProducts())
+	}, [])
 	
 	return (
 		<div className='App'>
