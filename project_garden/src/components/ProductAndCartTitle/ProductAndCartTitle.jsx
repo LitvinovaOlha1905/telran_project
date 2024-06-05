@@ -1,15 +1,18 @@
+import { useContext } from 'react';
 import classes from './ProductAndCartTitle.module.css';
-import { useSelector } from 'react-redux';
+import { Context } from '../../context';
+
 
 const ProductAndCartTitle = ({ text, weight, none }) => {
-  const { theme } = useSelector((state) => state.theme);
+
+ const { nightMode } = useContext(Context);
 
   return (
     <h3
-      className={`${classes.txt} ${theme === 'dark' ? classes.dark : ''}`}
+      className={`${classes.txt} ${nightMode ? classes.night_mode : ""}`}
       style={{
-        fontWeight: weight ? '600' : '700',
-        color: none ? 'var(--black)' : '',
+        fontWeight: weight ? "600" : "700",
+        color: none ? "var(--black)" : "",
       }}
     >
       {text}

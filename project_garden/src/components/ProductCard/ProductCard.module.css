@@ -15,11 +15,14 @@
    width: 100%;
    height: 284px;
    border-bottom: 1px solid var(--grey-divider);
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
 }
 
 .descriptionBlock {
-   margin-top: 20px;
-   padding: 0px 32px 32px;
+   padding: 20px 32px 32px;
+   border-bottom-left-radius: 12px;
+   border-bottom-right-radius: 12px;
 }
 
 /* Description Block */
@@ -93,4 +96,12 @@
    border-radius: 6px;
    color: var(--txt-white);
    background: var(--sale);
+}
+/* Night_mode */
+
+.night_mode.descriptionBlock {
+  background: #383a2c; 
+}
+.night_mode.price, .night_mode.description{
+   color: var(--txt-white);
 }

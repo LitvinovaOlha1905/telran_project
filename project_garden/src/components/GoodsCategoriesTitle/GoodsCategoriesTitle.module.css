@@ -11,11 +11,11 @@
   color: var(--grey);
 }
 
-/* Dark mode */
-.dark.title {
-  color: var(--white);
-}
+/* Night_mode */
 
+.night_mode.title{
+   color: var(--txt-white);
+}
 /* Mobile */
 
 @media (max-width: 767px) {

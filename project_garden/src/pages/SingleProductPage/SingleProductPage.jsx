@@ -10,6 +10,8 @@ import { addProduct, countTotalSum, decreaseProduct } from "../../store/slices/c
 import { Context } from "../../context";
 
 export default function SingleProductPage() {
+
+  const { nightMode } = useContext(Context);
   const { setModalActive } = useContext(Context);
   
   const dispatch = useDispatch();
@@ -56,19 +58,30 @@ export default function SingleProductPage() {
               setModalActive(true);
             }}
           >
-         <img src={`http://localhost:3333${image}`} alt={title} />
-
+            <img src={`http://localhost:3333${image}`} alt={title} />
           </div>
 
           <div className={styles.infoBlock}>
             <div className={styles.titleBlock}>
-              <h2>{title}</h2>
-              <Heart className={styles.icon} />
+              <h2
+                className={`${styles.title} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                {title}
+              </h2>
+              <Heart className={`${styles.icon} ${
+                  nightMode ? styles.night_mode : ""
+                }`} />
             </div>
 
             <div className={styles.priceBlock}>
               <div className={styles.prices}>
-                <p className={styles.price}>
+                <p
+                  className={`${styles.price} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                >
                   {"\u0024"}
                   {price}
                 </p>
@@ -82,7 +95,11 @@ export default function SingleProductPage() {
 
               <div>
                 {discont_price && (
-                  <p className={styles.discount}>
+                  <p
+                    className={`${styles.discount} ${
+                      nightMode ? styles.night_mode : ""
+                    }`}
+                  >
                     {"\u002d"}
                     {(((price - discont_price) / price) * 100).toFixed()}%
                   </p>
@@ -91,24 +108,46 @@ export default function SingleProductPage() {
             </div>
 
             <div className={styles.cartBlock}>
-            <div className={styles.countBlock}>
-  <Link onClick={handleDecrement}>
-    <IconMinus />
-  </Link>
-  <p className={styles.count}>{quantity}</p> {/* Добавляем класс styles.count */}
-  <Link onClick={handleIncrement}>
-    <IconPlus />
-  </Link>
-</div>
+              <div className={styles.countBlock}>
+                <Link onClick={handleDecrement}>
+                  <IconMinus />
+                </Link>
+                <p
+                  className={`${styles.count} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                >
+                  {quantity}
+                </p>{" "}
+                <Link onClick={handleIncrement}>
+                  <IconPlus />
+                </Link>
+              </div>
 
               <button onClick={handleAddToCart} className={styles.cartBtn}>
                 Add to cart
               </button>
             </div>
 
-            <div className={styles.descriptionBlock}>
-              <h5>Description</h5>
-              <p>{description}</p>
+            <div
+              className={`${styles.descriptionBlock} ${
+                nightMode ? styles.night_mode : ""
+              }`}
+            >
+              <h5
+                className={`${styles.descriptionTitle} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                Description
+              </h5>
+              <p
+                className={`${styles.description} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                {description}
+              </p>
             </div>
           </div>
         </div>

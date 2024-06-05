@@ -18,4 +18,9 @@
   height: 350px;
   object-fit: cover;
 }
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white); 
+}
 

@@ -38,3 +38,8 @@
 .sortButton {
    display: none;
 }
+/* Night_mode */
+
+.night_mode.sortLabel {
+  color: var(--txt-white);
+}

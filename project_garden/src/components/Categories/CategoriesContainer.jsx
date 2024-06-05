@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from "./CategoriesContainer.module.css";
 import { useSelector } from 'react-redux';
 import CategoriesCard from './CategoriesCard';
+import { Context } from '../../context';
 
 export default function CategoriesContainer() {
+
+  const { nightMode } = useContext(Context);
   
   const { categories } = useSelector((state) => state.categories);
   
@@ -12,7 +15,9 @@ export default function CategoriesContainer() {
       <div className="container">
         
         <div className={styles.titleBlock}>
-          <h2 className={styles.title}>Categories</h2>
+          <h2 className={`${styles.title} ${
+              nightMode ? styles.night_mode : ""
+            }`}>Categories</h2>
         </div>
 
         <div className={styles.cardContainer}>

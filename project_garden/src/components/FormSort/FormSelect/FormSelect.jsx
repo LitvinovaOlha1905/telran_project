@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./FormSelect.module.css";
 import { useDispatch } from "react-redux";
 import CustomSelect from "../CustomComponents/CustomSelect/CustomSelect";
 import { sortProducts } from "../../../store/slices/productsSlice";
+import { Context } from "../../../context";
 
 export default function FormSelect() {
+
 	const [selectedOption, setSelectedOption] = useState("default");
 
 	const dispatch = useDispatch();
@@ -16,15 +18,15 @@ export default function FormSelect() {
 	};
 
 	return (
-		<div>
-			<form className={styles.formSortBlock}>
-				<label className={styles.sortLabel} htmlFor='sortSelect'>
-					<CustomSelect
-						selected={selectedOption}
-						onChange={sort}
-					/>
-				</label>
-			</form>
-		</div>
-	);
+    <div>
+      <form className={styles.formSortBlock}>
+        <label
+          className={styles.sortLabel} 
+          htmlFor="sortSelect"
+        >
+          <CustomSelect selected={selectedOption} onChange={sort} />
+        </label>
+      </form>
+    </div>
+  );
 }

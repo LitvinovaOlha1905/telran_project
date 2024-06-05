@@ -20,3 +20,9 @@
 .modal.active{
     display: flex;
 }
+/* Night_mode */
+
+.night_mode.modal.active {
+ background: rgba(16, 16, 16, 0.5);
+}
+

@@ -8,11 +8,15 @@ import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
+import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice"; 
+
+
+
 
 export default function ModalDayProduct() {
   const dispatch = useDispatch();
 
+  const { nightMode } = useContext(Context);
   const { modalDayActive, setModalDayActive } = useContext(Context);
   const { products } = useSelector((state) => state.products);
   const { favorites } = useSelector((store) => store.favorites);
@@ -50,7 +54,9 @@ export default function ModalDayProduct() {
 
   return (
     <div
-      className={[styles.modal, modalDayActive ? styles.active : ""].join(" ")}
+        className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
+        modalDayActive ? styles.active : ""
+      }`}
       onClick={() => setModalDayActive(false)}
     >
       <div
@@ -86,7 +92,7 @@ export default function ModalDayProduct() {
 
               <div className={styles.cartBlock}>
                 <Link onClick={handleAddToFavorites}>
-                    {heartActive ? (
+                  {heartActive ? (
                     <IconHertActive className={styles.iconHeart} size="48" />
                   ) : (
                     <IconHeart

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./FormDiscountItems.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { ReactComponent as IconCheckbox } from "../../../images/Icons/checkbox.svg";
@@ -8,8 +8,12 @@ import {
   selectProducts,
   setFilteredProducts,
 } from "../../../store/slices/productsSlice";
+import { Context } from "../../../context";
 
 export default function FormDiscountItems() {
+
+  const { nightMode } = useContext(Context);
+  
   const [isActive, setIsActive] = useState(false);
 
   const dispatch = useDispatch();
@@ -29,7 +33,11 @@ export default function FormDiscountItems() {
 
   return (
     <form className={styles.sortBlock}>
-      <h1 className={styles.sortTitle}>Discounted items</h1>
+      <h1
+        className={`${styles.sortTitle} ${nightMode ? styles.night_mode : ""}`}
+      >
+        Discounted items
+      </h1>
       <label>
         <input
           className={styles.sortDiscountInput}
