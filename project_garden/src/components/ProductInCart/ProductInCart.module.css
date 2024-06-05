@@ -51,6 +51,9 @@
 .menuDark {
   filter: invert(1);
 }
+.night_mode.wrapper{
+  background: #383a2c;
+}
 
 /* Mobile */
 @media (max-width: 1439px) {

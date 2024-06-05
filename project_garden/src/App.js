@@ -25,48 +25,49 @@ function App() {
   
   const [modalDayActive, setModalDayActive] = useState(false);
 
+  const [nightMode, setNightMode] = useState(false);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
     dispatch(fetchAllCategories())
-    // dispatch(fetchAllProducts())
+    dispatch(fetchAllProducts())
   }, [dispatch]);
 
-	useEffect(() => {
-		dispatch(fetchAllProducts())
-	}, [])
-	
+		
 	return (
-		<div className='App'>
-			<Context.Provider
-				value={{
-					modalActive,
-					setModalActive,
-					modalDayActive,
-					setModalDayActive,
-				}}
-			>
-				<ModalProductImg />
-				<ModalDayProduct />
-				<Header />
-				<Routes>
-					<Route path='/' element={<MainPage />} />
-					<Route path='/categories/all' element={<CategoriesPage />} />
-					<Route path='/products/all' element={<AllProductsPage />} />
-					<Route path='/sales/all' element={<AllSalesPage />} />
-					<Route
-						path='/category/:categoryId'
-						element={<ProductsByCategoryPage />}
-					/>
-					<Route path='/product/:productId' element={<SingleProductPage />} />
-					<Route path='/cart' element={<CartPage />} />
-					<Route path='/favorites_products' element={<LikedProductsPage />} />
-					<Route path='*' element={<NotFoundPage />} />
-				</Routes>
-				<Footer />
-			</Context.Provider>
-		</div>
-	);
+    <div className={["App", nightMode ? "night_mode" : ""].join(" ")}>
+      <Context.Provider
+        value={{
+          modalActive,
+          setModalActive,
+          modalDayActive,
+          setModalDayActive,
+          nightMode,
+          setNightMode,
+        }}
+      >
+        <ModalProductImg />
+        <ModalDayProduct />
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/categories/all" element={<CategoriesPage />} />
+          <Route path="/products/all" element={<AllProductsPage />} />
+          <Route path="/sales/all" element={<AllSalesPage />} />
+          <Route
+            path="/category/:categoryId"
+            element={<ProductsByCategoryPage />}
+          />
+          <Route path="/product/:productId" element={<SingleProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/favorites_products" element={<LikedProductsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+      </Context.Provider>
+    </div>
+  );
 }
 
 export default App

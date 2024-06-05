@@ -36,6 +36,19 @@
   margin: 4px 0;
 }
 
+/* Night_mode */
+
+.night_mode.wrapper{
+  border-bottom: 1px solid var(--grey);
+}
+.night_mode.icon {
+  stroke: var(--txt-white);
+  fill: var(--black);
+}
+.night_mode.icon:hover{
+  fill: var(--green);
+  stroke: var(--green);
+}
 /* @media (max-width: 1440px) {
   .header {
 

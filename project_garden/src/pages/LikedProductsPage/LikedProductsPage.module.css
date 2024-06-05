@@ -8,3 +8,8 @@
    line-height: 110%;
    color: var(--black);
 }
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white);
+}
