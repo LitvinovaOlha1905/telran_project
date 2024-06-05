@@ -1,3 +1,5 @@
+
+
 import React, { useContext, useState } from "react";
 import styles from "./ModalDayProduct.module.css";
 import { ReactComponent as Cross } from "../../images/Icons/close.svg";
@@ -5,22 +7,25 @@ import { Context } from "../../context";
 import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct} from "../../store/slices/cartSlice";; 
 
 export default function ModalDayProduct() {
-
   const [heartActive, setHeartActive] = useState(false);
   const { modalDayActive, setModalDayActive } = useContext(Context);
   const { products } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
 
- 
   // Получаем индекс продукта на основе текущего дня
   const currentDate = new Date().getDate();
   const productIndex = currentDate % products.length;
   const productOfTheDay = products[productIndex];
-
- 
   const { title = 'Fallback product name', image, price = 1 } = productOfTheDay || {};
+
+  // Функция для добавления продукта в корзину
+  const handleAddToCart = () => {
+    dispatch(addProduct(productOfTheDay)); 
+  };
 
   return (
     <div
@@ -76,10 +81,9 @@ export default function ModalDayProduct() {
             </div>
           </div>
 
-          <button className={styles.btn}>Add to cart</button>
+          <button className={styles.btn} onClick={handleAddToCart}>Add to cart</button>
         </div>
       </div>
     </div>
   );
 }
-
