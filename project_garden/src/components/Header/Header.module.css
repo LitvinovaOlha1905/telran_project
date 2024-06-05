@@ -42,7 +42,7 @@
   border-bottom: 1px solid var(--grey);
 }
 .night_mode.icon {
-  stroke: var(--txt-white);
+  stroke: white;
   fill: var(--black);
 }
 .night_mode.icon:hover{
