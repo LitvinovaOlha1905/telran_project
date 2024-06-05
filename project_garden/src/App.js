@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import { Context } from "./context"
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { fetchAllCategories } from "./store/slices/categoriesSlice"
 import { fetchAllProducts } from "./store/slices/productsSlice"
 import CartPage from "./pages/CartPage/CartPage"
@@ -25,7 +25,7 @@ function App() {
   
   const [modalDayActive, setModalDayActive] = useState(false);
 
-  const [nightMode, setNightMode] = useState(false);
+  const nightMode = useSelector(store => store.theme.nightMode);
 
 	const dispatch = useDispatch();
 
@@ -43,8 +43,7 @@ function App() {
           setModalActive,
           modalDayActive,
           setModalDayActive,
-          nightMode,
-          setNightMode,
+          nightMode
         }}
       >
         <ModalProductImg />
@@ -71,3 +70,4 @@ function App() {
 }
 
 export default App
+

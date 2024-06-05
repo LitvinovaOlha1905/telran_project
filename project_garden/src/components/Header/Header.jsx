@@ -9,17 +9,22 @@ import { ReactComponent as ModeDay } from "../../images/Header/modeDay.svg";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Context } from "../../context";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../../store/slices/themeSlice";
 
 const Header = () => {
 
-  const { nightMode, setNightMode } = useContext(Context);
   const [isMenuOpen, setIsMenuOpen] =
     useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
+	};
+	
+	const dispatch = useDispatch();
 
+	const { nightMode } = useContext(Context);
+		
   return (
     <header className={styles.header}>
       <div className="container">
@@ -29,9 +34,9 @@ const Header = () => {
           <div className={styles.logoBlock}>
             <img src={iconTree} alt="Logo" className={styles.logo} />
             {nightMode ? (
-              <ModeNight onClick={() => setNightMode(false)} />
+              <ModeNight onClick={() => dispatch(toggleTheme())} />
             ) : (
-              <ModeDay onClick={() => setNightMode(true)} />
+			  <ModeDay onClick={() => dispatch(toggleTheme())} />
             )}
           </div>
           <div

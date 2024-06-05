@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./ModalDayProduct.module.css";
 import { ReactComponent as Cross } from "../../images/Icons/close.svg";
 import { Context } from "../../context";
-import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
-import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { Link } from "react-router-dom";

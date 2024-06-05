@@ -87,7 +87,7 @@
 }
 .night_mode.icon{
   fill: var(--white);
-  stroke: var(--white);
+  stroke: white;
 }
 
 @media (max-width: 999px) {
