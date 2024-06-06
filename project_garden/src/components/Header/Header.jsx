@@ -1,68 +1,73 @@
-
-
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavMenu from "../NavMenu/NavMenu";
 import styles from "./Header.module.css";
 import iconTree from "../../images/Header/tree.svg";
-import iconHeart from "../../images/Header/heart.svg";
-import iconBag from "../../images/Header/bag.svg";
-import modeNight from "../../images/Header/modeNight.svg";
-import modeDay from "../../images/Header/modeDay.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../../store/slices/themeSlice";
+import { ReactComponent as IconHeart } from "../../images/Icons/heartHeder.svg";
+import { ReactComponent as IconBag } from "../../images/Icons/bagHeder.svg";
+import { ReactComponent as ModeNight } from "../../images/Icons/modeNight.svg";
+import { ReactComponent as ModeDay } from "../../images/Icons/modeDay.svg";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Context } from "../../context";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../store/slices/themeSlice";
+import ModalNavMenu from "../ModalNavMenu/ModalNavMenu";
 
 const Header = () => {
+
+  const [navMenuActive, setNavMenuActive] = useState(true);
   const dispatch = useDispatch();
+  const { nightMode } = useContext(Context);
   const { theme } = useSelector((state) => state.theme);
   const { productsInCart = [] } = useSelector((store) => store.cart);
   //const { likedProducts = [] } = useSelector((store) => store.likes);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
-    <header className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}>
+    <header
+      className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}
+    >
       <div className="container">
         <div className={styles.wrapper}>
           <div className={styles.logoBlock}>
             <img src={iconTree} alt="Logo" className={styles.logo} />
-            <img
-              src={theme === "dark" ? modeNight : modeDay}
-              className={styles.switch}
-              alt="Change theme"
-              onClick={() => dispatch(toggleTheme())}
-            />
+
+            {nightMode ? (
+              <ModeNight onClick={() => dispatch(toggleTheme())} />
+            ) : (
+              <ModeDay onClick={() => dispatch(toggleTheme())} />
+            )}
           </div>
-          <div className={`${styles.hideMenu} ${isMenuOpen ? styles.open : ""}`}>
-            <NavMenu />
-          </div>
+          <div>{navMenuActive ? <ModalNavMenu /> : <NavMenu />}</div>
 
           <div className={styles.cartBlock}>
             <Link to="/favorites_products" className={styles.iconLink}>
-              <img src={iconHeart} alt="Like" />
+              <IconHeart
+                className={`${styles.icon} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              />
+
               {/* {likedProducts.length > 0 && (
                 <span className={styles.badgeCount}>{likedProducts.length}</span>
               )} */}
             </Link>
+
             <Link to="/cart" className={styles.iconLink}>
-              <img src={iconBag} alt="Bag" />
+              <IconBag
+                className={`${styles.icon} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              />
+
               {productsInCart.length > 0 && (
-                <span className={styles.badgeCount}>{productsInCart.length}</span>
+                <span className={styles.badgeCount}>
+                  {productsInCart.length}
+                </span>
               )}
             </Link>
-            <RxHamburgerMenu
-              className={styles.burger}
-              onClick={toggleMenu}
-              style={{
-                height: "3em",
-                width: "3em",
-              }}
-            />
           </div>
+
+          <RxHamburgerMenu className={styles.burger} />
         </div>
       </div>
     </header>
@@ -70,4 +75,3 @@ const Header = () => {
 };
 
 export default Header;
-
