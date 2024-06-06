@@ -17,9 +17,14 @@ import TitleH2 from "../../components/TitleH2/TitleH2";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import whiteCross from "../../images/Icons/whiteCross.svg";
 import CartForm from "../../components/CartForm/CartForm";
-import  MainBannerButton from "./../../UI/MainBannerButton/MainBannerButton";
+import MainBannerButton from "./../../UI/MainBannerButton/MainBannerButton";
+import { useContext } from "react";
+import { Context } from "../../context";
 
 const CartPage = () => {
+
+    const { nightMode } = useContext(Context);
+
   // opened page is displayed at the top
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -61,13 +66,13 @@ console.log(productsInCart);
 
   return (
     <div className={theme === "dark" ? classes.dark : ""}>
-      <ProductModal active={modalActive} setActive={setModalActive}>
+        <ProductModal active={modalActive} setActive={setModalActive}>
         <div className={classes.modalWrapper}>
           <div className={classes.titleModalBlock}>
             <h3 className={classes.titleModal}>Congratulations!</h3>
             <img
               className={classes.whiteCross}
-               src={whiteCross}
+              src={whiteCross}
               alt="Close"
               onClick={() => setModalActive(false)}
             />
@@ -86,9 +91,7 @@ console.log(productsInCart);
             // link={ROUTES.HOME}
           />
 
-          {
-
-          productsInCart.length === 0 ? (
+          {productsInCart.length === 0 ? (
             <>
               <div className={classes.paragraphBlock}>
                 <p
@@ -103,8 +106,7 @@ console.log(productsInCart);
                 <MainBannerButton text="Continue Shopping" />
               </Link> */}
             </>
-          )
-           : (
+          ) : (
             <div className={classes.prodAndOrdersBlock}>
               <div className={classes.productsBlock}>
                 {productsInCart.map((product) => (
@@ -119,7 +121,7 @@ console.log(productsInCart);
               </div>
               <div
                 className={`${classes.ordersBlock} ${
-                  theme === "dark" ? classes.darkBG : ""
+                  nightMode ? classes.night_mode : ""
                 }`}
               >
                 <ProductAndCartTitle text="Order details" />

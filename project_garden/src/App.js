@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import { Context } from "./context"
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { fetchAllCategories } from "./store/slices/categoriesSlice"
 import { fetchAllProducts } from "./store/slices/productsSlice"
 import CartPage from "./pages/CartPage/CartPage"
@@ -25,48 +25,49 @@ function App() {
   
   const [modalDayActive, setModalDayActive] = useState(false);
 
+  const nightMode = useSelector(store => store.theme.nightMode);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
     dispatch(fetchAllCategories())
-    // dispatch(fetchAllProducts())
+    dispatch(fetchAllProducts())
   }, [dispatch]);
 
-	useEffect(() => {
-		dispatch(fetchAllProducts())
-	}, [])
-	
+		
 	return (
-		<div className='App'>
-			<Context.Provider
-				value={{
-					modalActive,
-					setModalActive,
-					modalDayActive,
-					setModalDayActive,
-				}}
-			>
-				<ModalProductImg />
-				<ModalDayProduct />
-				<Header />
-				<Routes>
-					<Route path='/' element={<MainPage />} />
-					<Route path='/categories/all' element={<CategoriesPage />} />
-					<Route path='/products/all' element={<AllProductsPage />} />
-					<Route path='/sales/all' element={<AllSalesPage />} />
-					<Route
-						path='/category/:categoryId'
-						element={<ProductsByCategoryPage />}
-					/>
-					<Route path='/product/:productId' element={<SingleProductPage />} />
-					<Route path='/cart' element={<CartPage />} />
-					<Route path='/favorites_products' element={<LikedProductsPage />} />
-					<Route path='*' element={<NotFoundPage />} />
-				</Routes>
-				<Footer />
-			</Context.Provider>
-		</div>
-	);
+    <div className={["App", nightMode ? "night_mode" : ""].join(" ")}>
+      <Context.Provider
+        value={{
+          modalActive,
+          setModalActive,
+          modalDayActive,
+          setModalDayActive,
+          nightMode
+        }}
+      >
+        <ModalProductImg />
+        <ModalDayProduct />
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/categories/all" element={<CategoriesPage />} />
+          <Route path="/products/all" element={<AllProductsPage />} />
+          <Route path="/sales/all" element={<AllSalesPage />} />
+          <Route
+            path="/category/:categoryId"
+            element={<ProductsByCategoryPage />}
+          />
+          <Route path="/product/:productId" element={<SingleProductPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/favorites_products" element={<LikedProductsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+      </Context.Provider>
+    </div>
+  );
 }
 
 export default App
+

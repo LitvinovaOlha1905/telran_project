@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./ProductCard.module.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
@@ -12,6 +12,7 @@ import {
 	countTotalSum,
 } from "../../store/slices/cartSlice";
 import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
+import { Context } from "../../context";
 
 export default function ProductCard({
 	id,
@@ -20,6 +21,8 @@ export default function ProductCard({
 	price,
 	discont_price,
 }) {
+	const { nightMode } = useContext(Context);
+
 	const dispatch = useDispatch();
 	const product = { id, title, image, price, discont_price };
 
@@ -64,56 +67,70 @@ export default function ProductCard({
 	};
 
 	return (
-		<div>
-			<div className={styles.cardBlock}>
-				<Link to={`/product/${id}`}>
-					<img src={`http://localhost:3333${image}`} alt={title} />
-					{/* Description Block */}
-					<div className={styles.descriptionBlock}>
-						<p className={styles.description}>
-							{title.length > 20 ? `${title.substring(0, 17)}...` : title}
-						</p>
-						<div className={styles.priceBlock}>
-							<p className={styles.price}>
-								{"\u0024"}
-								{price}
-							</p>
-							{discont_price ? (
-								<span>
-									{"\u0024"}
-									{discont_price}
-								</span>
-							) : null}
-						</div>
-						{/* Icons Block */}
-						<div className={styles.cartBlock}>
-							<Link onClick={handleAddToFavorites}>
-								{heartActive ? (
-									<IconHertActive className={styles.iconHeart} size='48' />
-								) : (
-									<IconHeart
-										className={[styles.icon, styles.iconHeart].join(" ")}
-										size='48'
-									/>
-								)}
-							</Link>
-							<Link onClick={handleAddToCart}>
-								{bagActive ? (
-									<IconBagActive className={styles.icon} size='48' />
-								) : (
-									<IconBag className={styles.icon} size='48' />
-								)}
-							</Link>
-						</div>
-						{/* Sale Block */}
-						{discont_price && (
-							<p className={styles.discount}>
-								{(((price - discont_price) / price) * 100).toFixed()}%
-							</p>
-						)}
-					</div>
-				</Link>
-			</div>
-		</div>
-	);
+    <div>
+      <div className={styles.cardBlock}>
+        <Link to={`/product/${id}`}>
+          <img src={`http://localhost:3333${image}`} alt={title} />
+          {/* Description Block */}
+          <div
+            className={`${styles.descriptionBlock} ${
+              nightMode ? styles.night_mode : ""
+            }`}
+          >
+            <p className={`${styles.description} ${
+              nightMode ? styles.night_mode : ""
+            }`}>
+              {title.length > 20 ? `${title.substring(0, 17)}...` : title}
+            </p>
+            <div
+              className={`${styles.priceBlock} ${
+                nightMode ? styles.night_mode : ""
+              }`}
+            >
+              <p
+                className={`${styles.price} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                {"\u0024"}
+                {price}
+              </p>
+              {discont_price ? (
+                <span>
+                  {"\u0024"}
+                  {discont_price}
+                </span>
+              ) : null}
+            </div>
+            {/* Icons Block */}
+            <div className={styles.cartBlock}>
+              <Link onClick={handleAddToFavorites}>
+                {heartActive ? (
+                  <IconHertActive className={styles.iconHeart} size="48" />
+                ) : (
+                  <IconHeart
+                    className={[styles.icon, styles.iconHeart].join(" ")}
+                    size="48"
+                  />
+                )}
+              </Link>
+              <Link onClick={handleAddToCart}>
+                {bagActive ? (
+                  <IconBagActive className={styles.icon} size="48" />
+                ) : (
+                  <IconBag className={styles.icon} size="48" />
+                )}
+              </Link>
+            </div>
+            {/* Sale Block */}
+            {discont_price && (
+              <p className={styles.discount}>
+                {(((price - discont_price) / price) * 100).toFixed()}%
+              </p>
+            )}
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
 }

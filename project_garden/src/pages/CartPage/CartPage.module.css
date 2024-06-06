@@ -79,7 +79,14 @@
   }
   
   /* Dark mode */
-  
+
+   .night_mode.ordersBlock{
+    color: var(--white);
+  }
+  .night_mode.ordersBlock{
+  background: #383a2c;
+}
+ 
   .dark {
     background-color: var(--black);
   }

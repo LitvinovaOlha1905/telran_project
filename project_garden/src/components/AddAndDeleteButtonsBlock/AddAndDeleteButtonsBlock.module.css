@@ -38,10 +38,12 @@
   color: var(--black);
 }
 
-/* Dark mode */
-.dark {
-  color: var(--white);
+/* Night_mode */
+
+.night_mode.count{
+   color: var(--txt-white);
 }
+
 
 @media (max-width: 1439px) {
   .wrapper {

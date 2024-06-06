@@ -44,3 +44,8 @@ text-align: center;
 .button:hover, .button:focus {
   opacity: 0.8;
 }
+/* Dark mode */
+
+   .night_mode.title{
+    color: var(--white);
+  }

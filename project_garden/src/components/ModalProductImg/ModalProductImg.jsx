@@ -5,6 +5,8 @@ import { Context } from '../../context';
 
 export default function ModalProductImg() {
 
+    const { nightMode } = useContext(Context);
+
     const { modalActive, setModalActive } = useContext(Context);
     
     const singleProductState = useSelector((store) => store.singleProduct);
@@ -16,7 +18,9 @@ export default function ModalProductImg() {
     
    return (
      <div
-       className={[styles.modal, modalActive ? styles.active : ""].join(" ")}
+       className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
+         modalActive ? styles.active : ""
+       }`}
        onClick={() => {
          setModalActive(false);
        }}

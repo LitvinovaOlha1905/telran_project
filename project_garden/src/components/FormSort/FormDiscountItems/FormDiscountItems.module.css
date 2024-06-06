@@ -19,3 +19,8 @@
    display: flex;
    align-items: center;
 }
+/* Night_mode */
+
+.night_mode.sortTitle {
+  color: var(--txt-white);
+}

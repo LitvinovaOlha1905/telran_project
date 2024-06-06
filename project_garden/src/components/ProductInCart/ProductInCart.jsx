@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import AddAndDeleteButtonsBlock from '../AddAndDeleteButtonsBlock/AddAndDeleteButtonsBlock';
 import ProductAndCartTitle from '../ProductAndCartTitle/ProductAndCartTitle';
 import TitleThrough from '../TitleThrough/TitleThrough';
+import { useContext } from 'react';
+import { Context } from '../../context';
 
 const ProductInCart = ({
   id,
@@ -17,13 +19,18 @@ const ProductInCart = ({
   handleDeleteFromCart,
   handleDecreaseProduct,
 }) => {
+
+  const { nightMode } = useContext(Context);
+
   const { theme } = useSelector((state) => state.theme);
 
   // get dayDiscounted price
   let discountedPrice = id === 14 ? price / 2 : null;
 
   return (
-    <div className={classes.wrapper}>
+    <div
+      className={`${classes.wrapper} ${nightMode ? classes.night_mode : ""}`}
+    >
       <div
         className={classes.imgBlock}
         style={{ backgroundImage: `url(http://localhost:3333${image})` }}
@@ -38,7 +45,7 @@ const ProductInCart = ({
             src={close}
             alt="Close"
             className={`${classes.close} ${
-              theme === 'dark' ? classes.menuDark : ''
+              theme === "dark" ? classes.menuDark : ""
             }`}
           />
         </div>
@@ -60,10 +67,10 @@ const ProductInCart = ({
               weight
             />
             {discont_price && (
-              <TitleThrough text={`${'$' + price}`} smallText />
+              <TitleThrough text={`${"$" + price}`} smallText />
             )}
             {discountedPrice && (
-              <TitleThrough text={`${'$' + price}`} smallText />
+              <TitleThrough text={`${"$" + price}`} smallText />
             )}
           </div>
         </div>

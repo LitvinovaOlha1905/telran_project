@@ -18,3 +18,9 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap: 32px;
 }
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white);
+}
+

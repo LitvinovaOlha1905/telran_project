@@ -21,3 +21,8 @@
    align-items: center;
    gap: 40px;
 }
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white);
+}

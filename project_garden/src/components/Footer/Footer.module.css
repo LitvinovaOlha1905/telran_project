@@ -45,14 +45,49 @@
 .description {
   color: var(--black);
 }
-.link {
-  text-decoration: none;
+.linkTel {
   color: var(--black);
 }
 .iconsBlock {
   display: flex;
   gap: 20px;
   margin-top: 16px;
+}
+.mapBlock{
+   position: relative;
+}
+.mapBlock > div{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    border-radius: 12px
+}
+.mapBlock > div.dark{
+    display: block;
+}
+
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white); 
+}
+.night_mode.infoContainer{
+  background: var(--black);
+}
+.night_mode.infoBlock{
+ background: #383a2c;
+}
+.night_mode.description, .link, .linkTel, .iconsBlock{
+  color: var(--txt-white);
+}
+.night_mode.icon{
+  fill: var(--white);
+  stroke: white;
 }
 
 @media (max-width: 999px) {
