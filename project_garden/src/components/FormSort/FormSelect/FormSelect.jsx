@@ -19,6 +19,7 @@ export default function FormSelect() {
 		<div>
 			<form className={styles.formSortBlock}>
 				<label className={styles.sortLabel} htmlFor='sortSelect'>
+					<h3>Sorted</h3>
 					<CustomSelect
 						selected={selectedOption}
 						onChange={sort}

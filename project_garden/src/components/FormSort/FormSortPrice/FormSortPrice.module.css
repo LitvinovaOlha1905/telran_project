@@ -6,7 +6,7 @@
 
 .sortLabel {
    font-weight: 600;
-   font-size: 20px;
+   font-size: 18px;
    line-height: 130%;
    color: var(--black);
 }
@@ -37,4 +37,11 @@
 
 .sortButton {
    display: none;
+}
+
+/* 768px 1000px 1440px*/
+@media screen and (min-width: 768px) {
+   .sortLabel {
+      font-size: 20px;
+   }
 }

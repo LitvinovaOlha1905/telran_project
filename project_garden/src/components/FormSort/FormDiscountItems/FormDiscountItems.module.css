@@ -6,7 +6,7 @@
 
 .sortTitle {
    font-weight: 600;
-   font-size: 20px;
+   font-size: 18px;
    line-height: 130%;
    color: var(--black);
 }
@@ -18,4 +18,11 @@
 .sortDiscountCheckbox {
    display: flex;
    align-items: center;
+}
+
+/* 768px 1000px 1440px*/
+@media screen and (min-width: 768px) {
+   .sortLabel {
+      font-size: 20px;
+   }
 }

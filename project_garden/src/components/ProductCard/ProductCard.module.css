@@ -1,10 +1,5 @@
 .cardBlock {
    position: relative;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   gap: 20px;
-   min-width: 316px;
    border-radius: 12px;
    border: 1px solid var(--grey-divider);
    background: var(--txt-white);
@@ -13,26 +8,31 @@
 .cardBlock img {
    display: block;
    width: 100%;
-   height: 284px;
+   height: 220px;
+   border-radius: 12px;
    border-bottom: 1px solid var(--grey-divider);
 }
 
 .descriptionBlock {
    margin-top: 20px;
-   padding: 0px 32px 32px;
+   padding: 0px 20px 20px;
 }
 
 /* Description Block */
 
 .description {
    font-weight: 500;
-   font-size: 20px;
+   font-size: 18px;
    line-height: 130%;
    color: var(--black);
+
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
 }
 
 .priceBlock {
-   margin-top: 16px;
+   margin-top: 12px;
    display: flex;
    align-items: baseline;
    gap: 16px;
@@ -40,14 +40,14 @@
 
 .price {
    font-weight: 600;
-   font-size: 40px;
+   font-size: 36px;
    line-height: 110%;
    color: var(--black);
 }
 
 .priceBlock span {
    font-weight: 500;
-   font-size: 20px;
+   font-size: 18px;
    line-height: 130%;
    text-decoration: line-through;
    color: var(--grey);
@@ -71,7 +71,7 @@
 
 .icon {
    display: block;
-   width: 48px;
+   width: 40px;
    fill: var(--txt-white);
 }
 
@@ -87,10 +87,88 @@
    left: 22px;
    padding: 4px 8px;
    font-weight: 600;
-   font-size: 20px;
+   font-size: 18px;
    line-height: 130%;
    letter-spacing: 0.03em;
    border-radius: 6px;
    color: var(--txt-white);
    background: var(--sale);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+   .cardBlock {
+      min-width: 210px;
+   }
+
+   .descriptionBlock {
+      padding: 0 20px 20px;
+      height: 118px;
+   }
+
+   .description {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+   }
+
+}
+
+/* 768px 1000px 1440px */
+@media screen and (min-width: 768px) {
+   .description {
+      font-size: 20px;
+   }
+
+   .price {
+      font-size: 40px;
+   }
+
+   .priceBlock span {
+      font-size: 20px;
+   }
+
+   .icon {
+      width: 48px;
+   }
+
+   .discount {
+      font-size: 20px;
+   }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+   .cardBlock {
+      min-width: 354px;
+   }
+
+   .cardBlock img {
+      height: 350px;
+   }
+
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) and (max-width: 1439px) {
+   .cardBlock {
+      min-width: 225px;
+   }
+
+   .cardBlock img {
+      height: 250px;
+   }
+
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+   .cardBlock img {
+      height: 284px;
+   }
+
+   .priceBlock {
+      margin-top: 16px;
+   }
+
 }
