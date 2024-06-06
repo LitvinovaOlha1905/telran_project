@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./LikedProductsPage.module.css";
 import Sceleton from "../../components/Sceleton/Skeleton";
 import FavoritesProductsContainer from "../../components/FavoritesProductContainer/FavoritesProductContainer";
+import { Context } from "../../context";
 
 export default function LikedProductsPage() {
+
+	  const { nightMode } = useContext(Context);
 
    useEffect(() => {
 			window.scrollTo(0, 0);
@@ -18,12 +21,14 @@ export default function LikedProductsPage() {
 			}, 2000);
 		}, []);
 	return (
-		<div className={styles.wrapper}>
-			<div className='container'>
-				<h1 className={styles.title}>Liked products</h1>
+    <div className={styles.wrapper}>
+      <div className="container">
+        <h1 className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}>
+          Liked products
+        </h1>
 
-				{isLoading ? <Sceleton /> : <FavoritesProductsContainer />}
-			</div>
-		</div>
-	);
+        {isLoading ? <Sceleton /> : <FavoritesProductsContainer />}
+      </div>
+    </div>
+  );
 }

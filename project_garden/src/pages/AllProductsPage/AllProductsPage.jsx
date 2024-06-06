@@ -1,9 +1,13 @@
-import React, { useEffect } from "react"
+import React, { useContext, useEffect } from "react"
 import ProductsContainer from "../../components/ProductsContainer/ProductsContainer"
 import styles from "./AllProductsPage.module.css"
 import Sceleton from "../../components/Sceleton/Skeleton"
+import { Context } from "../../context";
 
 export default function AllProductsPage() {
+
+    const { nightMode } = useContext(Context);
+    
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	  }, []);
@@ -18,12 +22,16 @@ export default function AllProductsPage() {
     }, []);
     
     return (
-        <div className={styles.wrapper}>
-            <div className='container'>
-                <h1 className={styles.title}>All products</h1>
-               
-                {isLoading ? <Sceleton /> : <ProductsContainer />}
-            </div>
+      <div className={styles.wrapper}>
+        <div className="container">
+          <h1
+            className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}
+          >
+            All products
+          </h1>
+
+          {isLoading ? <Sceleton /> : <ProductsContainer />}
         </div>
-    )
+      </div>
+    );
 }

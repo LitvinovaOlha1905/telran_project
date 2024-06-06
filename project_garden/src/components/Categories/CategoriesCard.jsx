@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './CategoriesCard.module.css'
 import { Link } from 'react-router-dom';
+import { Context } from '../../context';
 
 export default function CategoriesCard({ id, image, title }) {
+  
+  const { nightMode } = useContext(Context);
 
   return (
     <div className={styles.categoryCard}>
@@ -12,9 +15,10 @@ export default function CategoriesCard({ id, image, title }) {
           src={`http://localhost:3333${image}`}
           alt={title}
         />
-        <p className={styles.title}>{title}</p>
+        <p className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}>
+          {title}
+        </p>
       </Link>
     </div>
   );
-
 }

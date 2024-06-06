@@ -5,8 +5,13 @@ import styles from "./AllSalesPage.module.css";
 import { useSelector } from "react-redux";
 import FormSortPrice from "../../components/FormSort/FormSortPrice/FormSortPrice";
 import FormSelect from "../../components/FormSort/FormSelect/FormSelect";
+import { useContext } from "react";
+import { Context } from "../../context";
 
 export default function AllSalesPage() {
+
+	const { nightMode } = useContext(Context);
+
 	const { products } = useSelector(state => state.products);
 	const discountedProducts = products?.filter(product => product.discont_price);
 
@@ -26,27 +31,29 @@ export default function AllSalesPage() {
 	}, []);
 
 	return (
-		<div className={styles.wrapper}>
-			<div className='container'>
-				<h1 className={styles.title}>Discounted items</h1>
+    <div className={styles.wrapper}>
+      <div className="container">
+        <h1 className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}>
+          Discounted items
+        </h1>
 
-				{isLoading ? (
-					<Sceleton />
-				) : (
-					<div>
-						<div className={styles.sortBlock}>
-							<FormSortPrice />
-							<FormSelect />
-						</div>
+        {isLoading ? (
+          <Sceleton />
+        ) : (
+          <div>
+            <div className={styles.sortBlock}>
+              <FormSortPrice />
+              <FormSelect />
+            </div>
 
-						<div className={styles.productsBlock}>
-							{discountedProducts.map(
-								el => el.visible && <ProductCard key={el.id} {...el} />
-							)}
-						</div>
-					</div>
-				)}
-			</div>
-		</div>
-	);
+            <div className={styles.productsBlock}>
+              {discountedProducts.map(
+                (el) => el.visible && <ProductCard key={el.id} {...el} />
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }

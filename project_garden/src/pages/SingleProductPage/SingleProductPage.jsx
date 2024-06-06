@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./SingleProductPage.module.css";
 import { Link, useParams } from "react-router-dom";
@@ -7,16 +7,15 @@ import { ReactComponent as IconMinus } from "../../images/Icons/minus.svg";
 import { ReactComponent as Heart } from "../../images/Icons/heart.svg";
 import { fetchSingleProducts } from "../../store/slices/singleProductSlice";
 import { addProduct, countTotalSum, decreaseProduct } from "../../store/slices/cartSlice";
-import AddAndDeleteButtonsBlock from "../../components/AddAndDeleteButtonsBlock/AddAndDeleteButtonsBlock";
 import { Context } from "../../context";
 
 export default function SingleProductPage() {
+
+  const { nightMode } = useContext(Context);
   const { setModalActive } = useContext(Context);
-
+  
   const dispatch = useDispatch();
-
   const { productId } = useParams();
-
   const singleProductState = useSelector((store) => store.singleProduct);
 
   useEffect(() => {
@@ -25,16 +24,27 @@ export default function SingleProductPage() {
 
   const { status, product } = singleProductState;
 
-  const [{ id, title, price, discont_price, description, image }] = product;
+  // Ensure product is defined and not empty before destructuring
+  const productDetails = product && product.length > 0 ? product[0] : {};
 
-  console.log(singleProductState);
-  console.log(product);
-  console.log(title);
+  const { id, title, price, discont_price, description, image } = productDetails;
 
-  const handleAddToCart = (event) => {
-	  dispatch(addProduct(product[0]));
-	  dispatch(countTotalSum());
-	};
+  const [quantity, setQuantity] = useState(1);
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  };
+
+  const handleAddToCart = () => {
+    if (productDetails && Object.keys(productDetails).length > 0) {
+      dispatch(addProduct({ ...productDetails, quantity }));
+      dispatch(countTotalSum());
+    }
+  };
 
   return (
     <div className="container">
@@ -53,13 +63,25 @@ export default function SingleProductPage() {
 
           <div className={styles.infoBlock}>
             <div className={styles.titleBlock}>
-              <h2>{title}</h2>
-              <Heart className={styles.icon} />
+              <h2
+                className={`${styles.title} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                {title}
+              </h2>
+              <Heart className={`${styles.icon} ${
+                  nightMode ? styles.night_mode : ""
+                }`} />
             </div>
 
             <div className={styles.priceBlock}>
               <div className={styles.prices}>
-                <p className={styles.price}>
+                <p
+                  className={`${styles.price} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                >
                   {"\u0024"}
                   {price}
                 </p>
@@ -73,7 +95,11 @@ export default function SingleProductPage() {
 
               <div>
                 {discont_price && (
-                  <p className={styles.discount}>
+                  <p
+                    className={`${styles.discount} ${
+                      nightMode ? styles.night_mode : ""
+                    }`}
+                  >
                     {"\u002d"}
                     {(((price - discont_price) / price) * 100).toFixed()}%
                   </p>
@@ -83,21 +109,45 @@ export default function SingleProductPage() {
 
             <div className={styles.cartBlock}>
               <div className={styles.countBlock}>
-                <Link>
+                <Link onClick={handleDecrement}>
                   <IconMinus />
                 </Link>
-                <p></p>
-                <Link>
+                <p
+                  className={`${styles.count} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                >
+                  {quantity}
+                </p>{" "}
+                <Link onClick={handleIncrement}>
                   <IconPlus />
                 </Link>
               </div>
-     
-              <button onClick ={handleAddToCart} className={styles.cartBtn}>Add to cart</button>
+
+              <button onClick={handleAddToCart} className={styles.cartBtn}>
+                Add to cart
+              </button>
             </div>
 
-            <div className={styles.descriptionBlock}>
-              <h5>Description</h5>
-              <p>{description}</p>
+            <div
+              className={`${styles.descriptionBlock} ${
+                nightMode ? styles.night_mode : ""
+              }`}
+            >
+              <h5
+                className={`${styles.descriptionTitle} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                Description
+              </h5>
+              <p
+                className={`${styles.description} ${
+                  nightMode ? styles.night_mode : ""
+                }`}
+              >
+                {description}
+              </p>
             </div>
           </div>
         </div>

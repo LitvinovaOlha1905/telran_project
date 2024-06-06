@@ -5,6 +5,7 @@ import { Context } from "../../context";
 
 export default function NavMenu() {
   const { setModalDayActive } = useContext(Context);
+  const { nightMode } = useContext(Context);
   return (
     <nav>
       <div className={styles.navBurger}>
@@ -18,7 +19,7 @@ export default function NavMenu() {
             1 day discount
           </div>
         </Link>
-        <div className={styles.nav_menu}>
+        <div className={`${styles.nav_menu} ${nightMode ? styles.night_mode : ""}`}>
           <Link to="/">Main Page</Link>
           <Link to="/categories/all">Categories</Link>
           <Link to="/products/all">All products</Link>

@@ -2,14 +2,16 @@
 import classes from './AddAndDeleteButtonsBlock.module.css';
 import minus from '../../images/Icons/minus.svg';
 import plus from '../../images/Icons/plus.svg';
-import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { Context } from '../../context';
 
 const AddAndDeleteButtonsBlock = ({
   quantity,
   handleAddToCart,
   handleDecreaseProduct,
 }) => {
-  const { theme } = useSelector((state) => state.theme);
+
+  const { nightMode } = useContext(Context);
 
   return (
     <div className={classes.wrapper}>
@@ -17,7 +19,7 @@ const AddAndDeleteButtonsBlock = ({
       <button className={classes.btn} onClick={handleDecreaseProduct}>
         <img src={minus} alt="Minus" />
       </button>
-      <p className={`${classes.count} ${theme === 'dark' ? classes.dark : ''}`}>
+      <p className={`${classes.count} ${nightMode ? classes.night_mode : ""}`}>
         {quantity ? quantity : 0}
       </p>
       <button className={classes.btn} onClick={handleAddToCart}>

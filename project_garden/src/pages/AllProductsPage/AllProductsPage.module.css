@@ -3,10 +3,15 @@
 }
 
 .title {
-   margin: 40px 0;
+   margin: 32px 0;
    font-size: 40px;
    line-height: 110%;
    color: var(--black);
+}
+
+/* Night_mode */
+.night_mode.title {
+   color: var(--txt-white);
 }
 
 /* 480px */

@@ -11,6 +11,8 @@
    height: 220px;
    border-radius: 12px;
    border-bottom: 1px solid var(--grey-divider);
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
 }
 
 .descriptionBlock {
@@ -19,7 +21,6 @@
 }
 
 /* Description Block */
-
 .description {
    font-weight: 500;
    font-size: 18px;
@@ -54,7 +55,6 @@
 }
 
 /* Icons Block */
-
 .cartBlock {
    position: absolute;
    top: 18px;
@@ -80,7 +80,6 @@
 }
 
 /* Sale Block */
-
 .discount {
    position: absolute;
    top: 16px;
@@ -93,6 +92,16 @@
    border-radius: 6px;
    color: var(--txt-white);
    background: var(--sale);
+}
+
+/* Night_mode */
+.night_mode.descriptionBlock {
+   background: #383a2c;
+}
+
+.night_mode.price,
+.night_mode.description {
+   color: var(--txt-white);
 }
 
 /* 480px */
@@ -170,5 +179,4 @@
    .priceBlock {
       margin-top: 16px;
    }
-
 }

@@ -35,6 +35,11 @@ a {
   text-decoration: none;
 }
 
+/* Night_mode */
+.night_mode {
+  background: var(--black);
+}
+
 /* 480px */
 @media screen and (min-width: 480px) {
   .container {
@@ -62,3 +67,4 @@ a {
     max-width: 1360px;
   }
 }
+

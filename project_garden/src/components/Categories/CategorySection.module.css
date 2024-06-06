@@ -19,14 +19,15 @@
 }
 .line::before {
   content: "";
-  width: 650%;
+  width: 600%;
   height: 1px;
   background-color: var(--grey-divider);
   position: absolute;
   top: 50%;
-  right: 130px;
+  right: 142px;
 }
 .btn {
+  font-family: var(--font-family);
   border: 1px solid var(--grey-divider);
   color: var(--txt-grey);
   background-color: transparent;
@@ -36,9 +37,18 @@
   padding: 8px 16px;
   cursor: pointer;
 }
+.btn:hover{
+  background: var(--light-grey);
+  color: var(--grey);
+}
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 32px;
   margin-top: 40px;
+}
+/* Night_mode */
+
+.night_mode.title {
+  color: var(--txt-white); 
 }

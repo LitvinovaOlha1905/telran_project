@@ -6,12 +6,11 @@
   min-width: fit-content;
 }
 
-/* Dark mode */
+/* Night_mode */
 
-.dark {
-  color: var(--white);
+.night_mode.title{
+   color: var(--txt-white);
 }
-
 /* Mobile */
 
 @media (max-width: 999px) {

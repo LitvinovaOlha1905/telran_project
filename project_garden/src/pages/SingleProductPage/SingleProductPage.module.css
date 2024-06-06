@@ -2,6 +2,7 @@
   display: flex;
   gap: 32px;
   margin-bottom: 85px;
+  margin-top: 40px;
 }
 .imgBlock{
   flex-grow: 1; /* Картинка будет занимать всю доступную ширину */
@@ -25,7 +26,7 @@
   justify-content: space-between;
   gap: 16px;
 }
-.titleBlock h2 {
+.title {
   font-weight: 700;
   font-size: 40px;
   color: var(--black);
@@ -33,6 +34,7 @@
 .icon {
   width: 48px;
   fill: var(--txt-white);
+  stroke: var(--black);
 }
 .icon:hover {
   fill: var(--black);
@@ -88,7 +90,14 @@
   width: 96px;
   height: 58px;
 }
-
+.count {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: var(--black);
+  text-align: center;
+  padding-top: 15px;
+}
 .cartBtn {
   background: var(--green);
   border: transparent;
@@ -100,13 +109,34 @@
   color: var(--txt-white);
   cursor: pointer;
 }
-.descriptionBlock h5 {
+.descriptionTitle {
   font-weight: 600;
   font-size: 20px;
   color: var(--black);
+  margin-bottom: 16px;
 }
-.descriptionBlock p {
+.description {
   font-weight: 400;
   font-size: 16px;
   color: var(--black);
+}
+
+/* Night_mode */
+
+.night_mode.title, .night_mode.price, .night_mode.count {
+  color: var(--txt-white);
+}
+.night_mode.discount {
+   background-color: var(--green);
+}
+.night_mode.description, .night_mode.descriptionTitle {
+  color: var(--txt-white);
+}
+.night_mode.icon {
+  stroke: var(--txt-white);
+  fill: var(--black);
+}
+.night_mode.icon:hover{
+  fill: var(--green);
+  stroke: var(--green);
 }

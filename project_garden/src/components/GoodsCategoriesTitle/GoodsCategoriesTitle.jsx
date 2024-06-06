@@ -1,17 +1,15 @@
+import { useContext } from 'react';
 import classes from './GoodsCategoriesTitle.module.css';
 import { useSelector } from 'react-redux';
+import { Context } from '../../context';
 
 const GoodsCategoriesTitle = ({ text, footer, none }) => {
-  const { theme } = useSelector((state) => state.theme);
+    const { nightMode } = useContext(Context);
 
   return (
     <h4
-      className={`${
-        footer
-          ? classes.footerTitle
-          : `${classes.title} ${theme === 'dark' ? classes.dark : ''}`
-      }`}
-      style={{ color: none ? 'var(--black)' : '' }}
+      className={`${classes.title} ${nightMode ? classes.night_mode : ""}`}
+      style={{ color: none ? "var(--black)" : "" }}
     >
       {text}
     </h4>

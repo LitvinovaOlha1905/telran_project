@@ -45,11 +45,15 @@
   height: 14px;
   aspect-ratio: 1;
   cursor: pointer;
+  
 }
 
 /* Dark mode */
 .menuDark {
   filter: invert(1);
+}
+.night_mode.wrapper{
+  background: #383a2c;
 }
 
 /* Mobile */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./ProductCard.module.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
@@ -12,6 +12,7 @@ import {
 	countTotalSum,
 } from "../../store/slices/cartSlice";
 import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
+import { Context } from "../../context";
 
 export default function ProductCard({
 	id,
@@ -20,6 +21,8 @@ export default function ProductCard({
 	price,
 	discont_price,
 }) {
+	const { nightMode } = useContext(Context);
+
 	const dispatch = useDispatch();
 	const product = { id, title, image, price, discont_price };
 
@@ -69,10 +72,28 @@ export default function ProductCard({
 				<Link to={`/product/${id}`}>
 					<img src={`http://localhost:3333${image}`} alt={title} />
 					{/* Description Block */}
-					<div className={styles.descriptionBlock}>
-						<p className={styles.description}>{title}</p>
-						<div className={styles.priceBlock}>
-							<p className={styles.price}>
+					<div
+						className={`${styles.descriptionBlock} ${
+							nightMode ? styles.night_mode : ""
+						}`}
+					>
+						<p
+							className={`${styles.description} ${
+								nightMode ? styles.night_mode : ""
+							}`}
+						>
+							{title}
+						</p>
+						<div
+							className={`${styles.priceBlock} ${
+								nightMode ? styles.night_mode : ""
+							}`}
+						>
+							<p
+								className={`${styles.price} ${
+									nightMode ? styles.night_mode : ""
+								}`}
+							>
 								{"\u0024"}
 								{price}
 							</p>
