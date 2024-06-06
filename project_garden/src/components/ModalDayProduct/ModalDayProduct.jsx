@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./ModalDayProduct.module.css";
 import { ReactComponent as Cross } from "../../images/Icons/close.svg";
@@ -6,18 +7,19 @@ import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice"; 
-
-
-
+import { addProduct } from "../../store/slices/cartSlice";
+import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
 
 export default function ModalDayProduct() {
   const dispatch = useDispatch();
 
+  // Добавляем состояние heartActive
+  const [heartActive, setHeartActive] = useState(false);
+
   const { nightMode } = useContext(Context);
   const { modalDayActive, setModalDayActive } = useContext(Context);
-  const { products } = useSelector((state) => state.products);
-  const { favorites } = useSelector((store) => store.favorites);
+  const { products } = useSelector(state => state.products);
+  const { favorites } = useSelector(store => store.favorites);
 
   // Получаем индекс продукта на основе текущего дня
   const currentDate = new Date().getDate();
@@ -32,16 +34,14 @@ export default function ModalDayProduct() {
   } = productOfTheDay || {};
 
   const isProductInFavorite = favorites.some(
-    (favoriteProduct) => favoriteProduct.id === id
+    favoriteProduct => favoriteProduct.id === id
   );
-
-  const [heartActive, setHeartActive] = useState(isProductInFavorite);
 
   useEffect(() => {
     setHeartActive(isProductInFavorite);
   }, [isProductInFavorite]);
 
-  const handleAddToFavorites = (event) => {
+  const handleAddToFavorites = event => {
     event.preventDefault();
     if (isProductInFavorite) {
       dispatch(removeFavorite(productOfTheDay));
@@ -50,16 +50,21 @@ export default function ModalDayProduct() {
     }
   };
 
+  // Функция для добавления продукта в корзину
+  const handleAddToCart = () => {
+    dispatch(addProduct(productOfTheDay));
+  };
+
   return (
     <div
-        className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
+      className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
         modalDayActive ? styles.active : ""
       }`}
       onClick={() => setModalDayActive(false)}
     >
       <div
         className={styles.modal_content}
-        onClick={(event) => event.stopPropagation()}
+        onClick={event => event.stopPropagation()}
       >
         <div className={styles.title}>
           <h5>50% discount on product of the day!</h5>
@@ -105,10 +110,11 @@ export default function ModalDayProduct() {
             </div>
           </div>
 
-          <button className={styles.btn}>Add to cart</button>
+          <button className={styles.btn} onClick={handleAddToCart}>
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
