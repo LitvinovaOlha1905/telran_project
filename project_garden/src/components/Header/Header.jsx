@@ -15,7 +15,7 @@ import ModalNavMenu from "../ModalNavMenu/ModalNavMenu";
 
 const Header = () => {
 
-  const [navMenuActive, setNavMenuActive] = useState(true);
+  const [navMenuActive, setNavMenuActive] = useState(false);
   const dispatch = useDispatch();
   const { nightMode } = useContext(Context);
   const { theme } = useSelector((state) => state.theme);
@@ -67,7 +67,11 @@ const Header = () => {
             </Link>
           </div>
 
-          <RxHamburgerMenu className={styles.burger} />
+          <RxHamburgerMenu
+            className={`${styles.burger} ${
+              navMenuActive ? styles.nav_menu_active : ""
+            }`}
+          />
         </div>
       </div>
     </header>

@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 28px;
+  border-bottom: 1px solid var(--grey-divider);
 }
 
 .switch {
@@ -59,6 +60,7 @@
 .burger{
   width: 44px;
   height: 44px;
+  display: none;
 }
 
 /* .burger {
