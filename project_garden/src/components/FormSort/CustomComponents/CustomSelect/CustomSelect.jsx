@@ -23,9 +23,11 @@ export default function CustomSelect({ onChange, selected }) {
 	}, [selected]);
 
 	const handleOptionClick = option => {
-		setSelectedLabel(option.label);
-		onChange({ target: { value: option.value } });
-		setIsActive(false);
+		if (option.value !== "default") {
+			setSelectedLabel(option.label);
+			onChange({ target: { value: option.value } });
+			setIsActive(false);
+		}
 	};
 
 	return (
@@ -42,11 +44,13 @@ export default function CustomSelect({ onChange, selected }) {
 					<div className={[styles.dropdownContent, styles.text].join(" ")}>
 						{options.map(option => (
 							<div
-								className={styles.dropdownItem}
+								className={[
+									styles.dropdownItem,
+									option.value === "default" ? styles.disabled : "",
+								].join(" ")}
 								key={option.value}
 								onClick={() => handleOptionClick(option)}
 							>
-								
 								{option.label}
 							</div>
 						))}

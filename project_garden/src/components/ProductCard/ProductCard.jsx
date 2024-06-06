@@ -67,70 +67,72 @@ export default function ProductCard({
 	};
 
 	return (
-    <div>
-      <div className={styles.cardBlock}>
-        <Link to={`/product/${id}`}>
-          <img src={`http://localhost:3333${image}`} alt={title} />
-          {/* Description Block */}
-          <div
-            className={`${styles.descriptionBlock} ${
-              nightMode ? styles.night_mode : ""
-            }`}
-          >
-            <p className={`${styles.description} ${
-              nightMode ? styles.night_mode : ""
-            }`}>
-              {title.length > 20 ? `${title.substring(0, 17)}...` : title}
-            </p>
-            <div
-              className={`${styles.priceBlock} ${
-                nightMode ? styles.night_mode : ""
-              }`}
-            >
-              <p
-                className={`${styles.price} ${
-                  nightMode ? styles.night_mode : ""
-                }`}
-              >
-                {"\u0024"}
-                {price}
-              </p>
-              {discont_price ? (
-                <span>
-                  {"\u0024"}
-                  {discont_price}
-                </span>
-              ) : null}
-            </div>
-            {/* Icons Block */}
-            <div className={styles.cartBlock}>
-              <Link onClick={handleAddToFavorites}>
-                {heartActive ? (
-                  <IconHertActive className={styles.iconHeart} size="48" />
-                ) : (
-                  <IconHeart
-                    className={[styles.icon, styles.iconHeart].join(" ")}
-                    size="48"
-                  />
-                )}
-              </Link>
-              <Link onClick={handleAddToCart}>
-                {bagActive ? (
-                  <IconBagActive className={styles.icon} size="48" />
-                ) : (
-                  <IconBag className={styles.icon} size="48" />
-                )}
-              </Link>
-            </div>
-            {/* Sale Block */}
-            {discont_price && (
-              <p className={styles.discount}>
-                {(((price - discont_price) / price) * 100).toFixed()}%
-              </p>
-            )}
-          </div>
-        </Link>
-      </div>
-    </div>
-  );
+		<div>
+			<div className={styles.cardBlock}>
+				<Link to={`/product/${id}`}>
+					<img src={`http://localhost:3333${image}`} alt={title} />
+					{/* Description Block */}
+					<div
+						className={`${styles.descriptionBlock} ${
+							nightMode ? styles.night_mode : ""
+						}`}
+					>
+						<p
+							className={`${styles.description} ${
+								nightMode ? styles.night_mode : ""
+							}`}
+						>
+							{title}
+						</p>
+						<div
+							className={`${styles.priceBlock} ${
+								nightMode ? styles.night_mode : ""
+							}`}
+						>
+							<p
+								className={`${styles.price} ${
+									nightMode ? styles.night_mode : ""
+								}`}
+							>
+								{"\u0024"}
+								{price}
+							</p>
+							{discont_price ? (
+								<span>
+									{"\u0024"}
+									{discont_price}
+								</span>
+							) : null}
+						</div>
+						{/* Icons Block */}
+						<div className={styles.cartBlock}>
+							<Link onClick={handleAddToFavorites}>
+								{heartActive ? (
+									<IconHertActive className={styles.iconHeart} size='48' />
+								) : (
+									<IconHeart
+										className={[styles.icon, styles.iconHeart].join(" ")}
+										size='48'
+									/>
+								)}
+							</Link>
+							<Link onClick={handleAddToCart}>
+								{bagActive ? (
+									<IconBagActive className={styles.icon} size='48' />
+								) : (
+									<IconBag className={styles.icon} size='48' />
+								)}
+							</Link>
+						</div>
+						{/* Sale Block */}
+						{discont_price && (
+							<p className={styles.discount}>
+								{(((price - discont_price) / price) * 100).toFixed()}%
+							</p>
+						)}
+					</div>
+				</Link>
+			</div>
+		</div>
+	);
 }

@@ -18,15 +18,16 @@ export default function FormSelect() {
 	};
 
 	return (
-    <div>
-      <form className={styles.formSortBlock}>
-        <label
-          className={styles.sortLabel} 
-          htmlFor="sortSelect"
-        >
-          <CustomSelect selected={selectedOption} onChange={sort} />
-        </label>
-      </form>
-    </div>
-  );
+		<div>
+			<form className={styles.formSortBlock}>
+				<label className={styles.sortLabel} htmlFor='sortSelect'>
+					<h3>Sorted</h3>
+					<CustomSelect
+						selected={selectedOption}
+						onChange={sort}
+					/>
+				</label>
+			</form>
+		</div>
+	);
 }
