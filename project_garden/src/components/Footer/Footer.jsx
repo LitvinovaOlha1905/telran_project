@@ -3,6 +3,8 @@ import styles from "./Footer.module.css";
 import Map from "../Map/Map";
 import { ReactComponent as IconInsta } from "../../images/Icons/insta.svg";
 import { ReactComponent as IconWA } from "../../images/Icons/whatsApp.svg";
+import { ReactComponent as IconInstaNight } from "../../images/Icons/instaNight.svg";
+import { ReactComponent as IconWANight } from "../../images/Icons/whatsAppNight.svg";
 import { Context } from "../../context";
 
 export default function Footer() {
@@ -45,24 +47,28 @@ export default function Footer() {
               <h6 className={styles.infoTitle}>Socials</h6>
 
               <div className={styles.iconsBlock}>
-                <a
-                  href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
-                >
-                  <IconInsta
-                    className={`${styles.icon} ${
-                      nightMode ? styles.night_mode : ""
-                    }`}
-                  />
+                <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
+                  {nightMode ? (
+                    <IconInstaNight />
+                  ) : (
+                    <IconInsta
+                      className={`${styles.icon} ${
+                        nightMode ? styles.night_mode : ""
+                      }`}
+                    />
+                  )}
                 </a>
 
-                <a
-                  href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ=="
-                >
-                  <IconWA
-                    className={`${styles.icon} ${
-                      nightMode ? styles.night_mode : ""
-                    }`}
-                  />
+                <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
+                  {nightMode ? (
+                    <IconWANight />
+                  ) : (
+                    <IconWA
+                      className={`${styles.icon} ${
+                        nightMode ? styles.night_mode : ""
+                      }`}
+                    />
+                  )}
                 </a>
               </div>
             </div>
