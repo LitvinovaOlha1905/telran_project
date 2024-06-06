@@ -22,8 +22,12 @@
 .cartBlock:nth-last-child{
   gap: 26px;
 }
+.burger{
+  width: 44px;
+  height: 44px;
+}
 
-.burger {
+/* .burger {
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -34,7 +38,7 @@
   height: 3px;
   background-color: #fff;
   margin: 4px 0;
-}
+} */
 
 /* Night_mode */
 

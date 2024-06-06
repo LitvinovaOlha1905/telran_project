@@ -2,17 +2,20 @@ import React, { useContext, useState } from "react";
 import NavMenu from "../NavMenu/NavMenu";
 import styles from "./Header.module.css";
 import iconTree from "../../images/Header/tree.svg";
-import { ReactComponent as IconHeart } from "../../images/Header/heart.svg";
-import { ReactComponent as IconBag } from "../../images/Header/bag.svg";
-import { ReactComponent as ModeNight } from "../../images/Header/modeNight.svg";
-import { ReactComponent as ModeDay } from "../../images/Header/modeDay.svg";
+import { ReactComponent as IconHeart } from "../../images/Icons/heartHeder.svg";
+import { ReactComponent as IconBag } from "../../images/Icons/bagHeder.svg";
+import { ReactComponent as ModeNight } from "../../images/Icons/modeNight.svg";
+import { ReactComponent as ModeDay } from "../../images/Icons/modeDay.svg";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Context } from "../../context";
 import { useDispatch } from "react-redux";
 import { toggleTheme } from "../../store/slices/themeSlice";
+import ModalNavMenu from "../ModalNavMenu/ModalNavMenu";
 
 const Header = () => {
+
+  const [navMenuActive, setNavMenuActive] = useState(true)
 
   const [isMenuOpen, setIsMenuOpen] =
     useState(false);
@@ -36,13 +39,13 @@ const Header = () => {
             {nightMode ? (
               <ModeNight onClick={() => dispatch(toggleTheme())} />
             ) : (
-			  <ModeDay onClick={() => dispatch(toggleTheme())} />
+              <ModeDay onClick={() => dispatch(toggleTheme())} />
             )}
           </div>
           <div
-            className={`${styles.hideMenu} ${isMenuOpen ? styles.open : ""}`}
+            // className={`${styles.hideMenu} ${isMenuOpen ? styles.open : ""}`}
           >
-            <NavMenu />
+            {navMenuActive ? <ModalNavMenu /> : <NavMenu />}
           </div>
 
           <div className={styles.cartBlock}>
@@ -60,15 +63,8 @@ const Header = () => {
                 }`}
               />
             </Link>
-            <RxHamburgerMenu
-              className={styles.burger}
-              onClick={toggleMenu}
-              style={{
-                height: "3em",
-                width: "3em",
-              }}
-            />
           </div>
+				  <RxHamburgerMenu className={styles.burger} />
         </div>
       </div>
     </header>
