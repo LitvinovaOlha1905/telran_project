@@ -9,62 +9,65 @@ import { ReactComponent as ModeDay } from "../../images/Icons/modeDay.svg";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Context } from "../../context";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../store/slices/themeSlice";
 import ModalNavMenu from "../ModalNavMenu/ModalNavMenu";
 
 const Header = () => {
 
-  const [navMenuActive, setNavMenuActive] = useState(true)
+  const [navMenuActive, setNavMenuActive] = useState(true);
+  const dispatch = useDispatch();
+  const { nightMode } = useContext(Context);
+  const { theme } = useSelector((state) => state.theme);
+  const { productsInCart = [] } = useSelector((store) => store.cart);
+  //const { likedProducts = [] } = useSelector((store) => store.likes);
 
-  const [isMenuOpen, setIsMenuOpen] =
-    useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-	};
-	
-	const dispatch = useDispatch();
-
-	const { nightMode } = useContext(Context);
-		
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}
+    >
       <div className="container">
-        <div
-          className={`${styles.wrapper} ${nightMode ? styles.night_mode : ""}`}
-        >
+        <div className={styles.wrapper}>
           <div className={styles.logoBlock}>
             <img src={iconTree} alt="Logo" className={styles.logo} />
+
             {nightMode ? (
               <ModeNight onClick={() => dispatch(toggleTheme())} />
             ) : (
               <ModeDay onClick={() => dispatch(toggleTheme())} />
             )}
           </div>
-          <div
-            // className={`${styles.hideMenu} ${isMenuOpen ? styles.open : ""}`}
-          >
-            {navMenuActive ? <ModalNavMenu /> : <NavMenu />}
-          </div>
+          <div>{navMenuActive ? <ModalNavMenu /> : <NavMenu />}</div>
 
           <div className={styles.cartBlock}>
-            <Link to="/favorites_products">
+            <Link to="/favorites_products" className={styles.iconLink}>
               <IconHeart
                 className={`${styles.icon} ${
                   nightMode ? styles.night_mode : ""
                 }`}
               />
+
+              {/* {likedProducts.length > 0 && (
+                <span className={styles.badgeCount}>{likedProducts.length}</span>
+              )} */}
             </Link>
-            <Link to="/cart">
+
+            <Link to="/cart" className={styles.iconLink}>
               <IconBag
                 className={`${styles.icon} ${
                   nightMode ? styles.night_mode : ""
                 }`}
               />
+
+              {productsInCart.length > 0 && (
+                <span className={styles.badgeCount}>
+                  {productsInCart.length}
+                </span>
+              )}
             </Link>
           </div>
-				  <RxHamburgerMenu className={styles.burger} />
+
+          <RxHamburgerMenu className={styles.burger} />
         </div>
       </div>
     </header>

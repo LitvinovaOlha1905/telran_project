@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import styles from "./ProductsByCategoryPage.module.css";
 import ProductsByCategoryContainer from '../../components/ProductsByCategoryContainer/ProductsByCategoryContainer';
 import Sceleton from '../../components/Sceleton/Skeleton';
 
@@ -19,7 +18,7 @@ export default function ProductsByCategoryPage() {
   }, []);
 
     return (
-      <div className={styles.wrapper}>
+      <div>
         <div className="container">
           {isLoading ? <Sceleton /> : <ProductsByCategoryContainer />}
         </div>

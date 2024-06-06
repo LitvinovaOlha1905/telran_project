@@ -11,7 +11,7 @@ export default function CategorySection() {
   
   const { categories } = useSelector((state) => state.categories);
 
-    const limitedCategories = categories.slice(0, 4);
+    const limitedCategories = categories ? categories.slice(0, 4):[];
   // Создаем новый массив, содержащий только первые 4 категории
 
     return (
