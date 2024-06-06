@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import ProductCard from "../ProductCard/ProductCard";
 import styles from "./SalesContainer.module.css";
+import ProductCard from "../ProductCard/ProductCard";
 import { Context } from "../../context";
 
 export default function SalesContainer() {
@@ -12,7 +12,17 @@ export default function SalesContainer() {
 	const products = useSelector(state => state.products.products);
 
 	const discountedProducts = products?.filter(product => product.discont_price);
-	const shuffledProducts = discountedProducts?.sort(() => Math.random() - 0.5);
+	const shuffledProducts = discountedProducts
+		?.map(product => {
+			return {
+				...product,
+				title:
+					product.title.length > 20
+						? `${product.title.substring(0, 17)}...`
+						: product.title,
+			};
+		})
+		.sort(() => Math.random() - 0.5);
 
 	return (
     <div className={styles.wrapper}>
@@ -33,7 +43,7 @@ export default function SalesContainer() {
         </div>
         <div className={styles.cardBlock}>
           {shuffledProducts?.slice(0, 4).map((product) => (
-            <ProductCard {...product} productNameClass={styles.productName} />
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </div>

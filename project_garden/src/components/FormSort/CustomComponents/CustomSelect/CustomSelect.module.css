@@ -40,3 +40,11 @@
 .dropdownItem:hover {
    color: var(--black);
 }
+
+.disabled {
+   color: var(--grey);
+}
+
+.disabled:hover{
+   color: var(--grey);
+}

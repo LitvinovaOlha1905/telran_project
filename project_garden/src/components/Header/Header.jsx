@@ -37,7 +37,7 @@ const Header = () => {
               <ModeDay onClick={() => dispatch(toggleTheme())} />
             )}
           </div>
-          <div>{navMenuActive ? <ModalNavMenu /> : <NavMenu />}</div>
+          <div>{navMenuActive ? <ModalNavMenu navMenuActive={navMenuActive} setNavMenuActive={setNavMenuActive} /> : <NavMenu />}</div>
 
           <div className={styles.cartBlock}>
             <Link to="/favorites_products" className={styles.iconLink}>
@@ -68,6 +68,7 @@ const Header = () => {
           </div>
 
           <RxHamburgerMenu
+            onClick={() => setNavMenuActive(true)}
             className={`${styles.burger} ${
               navMenuActive ? styles.nav_menu_active : ""
             }`}

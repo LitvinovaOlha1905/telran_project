@@ -1,6 +1,20 @@
-.formSortBlock {
+.sortLabel{
    display: flex;
-   gap: 16px;
    align-items: center;
+   gap: 12px;
+}
+
+.sortLabel h3{
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+/* 768px 1000px 1440px*/
+@media screen and (min-width: 768px){
+   .sortLabel h3{
+      font-size: 20px;
+   }
 }
 
