@@ -22,14 +22,12 @@ const Header = () => {
   const { nightMode } = useContext(Context);
   const { theme } = useSelector((state) => state.theme);
   const { productsInCart = [] } = useSelector((store) => store.cart);
-  //const { likedProducts = [] } = useSelector((store) => store.likes);
+  // const { likedProducts = [] } = useSelector((store) => store.likes);
 
   return (
-    <header
-      className={`${styles.header} ${theme === "dark" ? styles.dark : ""}`}
-    >
+    <header className={styles.wrapper}>
       <div className="container">
-        <div className={styles.wrapper}>
+        <div className={styles.header_container}>
           <div className={styles.logoBlock}>
             <img src={iconTree} alt="Logo" className={styles.logo} />
 
@@ -53,13 +51,9 @@ const Header = () => {
           <div className={styles.cartBlock}>
             <Link to="/favorites_products" className={styles.iconLink}>
               {nightMode ? (
-                <IconHeartNight />
+                <IconHeartNight className={styles.iconNight} />
               ) : (
-                <IconHeart
-                  className={`${styles.icon} ${
-                    nightMode ? styles.night_mode : ""
-                  }`}
-                />
+                <IconHeart className={styles.iconDay} />
               )}
 
               {/* {likedProducts.length > 0 && (
@@ -69,13 +63,9 @@ const Header = () => {
 
             <Link to="/cart" className={styles.iconLink}>
               {nightMode ? (
-                <IconBagNight />
+                <IconBagNight className={styles.iconNight} />
               ) : (
-                <IconBag
-                  className={`${styles.icon} ${
-                    nightMode ? styles.night_mode : ""
-                  }`}
-                />
+                <IconBag className={styles.iconDay} />
               )}
 
               {productsInCart.length > 0 && (
