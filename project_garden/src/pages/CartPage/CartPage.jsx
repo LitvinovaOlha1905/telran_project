@@ -17,7 +17,7 @@ import TitleH2 from "../../components/TitleH2/TitleH2";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import whiteCross from "../../images/Icons/whiteCross.svg";
 import CartForm from "../../components/CartForm/CartForm";
-import MainBannerButton from "./../../UI/MainBannerButton/MainBannerButton";
+// import MainBannerButton from "./../../UI/MainBannerButton";
 import { useContext } from "react";
 import { Context } from "../../context";
 
