@@ -11,6 +11,7 @@
   background-color: transparent;
   font-size: 20px;
   color: #fff;
+  width: 516px;
 }
 
 .input::placeholder {
