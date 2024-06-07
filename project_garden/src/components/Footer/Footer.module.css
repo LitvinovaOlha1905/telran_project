@@ -45,9 +45,10 @@
 .description {
   color: var(--black);
 }
-.linkTel {
+/* .linkTel {
   color: var(--black);
-}
+} */
+
 .iconsBlock {
   display: flex;
   gap: 20px;
@@ -67,8 +68,11 @@
     pointer-events: none;
     border-radius: 12px
 }
-.mapBlock > div.dark{
+.mapBlock > div.night_mode{
     display: block;
+}
+.infoBlock > a {
+  color: var(--black);
 }
 
 /* Night_mode */
@@ -82,13 +86,11 @@
 .night_mode.infoBlock{
  background: #383a2c;
 }
-.night_mode.description, .link, .linkTel, .iconsBlock{
+.night_mode.description, .night_mode.linkTel {
   color: var(--txt-white);
 }
-.night_mode.icon{
-  fill: var(--white);
-  stroke: white;
-}
+
+/*Media Query*/
 
 @media (max-width: 999px) {
   .infoContainer {
