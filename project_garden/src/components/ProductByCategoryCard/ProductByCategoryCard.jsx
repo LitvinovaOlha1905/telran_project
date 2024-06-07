@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./ProductByCategoryCard.module.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as IconBag } from "../../images/Icons/bag.svg";
@@ -7,10 +7,12 @@ import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { addProduct, countTotalSum } from '../../store/slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Context } from "../../context";
 
 
 export default function ProductByCategoryCard({ id, image, title, price, discont_price }) {
    
+  const { nightMode } = useContext(Context);
 
   const [heartActive, setHeartActive] = useState(false);
   const [bagActive, setBagActive] = useState(false);
@@ -38,10 +40,22 @@ export default function ProductByCategoryCard({ id, image, title, price, discont
       <Link to={`/product/${id}`}>
         <img src={`http://localhost:3333${image}`} alt={title} />
 
-        <div className={styles.descriptionBlock}>
-          <p>{title}</p>
+        <div
+          className={`${styles.descriptionBlock} ${
+            nightMode ? styles.night_mode : ""
+          }`}
+        >
+          <p
+            className={`${styles.title} ${
+              nightMode ? styles.night_mode : ""
+            }`}
+          >
+            {title}
+          </p>
           <div className={styles.priceBlock}>
-            <p>
+            <p className={`${styles.price} ${
+              nightMode ? styles.night_mode : ""
+            }`}>
               {"\u0024"}
               {price}
             </p>

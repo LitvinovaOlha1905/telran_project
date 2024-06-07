@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ProductByCategoryCard from '../ProductByCategoryCard/ProductByCategoryCard';
 import { fetchProductsByCategory } from '../../store/slices/dataSlice';
@@ -7,9 +7,12 @@ import styles from './ProductsByCategoryContainer.module.css'
 import FormSortPrice from '../FormSort/FormSortPrice/FormSortPrice';
 import FormDiscountItems from '../FormSort/FormDiscountItems/FormDiscountItems';
 import FormSelect from '../FormSort/FormSelect/FormSelect';
+import { Context } from '../../context';
 
 
 export default function ProductsByCategoryContainer() { 
+
+   const { nightMode } = useContext(Context);
 
     const { categoryId } = useParams();
 
@@ -24,14 +27,13 @@ export default function ProductsByCategoryContainer() {
       dispatch(fetchProductsByCategory(categoryId));
     }, [dispatch, categoryId]);
   
-  console.log(categoryId);
-  console.log(products);
-  console.log(currentCategory);
-
+  
   return (
     <div>
       {currentCategory && (
-        <h1 className={styles.title}>{currentCategory.title}</h1>
+        <h1 className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}>
+          {currentCategory.title}
+        </h1>
       )}
       <div className={styles.sortBlock}>
         {/* Price */}
