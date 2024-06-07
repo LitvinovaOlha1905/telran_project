@@ -5,23 +5,18 @@ import styles from './GetDiscount.module.css';
 
 const GetDiscount = () => {
   return (
-    <div className="container">
     <section className={styles.wrapper}>
-      <div className={styles.containerForm}>
+      <div className="container">
+        <div className={styles.containerForm}>
+          <h2 className={styles.title}>5% off on the first order</h2>
 
-        <div className={styles.container}>
-          <h2 className={styles.title}>
-            5% off on the first order
-          </h2>
           <article className={styles.container_form}>
-            
-            <DiscountForm/>
+            <DiscountForm />
             <img className={styles.image} src={image} alt="Image" />
           </article>
         </div>
       </div>
     </section>
-    </div>
   );
 };
 

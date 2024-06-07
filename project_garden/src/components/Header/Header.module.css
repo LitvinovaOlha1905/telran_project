@@ -94,7 +94,7 @@
 /* Media Query для экранов шириной 480px и меньше */
 
 /* для того, чтобы появляся бургер */
-@media (min-width: 480px){
+@media (max-width: 480px){
    .burger{
       display: flex;
     }
