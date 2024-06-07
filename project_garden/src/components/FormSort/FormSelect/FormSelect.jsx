@@ -7,6 +7,8 @@ import { Context } from "../../../context";
 
 export default function FormSelect() {
 
+	const { nightMode } = useContext(Context);
+
 	const [selectedOption, setSelectedOption] = useState("default");
 
 	const dispatch = useDispatch();
@@ -18,16 +20,17 @@ export default function FormSelect() {
 	};
 
 	return (
-		<div>
-			<form className={styles.formSortBlock}>
-				<label className={styles.sortLabel} htmlFor='sortSelect'>
-					<h3>Sorted</h3>
-					<CustomSelect
-						selected={selectedOption}
-						onChange={sort}
-					/>
-				</label>
-			</form>
-		</div>
+		<form className={styles.formSortBlock}>
+			<label className={styles.sortLabel} htmlFor='sortSelect'>
+				<h3
+					className={`${styles.sortTitle} ${
+						nightMode ? styles.night_mode : ""
+					}`}
+				>
+					Sorted
+				</h3>
+				<CustomSelect selected={selectedOption} onChange={sort} />
+			</label>
+		</form>
 	);
 }
