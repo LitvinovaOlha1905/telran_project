@@ -190,10 +190,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .imgBlock {
-    grid-area: image;
-  }
-
   .imgBlock img {
     height: 179px;
   }
@@ -242,7 +238,6 @@
   }
 
   .imgBlock {
-    grid-area: image;
     grid-row: 1 / span 2;
     position: static;
   }

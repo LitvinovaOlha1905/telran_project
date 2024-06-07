@@ -9,13 +9,15 @@
   display: block;
   width: 100%;
   height: 220px;
-  border-radius: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   border-bottom: 1px solid var(--grey-divider);
 }
 
 .descriptionBlock {
-  margin-top: 20px;
-  padding: 0px 20px 20px;
+  padding: 20px 20px 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /* Description Block */

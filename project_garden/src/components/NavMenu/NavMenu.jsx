@@ -4,11 +4,13 @@ import styles from "./NavMenu.module.css";
 import { Context } from "../../context";
 
 export default function NavMenu() {
-  const { setModalDayActive } = useContext(Context);
+  
+  const { setModalDayActive } = useContext(Context); 
+
   const { nightMode } = useContext(Context);
   return (
     <nav>
-      <div className={styles.navBurger}>
+      <div className={styles.nav_menu_wrapper}>
         <Link>
           <div
             className={styles.oneDaySaleButton}

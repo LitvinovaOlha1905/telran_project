@@ -10,9 +10,7 @@
   line-height: 130%;
   color: var(--black);
 }
-/* .navBurger {
 
-} */
 .oneDaySaleButton {
   background-color: #92a134; /* Красный фон для кнопки */
   color: #ffffff; /* Белый цвет текста */
@@ -34,7 +32,7 @@
 /* Night_mode */
 
 .night_mode.nav_menu > a {
- color: var(--txt-white);
+  color: var(--txt-white);
 }
 
 /* @media (max-width: 1440px) {
@@ -52,5 +50,10 @@
 @media (max-width: 769px) {
   .nav_menu {
     font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .nav_menu_wrapper {
+    display: none;
   }
 }

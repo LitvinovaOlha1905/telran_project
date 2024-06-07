@@ -18,7 +18,7 @@ export default function ProductByCategoryCard({
 	const [heartActive, setHeartActive] = useState(false);
 	const [bagActive, setBagActive] = useState(false);
 
-	const { productsInCart } = useSelector(store => store.cart);
+	// const { productsInCart } = useSelector(store => store.cart);
 
 	const dispatch = useDispatch();
 	const product = {
@@ -30,10 +30,10 @@ export default function ProductByCategoryCard({
 	};
 	const handleAddToCart = event => {
 		// event.preventDefault();
-		console.log(product);
+		// console.log(product);
 		dispatch(addProduct(product));
 		dispatch(countTotalSum());
-		console.log(productsInCart);
+		// console.log(productsInCart);
 	};
 
 	return (
