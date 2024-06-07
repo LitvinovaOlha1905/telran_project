@@ -4,6 +4,8 @@ import styles from "./Header.module.css";
 import iconTree from "../../images/Header/tree.svg";
 import { ReactComponent as IconHeart } from "../../images/Icons/heartHeder.svg";
 import { ReactComponent as IconBag } from "../../images/Icons/bagHeder.svg";
+import { ReactComponent as IconHeartNight } from "../../images/Icons/heartNight.svg";
+import { ReactComponent as IconBagNight } from "../../images/Icons/bagNight.svg";
 import { ReactComponent as ModeNight } from "../../images/Icons/modeNight.svg";
 import { ReactComponent as ModeDay } from "../../images/Icons/modeDay.svg";
 import { Link } from "react-router-dom";
@@ -15,7 +17,7 @@ import ModalNavMenu from "../ModalNavMenu/ModalNavMenu";
 
 const Header = () => {
 
-  const [navMenuActive, setNavMenuActive] = useState(true);
+  const [navMenuActive, setNavMenuActive] = useState(false);
   const dispatch = useDispatch();
   const { nightMode } = useContext(Context);
   const { theme } = useSelector((state) => state.theme);
@@ -37,15 +39,28 @@ const Header = () => {
               <ModeDay onClick={() => dispatch(toggleTheme())} />
             )}
           </div>
-          <div>{navMenuActive ? <ModalNavMenu /> : <NavMenu />}</div>
+          <div>
+            {navMenuActive ? (
+              <ModalNavMenu
+                navMenuActive={navMenuActive}
+                setNavMenuActive={setNavMenuActive}
+              />
+            ) : (
+              <NavMenu />
+            )}
+          </div>
 
           <div className={styles.cartBlock}>
             <Link to="/favorites_products" className={styles.iconLink}>
-              <IconHeart
-                className={`${styles.icon} ${
-                  nightMode ? styles.night_mode : ""
-                }`}
-              />
+              {nightMode ? (
+                <IconHeartNight />
+              ) : (
+                <IconHeart
+                  className={`${styles.icon} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                />
+              )}
 
               {/* {likedProducts.length > 0 && (
                 <span className={styles.badgeCount}>{likedProducts.length}</span>
@@ -53,11 +68,15 @@ const Header = () => {
             </Link>
 
             <Link to="/cart" className={styles.iconLink}>
-              <IconBag
-                className={`${styles.icon} ${
-                  nightMode ? styles.night_mode : ""
-                }`}
-              />
+              {nightMode ? (
+                <IconBagNight />
+              ) : (
+                <IconBag
+                  className={`${styles.icon} ${
+                    nightMode ? styles.night_mode : ""
+                  }`}
+                />
+              )}
 
               {productsInCart.length > 0 && (
                 <span className={styles.badgeCount}>
@@ -67,7 +86,12 @@ const Header = () => {
             </Link>
           </div>
 
-          <RxHamburgerMenu className={styles.burger} />
+          <RxHamburgerMenu
+            onClick={() => setNavMenuActive(true)}
+            className={`${styles.burger} ${
+              navMenuActive ? styles.nav_menu_active : ""
+            }`}
+          />
         </div>
       </div>
     </header>

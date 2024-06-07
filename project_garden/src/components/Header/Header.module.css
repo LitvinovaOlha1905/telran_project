@@ -3,11 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 28px;
-}
-
-.switch {
-  cursor: pointer;
-  /* existing styles */
+  border-bottom: 1px solid var(--grey-divider);
 }
 
 .cartBlock {
@@ -38,7 +34,6 @@
   color: var(--white);
 }
 
-
 .logoBlock {
   display: flex;
   gap: 20px;
@@ -59,20 +54,12 @@
 .burger{
   width: 44px;
   height: 44px;
-}
-
-/* .burger {
   display: none;
-  flex-direction: column;
   cursor: pointer;
 }
-
-.burger .line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-} */
+.nav_menu_active.burger{
+  display: flex;
+}
 
 /* Night_mode */
 
@@ -155,4 +142,11 @@
     color: #fff;
     text-decoration: none;
   }
+}
+
+/* для того, чтобы появляся бургер */
+@media (max-width: 480px){
+   .burger{
+      display: flex;
+    }
 }
