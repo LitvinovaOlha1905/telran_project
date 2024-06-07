@@ -1,54 +1,30 @@
 
-  
- 
-  
-  .containerForm{
-    display: flex;
-    flex-direction: column;
-    padding: 30px 32px 30px 0;
-    align-items: center;
-    gap: 24px;
-    background: linear-gradient(37deg, #87933d 0%, #55610b 100%);
-    overflow: hidden;
-  
- 
-  }
-  
-  .image {
-    
-    display: block;
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 32px 30px 0;
+  align-items: center;
+  background: linear-gradient(37deg, #87933d 0%, #55610b 100%);
+  border-radius: 12px;
+}
 
-    width: 100%;
-    position: relative;
-    bottom: -30px;
-    
-  }
-  
-  .title {
-    color: white;
-    font-size: 64px;
-    text-align: center;
-   gap: 24px;
-  }
-  
-  .container_form {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-  }
+.image {
+  display: block;
+  width: 100%;
+  position: relative;
+  bottom: -30px;
+}
 
+.title {
+  color: white;
+  font-size: 64px;
+  text-align: center;
+}
 
-  
-  
+.container_form {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
 
-  
-    .container_form:last-child {
-      order: 1;
-    }
-  
-    .image {
-      order: 2;
-    }
-  

@@ -1,19 +1,17 @@
 .form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
   gap: 16px;
 }
 
 .input {
-  padding: 10px 32px 10px 32px;
+  padding: 16px 32px;
   border-radius: 10px;
   border: 1px solid white;
   background-color: transparent;
   font-size: 20px;
   color: #fff;
-  margin-bottom: 16px; 
+  width: 516px;
 }
 
 .input::placeholder {
@@ -29,8 +27,7 @@
 
 .container_error {
   width: 100%;
- 
-}
+ }
 
 .error {
   color: #ff4d4f;
@@ -39,13 +36,11 @@
 }
 
 .btn {
-  width: 100%;
-  height: 58px;
-  padding: 16px 32px 16px 32px;
+  padding: 16px 32px;
   border-radius: 10px;
   background-color: #fffff1;
   color: #424436;
-  margin-bottom: 32px;
+  margin-top: 16px;
   border-color: transparent;
   font-size: 20px;
   font-weight: 600;
