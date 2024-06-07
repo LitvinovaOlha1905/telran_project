@@ -10,14 +10,14 @@
   grid-template-areas:
     "title"
     "image"
-    "info";
+    "info"
+    "description";
   gap: 20px;
 }
 
 .imgBlock {
   position: relative;
   grid-area: image;
-  justify-content: center;
   cursor: pointer;
 }
 
@@ -32,6 +32,10 @@
 
 .infoBlock {
   grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .titleBlock {
@@ -64,7 +68,6 @@
   justify-content: center;
   align-items: baseline;
   gap: 12px;
-  margin-bottom: 12px;
 }
 
 .price {
@@ -83,6 +86,7 @@
 }
 
 .discount {
+  display: block;
   position: absolute;
   top: 16px;
   right: 16px;
@@ -96,17 +100,38 @@
   background: var(--sale);
 }
 
+/* 768px 1000px 1440px */
+.discountPosition {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  color: var(--txt-white);
+  background: var(--sale);
+}
+
+.countFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .cartBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 12px;
 }
 
 .countBlock {
   display: flex;
   align-items: center;
-  margin-right: 20px;
 }
 
 .countBlock a {
@@ -121,6 +146,7 @@
   display: block;
   width: 47px;
   fill: var(--txt-white);
+  stroke: var(--grey-divider);
 }
 
 .count {
@@ -200,7 +226,6 @@
   }
 
   .infoBlock {
-    grid-area: info;
     grid-column: 2;
     grid-row: 2;
   }
@@ -217,9 +242,13 @@
     font-size: 28px;
   }
 
+  .countFlex {
+    align-items: start;
+    gap: 20px;
+  }
+
   .cartBlock {
     align-items: start;
-    margin-bottom: 20px;
   }
 
   .descriptionBlock {
@@ -228,13 +257,9 @@
 }
 
 /* 768px */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 999px) {
   .wrapper {
     margin: 32px 0 52px;
-  }
-
-  .singleProductCard {
-    grid-template-columns: 1fr 1fr;
   }
 
   .imgBlock {
@@ -255,6 +280,19 @@
     grid-area: info;
     grid-column: 2;
     grid-row: 2;
+    position: relative;
+    gap: 20px;
+  }
+
+  .discountPosition {
+    display: block;
+    top: 0;
+    right: 45px;
+    font-size: 20px;
+  }
+
+  .discount {
+    display: none;
   }
 
   .iconHeart {
@@ -263,7 +301,6 @@
 
   .priceBlock {
     justify-content: start;
-    margin-bottom: 20px;
   }
 
   .price {
@@ -276,29 +313,19 @@
 
   .cartBlock {
     align-items: start;
-    margin-bottom: 20px;
-  }
-
-  .discount {
-    top: 90px;
-    right: 53px;
   }
 
   .iconCount {
     width: 58px;
   }
 
-  .count{
-    padding: 16px 40px;
+  .count {
+    padding: 16px 38px;
   }
 
   .cartBtn {
     padding: 16px 32px;
     font-size: 20px;
-  }
-
-  .descriptionBlock {
-    grid-column: 1 / -1;
   }
 
   .descriptionTitle {
@@ -312,13 +339,87 @@
 
 /* 1000px */
 @media screen and (min-width: 1000px) {
-  .container {
-    max-width: 960px;
+
+  .singleProductCard {
+    grid-template-areas:
+      "image title"
+      "image info"
+      "image description";
+    gap: 32px 24px;
+  }
+
+  .imgBlock {
+    position: static;
+    grid-area: image;
+    grid-column: 1 / 2;
+  }
+
+  .imgBlock img {
+    height: 572px;
   }
 
   .infoBlock {
-    padding: 20px 40px;
+    position: relative;
   }
+
+  .discountPosition {
+    display: block;
+    top: 0;
+    right: 123px;
+    font-size: 20px;
+  }
+
+  .discount {
+    display: none;
+  }
+
+  .titleBlock {
+    grid-area: title;
+    align-self: start;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .priceBlock {
+    margin-bottom: 32px;
+  }
+
+  .price {
+    font-size: 64px;
+  }
+
+  .priceBlock span {
+    font-size: 40px;
+  }
+
+  .countFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .iconCount {
+    width: 59px;
+  }
+
+  .count {
+    padding: 16px 26px;
+  }
+
+  .cartBtn {
+    padding: 16px 32px;
+    font-size: 20px;
+  }
+
+  .descriptionBlock {
+    grid-area: description;
+    grid-column: 2 / 2;
+  }
+
+
 }
 
 /* 1440px */

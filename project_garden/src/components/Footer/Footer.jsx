@@ -48,27 +48,11 @@ export default function Footer() {
 
               <div className={styles.iconsBlock}>
                 <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
-                  {nightMode ? (
-                    <IconInstaNight />
-                  ) : (
-                    <IconInsta
-                      className={`${styles.icon} ${
-                        nightMode ? styles.night_mode : ""
-                      }`}
-                    />
-                  )}
+                  {nightMode ? <IconInstaNight /> : <IconInsta />}
                 </a>
 
                 <a href="https://www.instagram.com/startainstitute?igsh=MWR1azFwM3dhaHcxeQ==">
-                  {nightMode ? (
-                    <IconWANight />
-                  ) : (
-                    <IconWA
-                      className={`${styles.icon} ${
-                        nightMode ? styles.night_mode : ""
-                      }`}
-                    />
-                  )}
+                  {nightMode ? <IconWANight /> : <IconWA />}
                 </a>
               </div>
             </div>
@@ -106,7 +90,7 @@ export default function Footer() {
 
           <div className={styles.mapBlock}>
             <Map />
-            <div className={nightMode ? styles.dark : ""}></div>
+            <div className={nightMode ? styles.night_mode : ""}></div>
           </div>
         </div>
       </div>

@@ -102,7 +102,6 @@ export default function SingleProductPage() {
 							}}
 						>
 							<img src={`http://localhost:3333${image}`} alt={title} />
-
 							{discont_price && (
 								<p
 									className={`${styles.discount} ${
@@ -133,29 +132,42 @@ export default function SingleProductPage() {
 										{price.toFixed()}
 									</span>
 								) : null}
-							</div>
 
-							<div className={styles.cartBlock}>
-								<div className={styles.countBlock}>
-									<Link onClick={handleDecrement}>
-										<IconMinus className={styles.iconCount} />
-									</Link>
+								{discont_price && (
 									<p
-										className={`${styles.count} ${
+										className={`${styles.discountPosition} ${
 											nightMode ? styles.night_mode : ""
-										}`}
+										}` }
 									>
-										{quantity}
-									</p>{" "}
-									<Link onClick={handleIncrement}>
-										<IconPlus className={styles.iconCount} />
-									</Link>
-								</div>
+										{"\u002d"}
+										{(((price - discont_price) / price) * 100).toFixed()}%
+									</p>
+								)}
 							</div>
 
-							<button onClick={handleAddToCart} className={styles.cartBtn}>
-								Add to cart
-							</button>
+							<div className={styles.countFlex}>
+								<div className={styles.cartBlock}>
+									<div className={styles.countBlock}>
+										<Link onClick={handleDecrement}>
+											<IconMinus className={styles.iconCount} />
+										</Link>
+										<p
+											className={`${styles.count} ${
+												nightMode ? styles.night_mode : ""
+											}`}
+										>
+											{quantity}
+										</p>{" "}
+										<Link onClick={handleIncrement}>
+											<IconPlus className={styles.iconCount} />
+										</Link>
+									</div>
+								</div>
+
+								<button onClick={handleAddToCart} className={styles.cartBtn}>
+									Add to cart
+								</button>
+							</div>
 						</div>
 
 						<div
