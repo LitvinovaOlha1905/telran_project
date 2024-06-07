@@ -6,9 +6,11 @@ import FormSortPrice from "../FormSort/FormSortPrice/FormSortPrice";
 import FormSelect from "../FormSort/FormSelect/FormSelect";
 
 export default function FavoritesProductContainer() {
-	const favorites = useSelector(store => store.favorites.favorites);
+	const favorites = useSelector(store => store.favorites.favorites) || [];
 
-	const products = useSelector(state => state.products);
+	const truncateTitle = title => {
+		return title.length > 20 ? `${title.substring(0, 17)}...` : title;
+	};
 
 	return (
 		<div>
@@ -19,7 +21,11 @@ export default function FavoritesProductContainer() {
 			<div className={styles.cardBlock}>
 				{favorites.length > 0 ? (
 					favorites.map(product => (
-						<ProductCard key={product.id} {...product} />
+						<ProductCard
+							key={product.id}
+							{...product}
+							title={truncateTitle(product.title)}
+						/>
 					))
 				) : (
 					<p className={styles.description}>No favorite products found.</p>

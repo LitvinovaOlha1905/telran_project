@@ -5,18 +5,6 @@
       margin-top: 24px;
    }
 
-   /* .sortBlock {
-   display: flex;
-   align-items: center;
-   gap: 40px;
-} */
-
-   .formSortBlock {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-   }
-
    .sortBlock {
       display: flex;
       flex-direction: column;

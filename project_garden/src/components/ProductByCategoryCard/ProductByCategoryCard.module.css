@@ -1,6 +1,5 @@
 .cardBlock {
   position: relative;
-  max-width: 100%;
   border-radius: 12px;
   border: 1px solid var(--grey-divider);
   background: var(--txt-white);
@@ -9,30 +8,33 @@
 .cardBlock img {
   display: block;
   width: 100%;
-  height: 284px;
+  height: 220px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   border-bottom: 1px solid var(--grey-divider);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px; 
 }
 
 .descriptionBlock {
-  padding: 20px 32px 32px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px; 
+  margin-top: 20px;
+  padding: 0px 32px 32px;
 }
 
+/* Description Block */
 .descriptionBlock p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--black);
+
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 130%;
-  color: var(--black);
 }
 
 .priceBlock {
-  margin-top: 16px;
+  margin-top: 12px;
   display: flex;
   align-items: baseline;
   gap: 16px;
@@ -40,62 +42,56 @@
 
 .priceBlock p {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 36px;
   line-height: 110%;
   color: var(--black);
 }
 
 .priceBlock span {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 130%;
   text-decoration: line-through;
   color: var(--grey);
 }
+
+/* Icons Block */
 .cartBlock {
-   position: absolute;
-   top: 18px;
-   right: 18px;
-   display: flex;
-   flex-direction: column;
-   gap: 18px;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .iconHeart {
-   display: block;
-   stroke: var(--black);
+  display: block;
+  stroke: var(--black);
 }
 
 .icon {
-   display: block;
-   width: 48px;
-   fill: var(--txt-white);
+  display: block;
+  width: 40px;
+  fill: var(--txt-white);
 }
 
 .icon:hover {
-   fill: var(--black);
+  fill: var(--black);
 }
+
 /* Sale Block */
 
 .discount {
-   position: absolute;
-   top: 16px;
-   left: 22px;
-   padding: 4px 8px;
-   font-weight: 600;
-   font-size: 20px;
-   line-height: 130%;
-   letter-spacing: 0.03em;
-   border-radius: 6px;
-   color: var(--txt-white);
-   background: var(--sale);
-}
-
-/* Night_mode */
-
-.night_mode.descriptionBlock{
-  background: var(--black);;
-}
-.night_mode.title, .night_mode.price{
-  color: var(--txt-white);;
+  position: absolute;
+  top: 16px;
+  left: 22px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  color: var(--txt-white);
+  background: var(--sale);
 }
