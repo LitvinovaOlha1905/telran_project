@@ -11,6 +11,7 @@ export default function FavoritesProductContainer() {
 	const truncateTitle = title => {
 		return title.length > 20 ? `${title.substring(0, 17)}...` : title;
 	};
+	console.log(favorites);
 
 	return (
 		<div>

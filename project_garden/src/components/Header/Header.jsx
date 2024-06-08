@@ -20,9 +20,11 @@ const Header = () => {
   const [navMenuActive, setNavMenuActive] = useState(false);
   const dispatch = useDispatch();
   const { nightMode } = useContext(Context);
-  const { theme } = useSelector((state) => state.theme);
+
   const { productsInCart = [] } = useSelector((store) => store.cart);
-  const { likedProducts = [] } = useSelector((store) => store.favorites);
+  const likedProducts = useSelector((store) => store.favorites.favorites) || [];
+
+
 
   return (
     <header className={styles.wrapper}>
