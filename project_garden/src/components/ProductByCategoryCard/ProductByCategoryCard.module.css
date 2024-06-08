@@ -15,8 +15,7 @@
 }
 
 .descriptionBlock {
-  margin-top: 20px;
-  padding: 0px 32px 32px;
+  padding: 20px;
 }
 
 /* Description Block */
@@ -79,7 +78,6 @@
 }
 
 /* Sale Block */
-
 .discount {
   position: absolute;
   top: 16px;
@@ -94,10 +92,25 @@
   background: var(--sale);
 }
 
+/* Nigth mode */
+
+.night_mode.descriptionBlock {
+  background: var(--black);
+}
+
+.night_mode.title,
+.night_mode.price {
+  color: var(--txt-white);
+}
+
+.night_mode.cardBlock {
+  background: var(--black);
+}
+
 /* 480px */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .cardBlock {
-    min-width: 210px;
+    width: 210px;
   }
 
   .descriptionBlock {
@@ -132,7 +145,7 @@
 /* 768px */
 @media screen and (min-width: 768px) and (max-width: 999px) {
   .cardBlock {
-    min-width: 354px;
+    width: 354px;
   }
 
   .cardBlock img {
@@ -143,7 +156,7 @@
 /* 1000px */
 @media screen and (min-width: 1000px) and (max-width: 1439px) {
   .cardBlock {
-    min-width: 225px;
+   width: 225px;
   }
 
   .cardBlock img {
