@@ -12,8 +12,6 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border-bottom: 1px solid var(--grey-divider);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px; 
 }
 
 .descriptionBlock {
@@ -44,7 +42,6 @@
 .priceBlock p {
   font-weight: 600;
   font-size: 36px;
-  line-height: 110%;
   color: var(--black);
 }
 
@@ -95,4 +92,84 @@
   border-radius: 6px;
   color: var(--txt-white);
   background: var(--sale);
+}
+/* Nigth mode */
+
+.night_mode.descriptionBlock {
+  background: var(--black);
+}
+.night_mode.title, .night_mode.price {
+  color: var(--txt-white);
+}
+.night_mode.cardBlock {
+  background: var(--black);
+}
+
+
+/* 480px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .cardBlock {
+    min-width: 210px;
+  }
+
+  .descriptionBlock {
+    padding: 0 20px 20px;
+    height: 118px;
+  }
+}
+
+/* 768px 1000px 1440px */
+@media screen and (min-width: 768px) {
+  .descriptionBlock p {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 40px;
+  }
+
+  .priceBlock span {
+    font-size: 20px;
+  }
+
+  .icon {
+    width: 48px;
+  }
+
+  .discount {
+    font-size: 20px;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .cardBlock {
+    min-width: 354px;
+  }
+
+  .cardBlock img {
+    height: 350px;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) and (max-width: 1439px) {
+  .cardBlock {
+    min-width: 225px;
+  }
+
+  .cardBlock img {
+    height: 250px;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .cardBlock img {
+    height: 284px;
+  }
+
+  .priceBlock {
+    margin-top: 16px;
+  }
 }
