@@ -34,12 +34,10 @@ const favoritesSlice = createSlice({
 		},
 		filterFavorits: (state, action) => {
 			const { min_price, max_price } = action.payload;
-			state.favorites = state.favorites.map(el => ({
-				...el,
-				visible:
-					(!min_price || parseFloat(el.price) >= min_price) &&
-					(!max_price || parseFloat(el.price) <= max_price),
-			}));
+			state.favorites = state.favorites.filter(
+				el =>
+					parseFloat(el.price) >= min_price && parseFloat(el.price) <= max_price
+			);
 		},
 		setFilteredFavorits: (state, action) => {
 			state.favorites = action.payload.map(el => ({ ...el, visible: true }));
