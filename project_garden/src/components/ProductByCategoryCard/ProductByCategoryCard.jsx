@@ -16,12 +16,12 @@ export default function ProductByCategoryCard({
 	price,
 	discont_price,
 }) {
-   	const [heartActive, setHeartActive] = useState(false);
+	const [heartActive, setHeartActive] = useState(false);
 	const [bagActive, setBagActive] = useState(false);
 
 	// const { productsInCart } = useSelector(store => store.cart);
-   
-  const { nightMode } = useContext(Context);
+
+	const { nightMode } = useContext(Context);
 
 	const dispatch = useDispatch();
 	const product = {
@@ -44,16 +44,22 @@ export default function ProductByCategoryCard({
 			<Link to={`/product/${id}`}>
 				<img src={`http://localhost:3333${image}`} alt={title} />
 
-				<div className={`${styles.descriptionBlock} ${
-            nightMode ? styles.night_mode : ""
-          }`}>
-					<p className={`${styles.title} ${
-              nightMode ? styles.night_mode : ""
-            }`}>{title}</p>
+				<div
+					className={`${styles.descriptionBlock} ${
+						nightMode ? styles.night_mode : ""
+					}`}
+				>
+					<p
+						className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}
+					>
+						{title}
+					</p>
 					<div className={styles.priceBlock}>
-						<p className={`${styles.price} ${
-              nightMode ? styles.night_mode : ""
-            }`}>
+						<p
+							className={`${styles.price} ${
+								nightMode ? styles.night_mode : ""
+							}`}
+						>
 							{"\u0024"}
 							{discont_price === null
 								? price.toFixed()
@@ -70,7 +76,7 @@ export default function ProductByCategoryCard({
 
 				{/* Icons Block */}
 				<div className={styles.cartBlock}>
-					<Link onClick={() => setHeartActive(!heartActive)}>
+					<div onClick={() => setHeartActive(!heartActive)}>
 						{heartActive ? (
 							<IconHertActive className={styles.iconHeart} size='48' />
 						) : (
@@ -79,8 +85,8 @@ export default function ProductByCategoryCard({
 								size='48'
 							/>
 						)}
-					</Link>
-					<Link
+					</div>
+					<div
 						onClick={event => {
 							event.preventDefault();
 							setBagActive(!bagActive);
@@ -92,7 +98,7 @@ export default function ProductByCategoryCard({
 						) : (
 							<IconBag className={styles.icon} size='48' />
 						)}
-					</Link>
+					</div>
 				</div>
 
 				{/* Sale Block */}
