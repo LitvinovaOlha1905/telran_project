@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import classes from "./CartPage.module.css";
-// import { ROUTES } from "./../../utils/routes";
 import { useSelector, useDispatch } from "react-redux";
 import ProductInCart from "../../components/ProductInCart/ProductInCart";
 import {
@@ -10,13 +9,11 @@ import {
   decreaseProduct,
   deleteProduct,
 } from "../../store/slices/cartSlice";
-import { Link } from "react-router-dom";
 import ProductAndCartTitle from "../../components/ProductAndCartTitle/ProductAndCartTitle";
 import TitleH2 from "../../components/Cart/TitleH2/TitleH2";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import whiteCross from "../../images/Icons/whiteCross.svg";
 import CartForm from "../../components/CartForm/CartForm";
-// import MainBannerButton from "./../../UI/MainBannerButton";
 import { useContext } from "react";
 import { Context } from "../../context";
 import TitleBlockWithLine from '../../components/Cart/TitleBlockWithLine/TitleBlockWithLine'

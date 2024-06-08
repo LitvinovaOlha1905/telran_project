@@ -68,7 +68,7 @@ const Header = () => {
 								)}
 
 								{likedProducts.length > 0 && (
-									<span className={`${styles.badgeCount} ${styles.badgeCountLike}`}>
+									<span className={styles.badgeCount}>
 										{likedProducts.length}
 									</span>
 								)}

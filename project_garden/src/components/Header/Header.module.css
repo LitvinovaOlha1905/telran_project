@@ -33,7 +33,7 @@
 
 .badgeCount {
   position: absolute;
-  top: 4px;
+  top: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,10 +45,6 @@
   font-size: 12px;
   line-height: 90%;
   color: var(--white);
-}
-
-.badgeCountLike {
-  top: 1px;
 }
 
 .cartFlex {
