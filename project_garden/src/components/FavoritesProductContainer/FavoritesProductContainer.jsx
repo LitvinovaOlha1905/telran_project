@@ -1,18 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./FavoritesProductContainer.module.css";
 import FormSortPrice from "../FormSort/FormSortPrice/FormSortPrice";
 import FormSelect from "../FormSort/FormSelect/FormSelect";
-import { filterFavorits, selectFavorits } from "../../store/slices/favoritesSlice";
+import { selectFavorits } from "../../store/slices/favoritesSlice";
 
 export default function FavoritesProductContainer() {
-	const dispatch = useDispatch();
 	const favorites = useSelector(selectFavorits) || [];
-
-	const truncateTitle = title => {
-		return title.length > 20 ? `${title.substring(0, 17)}...` : title;
-	};
 	// console.log(favorites);
 
 	return (
@@ -27,7 +22,7 @@ export default function FavoritesProductContainer() {
 						<ProductCard
 							key={product.id}
 							{...product}
-							title={truncateTitle(product.title)}
+							descriptionClassName={styles.description}
 						/>
 					))
 				) : (

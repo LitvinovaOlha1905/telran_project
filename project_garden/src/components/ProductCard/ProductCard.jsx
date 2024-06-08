@@ -20,6 +20,7 @@ export default function ProductCard({
 	title,
 	price,
 	discont_price,
+	descriptionClassName,
 }) {
 	const { nightMode } = useContext(Context);
 
@@ -77,7 +78,7 @@ export default function ProductCard({
 					}`}
 				>
 					<p
-						className={`${styles.description} ${
+						className={`${styles.description} ${descriptionClassName} ${
 							nightMode ? styles.night_mode : ""
 						}`}
 					>
@@ -120,7 +121,7 @@ export default function ProductCard({
 							{bagActive ? (
 								<IconBagActive className={styles.icon} />
 							) : (
-								<IconBag className={styles.icon}  />
+								<IconBag className={styles.icon} />
 							)}
 						</div>
 					</div>
