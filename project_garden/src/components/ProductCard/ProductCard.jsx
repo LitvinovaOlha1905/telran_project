@@ -107,7 +107,7 @@ export default function ProductCard({
 					</div>
 					{/* Icons Block */}
 					<div className={styles.cartBlock}>
-						<Link onClick={handleAddToFavorites}>
+						<div onClick={handleAddToFavorites}>
 							{heartActive ? (
 								<IconHertActive className={styles.iconHeart} />
 							) : (
@@ -115,14 +115,14 @@ export default function ProductCard({
 									className={[styles.icon, styles.iconHeart].join(" ")}
 								/>
 							)}
-						</Link>
-						<Link onClick={handleAddToCart}>
+						</div>
+						<div onClick={handleAddToCart}>
 							{bagActive ? (
 								<IconBagActive className={styles.icon} />
 							) : (
 								<IconBag className={styles.icon}  />
 							)}
-						</Link>
+						</div>
 					</div>
 					{/* Sale Block */}
 					{discont_price && (

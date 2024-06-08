@@ -2,7 +2,7 @@ import GoodsCategoriesTitle from '../GoodsCategoriesTitle/GoodsCategoriesTitle';
 import classes from './ProductInCart.module.css';
 import close from '../../images/Icons/closeblack.svg';
 import { useSelector } from 'react-redux';
-import AddAndDeleteButtonsBlock from '../AddAndDeleteButtonsBlock/AddAndDeleteButtonsBlock';
+import AddAndDeleteButtonsBlock from '../Cart/AddAndDeleteButtonsBlock/AddAndDeleteButtonsBlock';
 import ProductAndCartTitle from '../ProductAndCartTitle/ProductAndCartTitle';
 import TitleThrough from '../Cart/TitleThrough/TitleThrough';
 import { useContext } from 'react';

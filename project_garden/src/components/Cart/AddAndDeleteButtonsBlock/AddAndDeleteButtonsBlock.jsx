@@ -1,9 +1,9 @@
 
 import classes from './AddAndDeleteButtonsBlock.module.css';
-import minus from '../../images/Icons/minus.svg';
-import plus from '../../images/Icons/plus.svg';
+import minus from '../../../images/Icons/minus.svg'
+import plus from '../../../images/Icons/plus.svg';
 import { useContext } from 'react';
-import { Context } from '../../context';
+import { Context } from '../../../context';
 
 const AddAndDeleteButtonsBlock = ({
   quantity,
