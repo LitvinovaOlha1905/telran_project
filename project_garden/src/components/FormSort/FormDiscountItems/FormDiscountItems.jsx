@@ -9,7 +9,7 @@ import {
   setFilteredProducts,
 } from "../../../store/slices/productsSlice";
 import { Context } from "../../../context";
-import { getCheapProductsData, selectData, setFilteredProductsData } from "../../../store/slices/dataSlice";
+import { getCheapProductsData, setFilteredProductsData } from "../../../store/slices/dataSlice";
 
 export default function FormDiscountItems() {
 
