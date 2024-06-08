@@ -20,10 +20,11 @@ const Header = () => {
   const [navMenuActive, setNavMenuActive] = useState(false);
   const dispatch = useDispatch();
   const { nightMode } = useContext(Context);
-  const { theme } = useSelector((state) => state.theme);
+  // const { theme } = useSelector((state) => state.theme);
   const { productsInCart = [] } = useSelector((store) => store.cart);
-  // const { likedProducts = [] } = useSelector((store) => store.likes);
+  const { likedProducts = [] } = useSelector((store) => store.favorites);
 
+  console.log(likedProducts);
   return (
     <header className={styles.wrapper}>
       <div className="container">
@@ -56,9 +57,9 @@ const Header = () => {
                 <IconHeart className={styles.iconDay} />
               )}
 
-              {/* {likedProducts.length > 0 && (
+              {likedProducts.length > 0 && (
                 <span className={styles.badgeCount}>{likedProducts.length}</span>
-              )} */}
+              )}
             </Link>
 
             <Link to="/cart" className={styles.iconLink}>

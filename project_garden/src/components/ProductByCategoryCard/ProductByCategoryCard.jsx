@@ -16,7 +16,7 @@ export default function ProductByCategoryCard({
 	price,
 	discont_price,
 }) {
-	const [heartActive, setHeartActive] = useState(false);
+   	const [heartActive, setHeartActive] = useState(false);
 	const [bagActive, setBagActive] = useState(false);
 
 	// const { productsInCart } = useSelector(store => store.cart);
