@@ -70,10 +70,7 @@ export default function ProductCard({
 	return (
 		<div className={styles.cardBlock}>
 			<Link to={`/product/${id}`}>
-				<img
-					src={`https://telran-project-backend-49hi.onrender.com${image}`}
-					alt={title}
-				/>
+				<img src={`http://localhost:3333${image}`} alt={title} />
 				{/* Description Block */}
 				<div
 					className={`${styles.descriptionBlock} ${

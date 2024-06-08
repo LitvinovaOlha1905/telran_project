@@ -31,7 +31,7 @@ const ProductInCart = ({
 		>
 			<div
 				className={classes.imgBlock}
-				style={{ backgroundImage: `url(https://telran-project-backend-49hi.onrender.com${image})` }}
+				style={{ backgroundImage: `url(http://localhost:3333${image})` }}
 			></div>
 			<div className={classes.aboutBlock}>
 				<div className={classes.titleAndCloseBlock}>
@@ -66,7 +66,7 @@ const ProductInCart = ({
 							<TitleThrough text={`${"$" + price.toFixed()}`} smallText />
 						)}
 						{discountedPrice && (
-							<TitleThrough text={`${"$" + price.toFixed()}`} smallText />
+							<TitleThrough text={`${"$" + price}`} smallText />
 						)}
 					</div>
 				</div>
