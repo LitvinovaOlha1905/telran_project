@@ -12,8 +12,8 @@ export const fetchProductsByCategory = createAsyncThunk(
   async (categoryId) => {
     try {
       const response = await fetch(
-        `http://localhost:3333/categories/${categoryId}`
-      );
+				`https://telran-project-backend-49hi.onrender.com/categories/${categoryId}`
+			);
       if (!response.ok) {
         throw new Error("Failed to fetch users!");
       }

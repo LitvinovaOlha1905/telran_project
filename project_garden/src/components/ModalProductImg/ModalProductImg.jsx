@@ -17,20 +17,23 @@ export default function ModalProductImg() {
 
     
    return (
-     <div
-       className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
-         modalActive ? styles.active : ""
-       }`}
-       onClick={() => {
-         setModalActive(false);
-       }}
-     >
-       <div
-         className={styles.modal_content}
-         onClick={(event) => event.stopPropagation()}
-       >
-         <img src={`http://localhost:3333${image}`} alt={title} />
-       </div>
-     </div>
-   );
+			<div
+				className={`${styles.modal} ${nightMode ? styles.night_mode : ""} ${
+					modalActive ? styles.active : ""
+				}`}
+				onClick={() => {
+					setModalActive(false);
+				}}
+			>
+				<div
+					className={styles.modal_content}
+					onClick={event => event.stopPropagation()}
+				>
+					<img
+						src={`https://telran-project-backend-49hi.onrender.com${image}`}
+						alt={title}
+					/>
+				</div>
+			</div>
+		);
 }

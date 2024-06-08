@@ -11,7 +11,7 @@ export default function CategoriesCard({ id, image, title, className }) {
 			<Link to={`/category/${id}`}>
 				<img
 					className={styles.image}
-					src={`http://localhost:3333${image}`}
+					src={`https://telran-project-backend-49hi.onrender.com${image}`}
 					alt={title}
 				/>
 				<p className={`${styles.title} ${nightMode ? styles.night_mode : ""}`}>

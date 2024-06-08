@@ -31,7 +31,7 @@ const ProductInCart = ({
 		>
 			<div
 				className={classes.imgBlock}
-				style={{ backgroundImage: `url(http://localhost:3333${image})` }}
+				style={{ backgroundImage: `url(https://telran-project-backend-49hi.onrender.com${image})` }}
 			></div>
 			<div className={classes.aboutBlock}>
 				<div className={classes.titleAndCloseBlock}>
