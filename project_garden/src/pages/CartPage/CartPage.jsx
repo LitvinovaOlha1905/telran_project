@@ -63,12 +63,12 @@ const CartPage = () => {
     dispatch(deleteProduct(product));
     dispatch(countTotalSum());
   };
-  console.log(ProductInCart);
+  // console.log(ProductInCart);
 
   const totalQuantity = productsInCart.reduce((total, product) => {
     return total + product.quantity;
   }, 0);
-  console.log(totalQuantity);
+  // console.log(totalQuantity);
 
   return (
     <div className={theme === "dark" ? classes.dark : ""}>
@@ -94,7 +94,6 @@ const CartPage = () => {
           <TitleBlockWithLine
             text="Shopping cart"
             textSmallBtn="Back to the store"
-            // link={ROUTES.HOME}
           />
 
           {productsInCart.length === 0 ? (
