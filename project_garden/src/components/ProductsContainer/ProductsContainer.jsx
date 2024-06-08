@@ -9,7 +9,6 @@ import { selectProducts } from "../../store/slices/productsSlice";
 
 export default function ProductsContainer() {
 	const products = useSelector(selectProducts);
-
 	// console.log(products);
 
 	return (

@@ -34,7 +34,7 @@ const CartPage = () => {
 
   const { theme } = useSelector((state) => state.theme);
   const { productsInCart } = useSelector((store) => store.cart);
-console.log(productsInCart);
+// console.log(productsInCart);
   const { totalSum } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   // get dayDiscounted price
@@ -43,7 +43,7 @@ console.log(productsInCart);
     const isProductOfDay = productsInCart.find((product) => product.id === 14);
     discountedPrice = isProductOfDay ? isProductOfDay.price / 2 : null;
   }
-  console.log(discountedPrice);
+  // console.log(discountedPrice);
 
   const handleAddToCart = (product) => {
     dispatch(addProduct(product));
@@ -102,9 +102,6 @@ console.log(productsInCart);
                   Looks like you have no items in your basket currently.
                 </p>
               </div>
-              {/* <Link to={`${ROUTES.ALLPRODUCTS}?category=1`}>
-                <MainBannerButton text="Continue Shopping" />
-              </Link> */}
             </>
           ) : (
             <div className={classes.prodAndOrdersBlock}>
@@ -139,9 +136,6 @@ console.log(productsInCart);
             </div>
           )}
           <div className={classes.bottomSmallBtn}>
-            {/* <Link to={`${ROUTES.ALLPRODUCTS}?category=1`}>
-              <MainBannerButton textSmallBtn="Back to the store" />
-            </Link> */}
           </div>
         </div>
       </div>

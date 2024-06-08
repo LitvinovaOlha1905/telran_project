@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import CustomSelect from "../CustomComponents/CustomSelect/CustomSelect";
 import { sortProducts } from "../../../store/slices/productsSlice";
 import { Context } from "../../../context";
+import { sortFavorits } from "../../../store/slices/favoritesSlice";
+import { sortProductsData } from "../../../store/slices/dataSlice";
 
 export default function FormSelect() {
 
@@ -16,6 +18,8 @@ export default function FormSelect() {
 	const sort = event => {
 		const selectedValue = event.target.value;
 		dispatch(sortProducts(selectedValue));
+		dispatch(sortFavorits(selectedValue));
+		dispatch(sortProductsData(selectedValue));
 		setSelectedOption(selectedValue);
 	};
 

@@ -23,22 +23,6 @@ export const fetchAllProducts = createAsyncThunk(
   }
 );
 
-export const fetchProduct = createAsyncThunk(
-  "products/fetchProduct",
-  async (productId) => {
-    try {
-      const res = await fetch(`http://localhost:3333/products/${productId}`);
-      if (!res.ok) {
-        throw new Error("Failed to fetch product!");
-      }
-      const json = await res.json();
-      return json;
-    } catch (err) {
-      console.log(err.message);
-    }
-  }
-);
-
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -92,17 +76,6 @@ const productsSlice = createSlice({
       .addCase(fetchAllProducts.rejected, (state) => {
         state.status = "error";
       })
-      .addCase(fetchProduct.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(fetchProduct.fulfilled, (state, action) => {
-        state.currentProduct = action.payload;
-        state.products = action.payload;
-        state.status = "ready";
-      })
-      .addCase(fetchProduct.rejected, (state) => {
-        state.status = "error";
-      });
   },
 });
 
