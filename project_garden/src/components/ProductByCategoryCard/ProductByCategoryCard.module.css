@@ -13,7 +13,7 @@
   border-top-right-radius: 12px;
   border-bottom: 1px solid var(--grey-divider);
   border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-right-radius: 12px; 
 }
 
 .descriptionBlock {
@@ -95,12 +95,4 @@
   border-radius: 6px;
   color: var(--txt-white);
   background: var(--sale);
-}
-/* Night_mode */
-
-.night_mode.descriptionBlock {
-  background: var(--black);
-}
-.night_mode.title, .night_mode.price {
- color: var(--txt-white);
 }

@@ -9,25 +9,41 @@ export default function NavMenu() {
 
   const { nightMode } = useContext(Context);
   return (
-    <nav>
-      <div className={styles.nav_menu_wrapper}>
-        <Link>
-          <div
-            className={styles.oneDaySaleButton}
-            onClick={() => {
-               setModalDayActive(true);
-            }}
-          >
-            1 day discount
-          </div>
-        </Link>
-        <div className={`${styles.nav_menu} ${nightMode ? styles.night_mode : ""}`}>
-          <Link to="/">Main Page</Link>
-          <Link to="/categories/all">Categories</Link>
-          <Link to="/products/all">All products</Link>
-          <Link to="/sales/all">All sales</Link>
-        </div>
-      </div>
-    </nav>
-  );
+		<nav>
+			<div className={styles.navMenuContainer}>
+				<Link>
+					<button
+						className={styles.oneDaySaleButton}
+						onClick={() => {
+							setModalDayActive(true);
+						}}
+					>
+						1 day discount
+					</button>
+				</Link>
+				<ul className={`${styles.navMenu} `}>
+					<li
+						className={`${styles.item} ${nightMode ? styles.night_mode : ""}`}
+					>
+						<Link to='/'>Main Page</Link>
+					</li>
+					<li
+						className={`${styles.item} ${nightMode ? styles.night_mode : ""}`}
+					>
+						<Link to='/categories/all'>Categories</Link>
+					</li>
+					<li
+						className={`${styles.item} ${nightMode ? styles.night_mode : ""}`}
+					>
+						<Link to='/products/all'>All products</Link>
+					</li>
+					<li
+						className={`${styles.item} ${nightMode ? styles.night_mode : ""}`}
+					>
+						<Link to='/sales/all'>All sales</Link>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	);
 }

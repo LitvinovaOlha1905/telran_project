@@ -28,24 +28,45 @@
 
 /* 480px */
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .categoryCard {
+    width: 210px;
+  }
+
   .image {
     height: 260px;
   }
 }
 
 /* 768px */
-@media screen and (min-width: 768px){
-  .title{
+@media screen and (min-width: 768px) {
+  .categoryCard {
+    width: 354px;
+  }
+
+  .title {
     margin-top: 16px;
     font-size: 20px;
   }
+
   .image {
-      height: 250px;
-    }
+    height: 250px;
+  }
 }
 
-@media screen and (min-width: 1440px){
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  .categoryCard {
+    width: 225px;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .categoryCard {
+    width: 316px;
+  }
+
   .image {
-      height: 350px;
-    }
+    height: 350px;
+  }
 }
