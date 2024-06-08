@@ -63,10 +63,16 @@ const CartPage = () => {
     dispatch(deleteProduct(product));
     dispatch(countTotalSum());
   };
+  console.log(ProductInCart);
+
+  const totalQuantity = productsInCart.reduce((total, product) => {
+    return total + product.quantity;
+  }, 0);
+  console.log(totalQuantity);
 
   return (
     <div className={theme === "dark" ? classes.dark : ""}>
-        <ProductModal active={modalActive} setActive={setModalActive}>
+      <ProductModal active={modalActive} setActive={setModalActive}>
         <div className={classes.modalWrapper}>
           <div className={classes.titleModalBlock}>
             <h3 className={classes.titleModal}>Congratulations!</h3>
@@ -109,7 +115,13 @@ const CartPage = () => {
                 {productsInCart.map((product) => (
                   <ProductInCart
                     key={product.id}
-                    {...product}
+                    id={product.id}
+                    image={product.image}
+                    title={product.title}
+                    price={product.price}
+                    discont_price={product.discont_price}
+                    quantity={product.quantity}
+                    // {...product}
                     handleAddToCart={() => handleAddToCart(product)}
                     handleDeleteFromCart={() => handleDeleteFromCart(product)}
                     handleDecreaseProduct={() => handleDecreaseProduct(product)}
@@ -123,7 +135,9 @@ const CartPage = () => {
               >
                 <ProductAndCartTitle text="Order details" />
                 <h4 className={classes.greyTitle}>
-                  {productsInCart.length} items
+                    {totalQuantity}
+                    { "\u0020"}
+                  items
                 </h4>
                 <div className={classes.totalBlock}>
                   <h4 className={classes.greyTitle}>Total</h4>
