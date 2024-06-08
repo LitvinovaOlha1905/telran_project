@@ -16,6 +16,8 @@
 
 .descriptionBlock {
   padding: 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 /* Description Block */
@@ -40,7 +42,6 @@
 .priceBlock p {
   font-weight: 600;
   font-size: 36px;
-  line-height: 110%;
   color: var(--black);
 }
 
@@ -91,6 +92,18 @@
   color: var(--txt-white);
   background: var(--sale);
 }
+/* Nigth mode */
+
+.night_mode.descriptionBlock {
+  background: var(--black);
+}
+.night_mode.title, .night_mode.price {
+  color: var(--txt-white);
+}
+.night_mode.cardBlock {
+  background: var(--black);
+}
+
 
 /* Nigth mode */
 
