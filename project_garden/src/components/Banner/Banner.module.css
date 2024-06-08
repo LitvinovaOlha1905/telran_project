@@ -7,25 +7,59 @@
 }
 
 .title {
-   font-size: 96px;
+   font-size: 52px;
    line-height: 110%;
    color: var(--txt-white);
 }
 
 .btn {
-   margin-top: 40px;
-   padding: 16px 56px;
-   background: var(--green);
+   margin-top: 24px;
+   padding: 12px 52px;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
    border: transparent;
    border-radius: 6px;
    cursor: pointer;
-   font-weight: 600;
-   font-size: 20px;
-   line-height: 130%;
    color: var(--txt-white);
+   background: var(--green);
 }
 
 .btn:hover,
 .btn:focus {
    opacity: 0.8;
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+   .title {
+      font-size: 60px;
+   }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+   .title {
+      font-size: 68px;
+   }
+
+   .btn {
+      margin-top: 40px;
+      padding: 16px 56px;
+   }
+
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+   .title {
+      font-size: 90px;
+   }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+   .title {
+      font-size: 96px;
+   }
 }
