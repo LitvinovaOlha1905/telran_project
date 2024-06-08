@@ -42,7 +42,10 @@ export default function ProductByCategoryCard({
 	return (
 		<div className={styles.cardBlock}>
 			<Link to={`/product/${id}`}>
-				<img src={`http://localhost:3333${image}`} alt={title} />
+				<img
+					src={`https://project-backend-hvmn.onrender.com${image}`}
+					alt={title}
+				/>
 
 				<div
 					className={`${styles.descriptionBlock} ${

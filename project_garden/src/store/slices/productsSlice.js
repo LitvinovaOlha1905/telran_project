@@ -11,7 +11,9 @@ export const fetchAllProducts = createAsyncThunk(
   "products/fetchAllProducts",
   async () => {
     try {
-      const res = await fetch("http://localhost:3333/products/all");
+      const res = await fetch(
+				"https://project-backend-hvmn.onrender.com/products/all"
+			);
       if (!res.ok) {
         throw new Error("Failed to fetch product!");
       }

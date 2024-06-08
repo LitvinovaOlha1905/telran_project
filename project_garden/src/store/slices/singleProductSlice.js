@@ -10,7 +10,9 @@ export const fetchSingleProducts = createAsyncThunk(
   "singleProducts/fetchSingleProducts",
   async (productId) => {
     try {
-      const res = await fetch(`http://localhost:3333/products/${productId}`);
+      const res = await fetch(
+				`https://project-backend-hvmn.onrender.com/products/${productId}`
+			);
       if (!res.ok) {
         throw new Error("Failed to fetch users!");
       }

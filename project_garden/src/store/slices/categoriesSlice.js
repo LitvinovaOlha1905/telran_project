@@ -11,7 +11,9 @@ export const fetchAllCategories = createAsyncThunk(
 	"categories/fetchAllCategories",
 	async () => {
 		try {
-			const res = await fetch("http://localhost:3333/categories/all")
+			const res = await fetch(
+				"https://project-backend-hvmn.onrender.com/categories/all"
+			);
 			if (!res.ok) {
 				throw new Error("Failed to fetch categories!");
 			}

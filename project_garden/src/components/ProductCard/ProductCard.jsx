@@ -70,7 +70,10 @@ export default function ProductCard({
 	return (
 		<div className={styles.cardBlock}>
 			<Link to={`/product/${id}`}>
-				<img src={`http://localhost:3333${image}`} alt={title} />
+				<img
+					src={`https://project-backend-hvmn.onrender.com${image}`}
+					alt={title}
+				/>
 				{/* Description Block */}
 				<div
 					className={`${styles.descriptionBlock} ${
