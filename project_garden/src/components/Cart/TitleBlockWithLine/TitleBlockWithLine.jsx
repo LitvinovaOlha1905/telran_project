@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Line from '../../UI/Line/Line';
+import Line from '../../../UI/Line/Line';
 import TitleH2 from '../TitleH2/TitleH2';
 import classes from './TitleBlockWithLine.module.css';
-import StartBlockButton from '../../UI/StartBlockButton/StartBlockButton';
+import StartBlockButton from '../../../UI/StartBlockButton/StartBlockButton';
 
 const TitleBlockWithLine = ({ text, textSmallBtn, link }) => {
   return (

@@ -5,7 +5,7 @@ import styles from './GetDiscount.module.css';
 
 const GetDiscount = () => {
   return (
-    <section className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className="container">
         <div className={styles.containerForm}>
           <h2 className={styles.title}>5% off on the first order</h2>
@@ -16,7 +16,7 @@ const GetDiscount = () => {
           </article>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

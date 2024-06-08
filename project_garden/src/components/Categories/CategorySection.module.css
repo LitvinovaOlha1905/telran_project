@@ -1,54 +1,133 @@
 .wrapper {
-  margin-top: 50px;
-  margin-bottom: 110px;
+  margin-top: 56px;
 }
+
 .titleBlock {
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 32px;
+  position: relative;
 }
+
 .title {
-  font-weight: 700;
-  font-size: 64px;
+  font-size: 40px;
   line-height: 110%;
   color: var(--black);
 }
-.titleBlockLine {
-  display: flex;
-  position: relative;
-}
+
 .line::before {
-  content: "";
-  width: 600%;
+  display: none;
+  content: '';
+  width: 80%;
   height: 1px;
   background-color: var(--grey-divider);
   position: absolute;
   top: 50%;
-  right: 142px;
+  right: 98px;
 }
-.btn {
-  font-family: var(--font-family);
+
+/* 480px 768px 1000px */
+.btnPhone {
+  display: block;
+  margin: 24px auto 0;
+  padding: 12px 24px;
   border: 1px solid var(--grey-divider);
-  color: var(--txt-grey);
-  background-color: transparent;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 126%;
-  padding: 8px 16px;
   cursor: pointer;
+  color: var(--grey);
+  background: transparent;
 }
-.btn:hover{
+
+.btnPhone:hover {
   background: var(--light-grey);
   color: var(--grey);
 }
-.cardContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 32px;
-  margin-top: 40px;
-}
-/* Night_mode */
 
+.btn {
+  display: none;
+  padding: 8px 16px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Night_mode */
 .night_mode.title {
-  color: var(--txt-white); 
+  color: var(--txt-white);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+  .wrapper {
+    margin-top: 60px;
+  }
+
+  .titleBlock {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .cardContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .line::before {
+    display: block;
+    width: 5%;
+    right: 128px;
+  }
+
+  .btnPhone {
+    display: none;
+    margin: 0;
+  }
+
+  .btn {
+    display: block;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 56px;
+  }
+
+  .line::before {
+    width: 35%;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: 64px;
+  }
+
+  .line::before {
+    width: 46%;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    margin-top: 80px;
+  }
+
+  .line::before {
+    width: 60%;
+  }
 }

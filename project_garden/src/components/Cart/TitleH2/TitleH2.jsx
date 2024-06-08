@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Context } from '../../context';
+import { Context } from '../../../context';
 import classes from './TitleH2.module.css';
 
 const TitleH2 = ({ text }) => {

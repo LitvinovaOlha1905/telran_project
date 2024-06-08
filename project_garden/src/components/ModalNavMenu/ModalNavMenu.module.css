@@ -15,57 +15,75 @@
 }
 
 .modal_content {
-  background-color: var(--white);
-  color: white;
-  padding: 100px 20px 0;
-  font-size: 20px;
   position: relative;
+  padding: 100px 20px 0 32px;
+  font-size: 20px;
+  color: var(--white);
+  background-color: var(--white);
 }
+
 .icon {
   position: absolute;
   top: 25px;
   right: 25px;
 }
+
 .nav_menu {
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  text-align: start;
-  margin-bottom: 42px;
-  margin-left: 20px;
+  gap: 32px;
+  min-width: 170px;
 }
+
 .nav_menu a {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 130%;
   color: var(--black);
 }
+
 .oneDaySaleButton {
-  background-color: #92a134;
-  color: #ffffff;
   padding: 6px 16px;
-  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 126%;
+  border: transparent;
   border-radius: 6px;
-  width: 211px;
-  height: 42px;
-  margin: auto;
-  text-align: center;
-  display: block;
   cursor: pointer;
-  margin-bottom: 10px;
+  color: var(--txt-white);
+  background-color: var(--green);
 }
 
 .oneDaySaleButton:hover {
   background-color: gray;
 }
-/* Night_mode */
 
-.night_mode.modal_content{
-  background: var(--black);;
+/* Night_mode */
+.night_mode.modal_content {
+  background: var(--black);
+  ;
 }
-.night_mode.nav_menu > a {
+
+.night_mode.nav_menu>a {
   color: var(--white);
 }
-.night_mode.icon{
-  stroke: var(--black);;
+
+.night_mode.icon {
+  stroke: var(--black);
+  ;
+}
+
+@media screen and (min-width: 480px) {
+  .nav_menu {
+    gap: 36px;
+    min-width: 230px;
+  }
+
+  .nav_menu a {
+    font-size: 24px;
+  }
+
+  .oneDaySaleButton {
+    font-size: 24px;
+  }
 }
