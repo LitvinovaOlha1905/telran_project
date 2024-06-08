@@ -17,6 +17,7 @@
   border-radius: 6px;
   width: 58px;
   height: 58px;
+  background: var(--txt-white);
 }
 
 .line.top {
@@ -43,6 +44,7 @@
 .night_mode.count{
    color: var(--txt-white);
 }
+
 
 
 @media (max-width: 1439px) {

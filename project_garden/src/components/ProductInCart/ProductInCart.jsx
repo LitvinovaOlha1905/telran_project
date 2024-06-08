@@ -44,9 +44,7 @@ const ProductInCart = ({
             onClick={handleDeleteFromCart}
             src={close}
             alt="Close"
-            className={`${classes.close} ${
-              theme === "dark" ? classes.menuDark : ""
-            }`}
+            className={classes.close} 
           />
         </div>
         <div className={classes.addAndPriceBlock}>
