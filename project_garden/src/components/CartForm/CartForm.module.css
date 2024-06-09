@@ -26,9 +26,9 @@
     font-size: 20px;
     line-height: 130%;
     color: var(--white);
+    cursor: pointer;
     margin-top: 16px;
     border: transparent;
-    
   }
   
   .btn:active {

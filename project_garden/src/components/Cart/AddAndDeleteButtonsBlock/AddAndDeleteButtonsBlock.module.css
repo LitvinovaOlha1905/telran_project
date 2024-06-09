@@ -21,7 +21,8 @@
 }
 
 .icons{
-  fill: var(--white)
+  fill: var(--white);
+  cursor:pointer;
 }
 
 .line.top {
