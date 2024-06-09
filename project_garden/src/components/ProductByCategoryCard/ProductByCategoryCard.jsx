@@ -6,8 +6,9 @@ import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { addProduct, countTotalSum } from "../../store/slices/cartSlice";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Context } from "../../context";
+import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
 
 export default function ProductByCategoryCard({
 	id,
@@ -20,6 +21,10 @@ export default function ProductByCategoryCard({
 	const [bagActive, setBagActive] = useState(false);
 
 	// const { productsInCart } = useSelector(store => store.cart);
+	const { favorites } = useSelector(store => store.favorites);
+	const isProductInFavorite = favorites.some(
+		favoriteProduct => favoriteProduct.id === id
+	);
 
 	const { nightMode } = useContext(Context);
 
@@ -37,6 +42,15 @@ export default function ProductByCategoryCard({
 		dispatch(addProduct(product));
 		dispatch(countTotalSum());
 		// console.log(productsInCart);
+	};
+
+	const handleAddToFavorites = event => {
+		// event.preventDefault();
+		if (isProductInFavorite) {
+			dispatch(removeFavorite(product));
+		} else {
+			dispatch(addFavorite(product));
+		}
 	};
 
 	return (
@@ -79,7 +93,13 @@ export default function ProductByCategoryCard({
 
 				{/* Icons Block */}
 				<div className={styles.cartBlock}>
-					<div onClick={() => setHeartActive(!heartActive)}>
+					<div
+						onClick={event => {
+							event.preventDefault();
+							setHeartActive(!heartActive);
+							handleAddToFavorites();
+						}}
+					>
 						{heartActive ? (
 							<IconHertActive className={styles.iconHeart} size='48' />
 						) : (
