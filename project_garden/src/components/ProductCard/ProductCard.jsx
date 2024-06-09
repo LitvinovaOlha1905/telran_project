@@ -136,7 +136,7 @@ export default function ProductCard({
 							}`}
 						>
 							{"\u002d"}
-							{(((price - discont_price) / price) * 100).toFixed()}%
+							{(((price - discont_price) / price) * 100)?.toFixed()}%
 						</p>
 					)}
 				</div>

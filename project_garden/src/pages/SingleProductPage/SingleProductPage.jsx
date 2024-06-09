@@ -111,7 +111,7 @@ export default function SingleProductPage() {
 									}`}
 								>
 									{"\u002d"}
-									{(((price - discont_price) / price) * 100).toFixed()}%
+									{(((price - discont_price) / price) * 100)?.toFixed()}%
 								</p>
 							)}
 						</div>
@@ -142,7 +142,7 @@ export default function SingleProductPage() {
 										}`}
 									>
 										{"\u002d"}
-										{(((price - discont_price) / price) * 100).toFixed()}%
+										{(((price - discont_price) / price) * 100)?.toFixed()}%
 									</p>
 								)}
 							</div>

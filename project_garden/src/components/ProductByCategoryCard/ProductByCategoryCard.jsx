@@ -127,7 +127,7 @@ export default function ProductByCategoryCard({
 				{/* Sale Block */}
 				{discont_price && (
 					<p className={styles.discount}>
-						{(((price - discont_price) / price) * 100).toFixed()}%
+						{(((price - discont_price) / price) * 100)?.toFixed()}%
 					</p>
 				)}
 			</Link>
