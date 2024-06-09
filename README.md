@@ -4,7 +4,7 @@
 
 "Интернет-магазин товаров для дома и сада" (Garden Products)
 
-# Ссылки на макет, ТЗ или требования, задеплоенную реализацию
+# Ссылки на макет, ТЗ и задеплоенную реализацию
 
 Макет: [Figma](https://www.figma.com/file/SDNWLzCWkh9ZXdCpWEaByv/project-frontend?type=design&node-id=280-1136&mode=design&t=NJTGdloftvn8I6Vz-0)
 
