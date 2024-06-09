@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "./FormSortPrice.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { filterProducts } from "../../../store/slices/productsSlice";
 import { filterFavorits } from "../../../store/slices/favoritesSlice";
 import { filterProductsData } from "../../../store/slices/dataSlice";

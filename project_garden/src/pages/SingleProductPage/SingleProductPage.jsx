@@ -10,7 +10,6 @@ import { fetchSingleProducts } from "../../store/slices/singleProductSlice";
 import {
 	addProduct,
 	countTotalSum,
-	decreaseProduct,
 } from "../../store/slices/cartSlice";
 import { Context } from "../../context";
 import { addFavorite, removeFavorite } from "../../store/slices/favoritesSlice";
@@ -101,7 +100,10 @@ export default function SingleProductPage() {
 								setModalActive(true);
 							}}
 						>
-							<img src={`http://localhost:3333${image}`} alt={title} />
+							<img
+								src={`https://project-backend-hvmn.onrender.com${image}`}
+								alt={title}
+							/>
 							{discont_price && (
 								<p
 									className={`${styles.discount} ${
@@ -137,7 +139,7 @@ export default function SingleProductPage() {
 									<p
 										className={`${styles.discountPosition} ${
 											nightMode ? styles.night_mode : ""
-										}` }
+										}`}
 									>
 										{"\u002d"}
 										{(((price - discont_price) / price) * 100).toFixed()}%

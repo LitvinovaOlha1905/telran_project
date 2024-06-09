@@ -9,7 +9,6 @@ import FormDiscountItems from '../FormSort/FormDiscountItems/FormDiscountItems';
 import FormSelect from '../FormSort/FormSelect/FormSelect';
 import { Context } from '../../context';
 
-
 export default function ProductsByCategoryContainer() { 
 
    const { nightMode } = useContext(Context);
