@@ -1,8 +1,8 @@
-import { ReactComponent as Minus } from "../../images/Icons/minus.svg";
-import { ReactComponent as Plus } from "../../images/Icons/plus.svg";
-import classes from "./AddAndDeleteButtonsBlock.module.css";
-import { useContext } from "react";
-import { Context } from "../../context";
+import classes from './AddAndDeleteButtonsBlock.module.css';
+import { ReactComponent as Minus } from "../../../images/Icons/minus.svg";
+import { ReactComponent as Plus } from "../../../images/Icons/plus.svg";
+import { useContext } from 'react';
+import { Context } from '../../../context';
 
 const AddAndDeleteButtonsBlock = ({
   quantity,

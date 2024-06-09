@@ -9,6 +9,7 @@ import {
   setFilteredProducts,
 } from "../../../store/slices/productsSlice";
 import { Context } from "../../../context";
+import { getCheapProductsData, selectData, setFilteredProductsData } from "../../../store/slices/dataSlice";
 
 export default function FormDiscountItems() {
 
@@ -22,8 +23,10 @@ export default function FormDiscountItems() {
   useEffect(() => {
     if (isActive) {
       dispatch(getCheapProducts({ checked: true }));
+      dispatch(getCheapProductsData({ checked: true }));
     } else {
       dispatch(setFilteredProducts(products));
+      dispatch(setFilteredProductsData(products));
     }
   }, [isActive, dispatch]);
 
