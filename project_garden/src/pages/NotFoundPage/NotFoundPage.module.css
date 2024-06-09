@@ -1,0 +1,156 @@
+.wrapper {
+  margin-top: 56px;
+}
+
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.imgBlock {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 80px;
+  height: 100px;
+}
+
+.imageCactus {
+  width: 131px;
+  height: 118px;
+}
+
+.title,
+.text,
+.button {
+  text-align: center;
+  line-height: 130%;
+}
+
+.title {
+  font-size: 40px;
+  color: var(--black);
+}
+
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 12px 0 24px;
+  color: var(--grey);
+}
+
+
+.titleBlock {
+  text-align: center;
+}
+
+/* Зеленая кнопка */
+.button {
+  border-radius: 6px;
+  padding: 12px 52px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--txt-white);
+  background: var(--green);
+  border-color: transparent;
+}
+
+/* Дополнительные стили для кнопки (например, при наведении) */
+.button:hover,
+.button:focus {
+  color: var(--black);
+}
+
+/* Dark mode */
+
+.night_mode.title {
+  color: var(--white);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+  .image {
+    width: 109px;
+    height: 150px;
+  }
+
+  .imageCactus {
+    width: 181px;
+    height: 162px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .text span {
+    display: block;
+  }
+
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    margin-top: 60px;
+  }
+
+  .contentBlock {
+    gap: 32px;
+  }
+
+  .image {
+    width: 161px;
+    height: 220px;
+  }
+
+  .imageCactus {
+    width: 266px;
+    height: 240px;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .text {
+    margin-bottom: 32px;
+    font-size: 20px;
+  }
+
+  .button {
+    padding: 16px 56px;
+    font-size: 20px;
+
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  .image {
+    width: 180px;
+    height: 246px;
+  }
+
+  .imageCactus {
+    width: 300px;
+    height: 270px;
+  }
+
+  .title {
+    margin-top: 16px;
+    font-size: 64px;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    margin-top: 80px;
+  }
+}

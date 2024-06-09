@@ -1,0 +1,33 @@
+.sortBlock {
+   display: flex;
+   gap: 16px;
+   align-items: center;
+}
+
+.sortTitle {
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+.sortDiscountInput {
+   display: none;
+}
+
+.sortDiscountCheckbox {
+   display: flex;
+   align-items: center;
+}
+
+/* Night_mode */
+.night_mode.sortTitle {
+   color: var(--txt-white);
+}
+
+/* 768px 1000px 1440px*/
+@media screen and (min-width: 768px) {
+   .sortLabel {
+      font-size: 20px;
+   }
+}

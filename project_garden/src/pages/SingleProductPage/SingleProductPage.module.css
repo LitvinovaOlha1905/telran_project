@@ -1,0 +1,432 @@
+.wrapper {
+  margin: 32px 0 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleProductCard {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "image"
+    "info"
+    "description";
+  gap: 20px;
+}
+
+.imgBlock {
+  position: relative;
+  grid-area: image;
+  cursor: pointer;
+}
+
+.imgBlock img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 1px solid var(--grey-divider);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.infoBlock {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.titleBlock {
+  grid-area: title;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--black);
+}
+
+.iconHeart {
+  display: block;
+  width: 40px;
+  stroke: var(--black);
+  fill: var(--txt-white);
+}
+
+.iconHeart:hover {
+  fill: var(--black);
+}
+
+.priceBlock {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  color: var(--black);
+}
+
+.priceBlock span {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 130%;
+  text-decoration: line-through;
+  color: var(--grey);
+}
+
+.discount {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  color: var(--txt-white);
+  background: var(--sale);
+}
+
+/* 768px 1000px 1440px */
+.discountPosition {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  color: var(--txt-white);
+  background: var(--sale);
+}
+
+.countFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cartBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countBlock {
+  display: flex;
+  align-items: center;
+}
+
+.countBlock a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iconCount {
+  display: block;
+  width: 47px;
+  fill: var(--txt-white);
+  stroke: var(--grey-divider);
+}
+
+.count {
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 130%;
+  border-radius: 6px;
+  border: 1px solid var(--grey-divider);
+  color: var(--black);
+  background: var(--txt-white);
+}
+
+.cartBtn {
+  padding: 12px 20px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 6px;
+  border: transparent;
+  cursor: pointer;
+  color: var(--txt-white);
+  background: var(--green);
+}
+
+.descriptionTitle {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--black);
+}
+
+/* Night_mode */
+.night_mode.title,
+.night_mode.price {
+  color: var(--txt-white);
+}
+
+.night_mode.discount {
+  background-color: var(--green);
+}
+
+.night_mode.description,
+.night_mode.descriptionTitle {
+  color: var(--txt-white);
+}
+
+.night_mode.icon {
+  stroke: var(--txt-white);
+  fill: var(--black);
+}
+
+.night_mode.icon:hover {
+  fill: var(--green);
+  stroke: var(--green);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+  .singleProductCard {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imgBlock img {
+    height: 179px;
+  }
+
+  .titleBlock {
+    grid-area: title;
+    grid-column: 1 / span 2;
+  }
+
+  .infoBlock {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .priceBlock {
+    justify-content: start;
+  }
+
+  .price {
+    font-size: 48px;
+  }
+
+  .priceBlock span {
+    font-size: 28px;
+  }
+
+  .countFlex {
+    align-items: start;
+    gap: 20px;
+  }
+
+  .cartBlock {
+    align-items: start;
+  }
+
+  .descriptionBlock {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 768px 1000px 1440px */
+@media screen and (min-width: 768px) {
+  .infoBlock {
+    position: relative;
+  }
+
+  .discountPosition {
+    display: block;
+    top: 0;
+    font-size: 20px;
+  }
+
+  .discount {
+    display: none;
+  }
+
+  .iconHeart {
+    width: 44px;
+  }
+
+  .iconCount {
+    width: 58px;
+  }
+
+  .count {
+    padding: 16px 38px;
+  }
+
+  .cartBtn {
+    padding: 16px 32px;
+    font-size: 20px;
+  }
+
+  .descriptionTitle {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+}
+
+/* 768px */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .wrapper {
+    margin: 32px 0 52px;
+  }
+
+  .imgBlock {
+    position: static;
+    grid-row: 1 / span 2;
+  }
+
+  .imgBlock img {
+    height: 286px;
+  }
+
+  .titleBlock {
+    grid-column: 2 / span 2;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .infoBlock {
+    grid-area: info;
+    grid-column: 2;
+    grid-row: 2;
+    gap: 20px;
+  }
+
+  .discountPosition {
+    right: 45px;
+  }
+
+  .priceBlock {
+    justify-content: start;
+  }
+
+  .price {
+    font-size: 56px;
+  }
+
+  .priceBlock span {
+    font-size: 32px;
+  }
+
+  .cartBlock {
+    align-items: start;
+  }
+}
+
+/* 1000px 1440px */
+@media screen and (min-width: 1000px) {
+  .wrapper {
+    margin: 40px 0 56px;
+  }
+
+  .singleProductCard {
+    grid-template-areas:
+      "image title"
+      "image info"
+      "image description";
+    gap: 32px 24px;
+  }
+
+  .imgBlock {
+    position: static;
+    grid-column: 1 / 2;
+  }
+
+  .imgBlock img {
+    height: 572px;
+  }
+
+  .titleBlock {
+    grid-area: title;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .discountPosition {
+    right: 123px;
+  }
+
+  .price {
+    font-size: 64px;
+  }
+
+  .priceBlock span {
+    font-size: 40px;
+  }
+
+  .countFlex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .descriptionBlock {
+    grid-area: description;
+    grid-column: 2 / 2;
+  }
+
+  .descriptionTitle {
+    margin-bottom: 16px;
+  }
+
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    margin-bottom: 76px;
+  }
+
+  .singleProductCard {
+    grid-template-columns: 3fr 2fr;
+    gap: 32px;
+  }
+
+  .countFlex {
+    gap: 32px;
+  }
+
+  .discountPosition {
+    right: 189px;
+  }
+
+}

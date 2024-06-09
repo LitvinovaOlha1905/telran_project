@@ -1,0 +1,24 @@
+.sortLabel {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+
+.sortTitle {
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+/* Night_mode */
+.night_mode.sortTitle {
+   color: var(--txt-white);
+}
+
+/* 768px 1000px 1440px*/
+@media screen and (min-width: 768px) {
+   .sortTitle {
+      font-size: 20px;
+   }
+}

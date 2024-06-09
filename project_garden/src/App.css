@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --green: #92a134;
+  --sale: #f26d22;
+  --white: #fffff1;
+  --black: #424436;
+  --grey-divider: #ddd;
+  --grey: #8b8b8b;
+  --light-grey: #f2f6d3;
+  --txt-black: #424436;
+  --txt-white: #fff;
+  --txt-grey: #8b8b8b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +21,53 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background: var(--white);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 320px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Night_mode */
+.night_mode {
+  background: var(--black);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 440px;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 728px;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
 }

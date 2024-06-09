@@ -1,0 +1,65 @@
+.wrapper {
+   background-image: url('../../images/Banner/banner.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   padding: 80px 0 210px;
+}
+
+.title {
+   font-size: 52px;
+   line-height: 110%;
+   color: var(--txt-white);
+}
+
+.btn {
+   margin-top: 24px;
+   padding: 12px 52px;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
+   border: transparent;
+   border-radius: 6px;
+   cursor: pointer;
+   color: var(--txt-white);
+   background: var(--green);
+}
+
+.btn:hover,
+.btn:focus {
+   opacity: 0.8;
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+   .title {
+      font-size: 60px;
+   }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+   .title {
+      font-size: 68px;
+   }
+
+   .btn {
+      margin-top: 40px;
+      padding: 16px 56px;
+   }
+
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+   .title {
+      font-size: 90px;
+   }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+   .title {
+      font-size: 96px;
+   }
+}

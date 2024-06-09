@@ -1,0 +1,247 @@
+.modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 72px 20px 20px;
+   width: 100%;
+   height: 100%;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(40, 40, 40, 0.4);
+   z-index: 1;
+}
+
+.title {
+   display: flex;
+   position: relative;
+}
+
+.title h5 {
+   margin-bottom: 12px;
+   font-weight: 600;
+   font-size: 28px;
+   line-height: 110%;
+   color: var(--txt-white);
+}
+
+.cross {
+   fill: var(--txt-white);
+   position: absolute;
+   top: -50px;
+   right: -10px;
+}
+
+.cross:hover {
+   cursor: pointer;
+}
+
+.modal_content {
+   background: var(--green);
+   border-radius: 12px;
+   padding: 72px 32px 32px;
+   width: 548px;
+   height: 584px;
+}
+
+.modal.active {
+   display: flex;
+}
+
+.product_card {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
+
+.cardBlock {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 280px;
+   border-radius: 12px;
+   border: 1px solid var(--grey-divider);
+   background: var(--txt-white);
+}
+
+.cardBlock img {
+   display: block;
+   width: 100%;
+   height: 220px;
+   border-top-left-radius: 12px;
+   border-top-right-radius: 12px;
+   border-bottom: 1px solid var(--grey-divider);
+   object-fit: cover;
+}
+
+.descriptionBlock {
+   padding: 20px;
+}
+
+/* Description Block */
+.description {
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 130%;
+   color: var(--black);
+}
+
+.priceBlock {
+   margin-top: 16px;
+   display: flex;
+   align-items: baseline;
+   gap: 16px;
+}
+
+.price {
+   font-weight: 600;
+   font-size: 36px;
+   line-height: 110%;
+   color: var(--black);
+}
+
+.priceBlock span {
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 130%;
+   text-decoration: line-through;
+   color: var(--grey);
+}
+
+/* Icons Block */
+.cartBlock {
+   position: absolute;
+   top: 18px;
+   right: 18px;
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+}
+
+.iconHeart {
+   display: block;
+   stroke: var(--black);
+}
+
+.icon {
+   display: block;
+   width: 48px;
+   fill: var(--txt-white);
+}
+
+.icon:hover {
+   fill: var(--black);
+}
+
+/* Sale Block */
+
+.discount {
+   position: absolute;
+   top: 16px;
+   left: 22px;
+   padding: 4px 8px;
+   font-weight: 600;
+   font-size: 20px;
+   line-height: 130%;
+   letter-spacing: 0.03em;
+   border-radius: 6px;
+   color: var(--txt-white);
+   background: var(--sale);
+}
+
+.btn {
+   border-radius: 6px;
+   padding: 16px 32px;
+   background-color: var(--txt-white);
+   border: transparent;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 130%;
+   text-align: center;
+   color: var(--black);
+}
+
+.btn:hover {
+   cursor: pointer;
+   background: var(--black);
+   color: var(--txt-white);
+}
+
+/* Night_mode */
+
+.night_mode.modal.active {
+   background: rgba(16, 16, 16, 0.5);
+}
+
+
+/* 480px */
+@media screen and (min-width: 480px) {
+   .modal_content {
+      padding: 20px;
+      width: 440px;
+      height: 654px;
+   }
+
+   .title h5 {
+      max-width: 334px;
+      font-size: 36px;
+   }
+
+   .cross {
+      top: 0px;
+      right: 0px;
+   }
+
+   .cardBlock {
+      width: 400px;
+   }
+
+   .cardBlock img {
+      height: 284px;
+   }
+}
+
+/* 768px 1000px 1440px */
+@media screen and (min-width: 768px) {
+   .modal_content {
+      padding: 32px;
+      width: 548px;
+      height: 684px;
+   }
+
+   .title h5 {
+      margin-bottom: 16px;
+      max-width: 400px;
+      font-size: 40px;
+   }
+
+   .cross {
+      top: 0px;
+      right: 0px;
+   }
+
+   .cardBlock {
+      width: 484px;
+   }
+
+   .cardBlock img {
+      height: 284px;
+   }
+
+   .description {
+      font-size: 20px;
+   }
+
+   .price__Ta2Fk {
+      font-size: 40px;
+   }
+
+   .priceBlock span {
+      font-size: 20px;
+   }
+
+   .btn {
+      font-size: 20px;
+   }
+}

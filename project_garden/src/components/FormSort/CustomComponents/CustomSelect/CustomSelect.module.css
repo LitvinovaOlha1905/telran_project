@@ -1,0 +1,50 @@
+.customSelect {
+   position: relative;
+   user-select: none;
+}
+
+.customSelectBlock {
+   padding: 8px 8px 8px 16px;
+   line-height: 126%;
+   font-size: 16px;
+   border-radius: 6px;
+   border: 1px solid var(--grey-divider);
+}
+
+.dropdown {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 200px;
+   color: var(--black);
+   background: var(--txt-white);
+}
+
+.dropdownContent {
+   padding: 16px;
+   position: absolute;
+   z-index: 1;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+   width: 200px;
+   color: var(--grey);
+   background: var(--white);
+}
+
+.dropdownItem {
+   cursor: context-menu;
+   transition: all 0.2s;
+}
+
+.dropdownItem:hover {
+   color: var(--black);
+}
+
+.disabled {
+   color: var(--grey);
+}
+
+.disabled:hover{
+   color: var(--grey);
+}

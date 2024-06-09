@@ -1,0 +1,118 @@
+.wrapper {
+  margin-top: 56px;
+}
+
+.title {
+  color: var(--txt-white);
+  font-size: 40px;
+  line-height: 110%;
+  text-align: center;
+}
+
+.formBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 20px 0;
+  height: 592px;
+  border-radius: 12px;
+  background: linear-gradient(37deg, #87933d 0%, #55610b 100%);
+
+  overflow: hidden;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Стили блока с изображением */
+.imgBlock {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 100%; */
+  overflow: hidden;
+}
+
+/* Стили изображения */
+.image {
+  display: block;
+  width: 454px;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* 480px */
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 48px;
+  }
+
+}
+
+/* 768px */
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 55px;
+  }
+
+  .formBlock {
+    padding: 32px 20px;
+    height: 426px;
+  }
+
+  .containerForm {
+    flex-direction: row-reverse;
+  }
+
+  .imgBlock {
+    display: inline-block;
+    bottom: 0;
+    left: 7%;
+    overflow: hidden;
+  }
+
+  .image {
+    width: 602px;
+    object-position: bottom left;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  .title {
+    font-size: 64px;
+  }
+
+  .formBlock {
+    height: 434px;
+  }
+
+  .imgBlock {
+    left: 18%;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .formBlock {
+    gap: 56px;
+    padding: 32px 32px;
+    height: 486px;
+  }
+
+  .imgBlock {
+    left: 30%;
+  }
+
+  .image {
+    width: 748px;
+  }
+}

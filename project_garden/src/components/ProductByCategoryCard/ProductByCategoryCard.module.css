@@ -1,0 +1,191 @@
+.cardBlock {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid var(--grey-divider);
+  background: var(--txt-white);
+}
+
+.cardBlock img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 1px solid var(--grey-divider);
+}
+
+.descriptionBlock {
+  padding: 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Description Block */
+.descriptionBlock p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--black);
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.priceBlock {
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.priceBlock p {
+  font-weight: 600;
+  font-size: 36px;
+  color: var(--black);
+}
+
+.priceBlock span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  text-decoration: line-through;
+  color: var(--grey);
+}
+
+/* Icons Block */
+.cartBlock {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.iconHeart {
+  display: block;
+  stroke: var(--black);
+}
+
+.icon {
+  display: block;
+  width: 40px;
+  fill: var(--txt-white);
+}
+
+.icon:hover {
+  fill: var(--black);
+}
+
+/* Sale Block */
+.discount {
+  position: absolute;
+  top: 16px;
+  left: 22px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  color: var(--txt-white);
+  background: var(--sale);
+}
+/* Nigth mode */
+
+.night_mode.descriptionBlock {
+  background: var(--black);
+}
+.night_mode.title, .night_mode.price {
+  color: var(--txt-white);
+}
+.night_mode.cardBlock {
+  background: var(--black);
+}
+
+/* Nigth mode */
+.night_mode.descriptionBlock {
+  background: var(--black);
+}
+
+.night_mode.title,
+.night_mode.price {
+  color: var(--txt-white);
+}
+
+.night_mode.cardBlock {
+  background: var(--black);
+}
+
+/* 480px */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .cardBlock {
+    width: 210px;
+  }
+
+  .descriptionBlock {
+    height: 118px;
+  }
+}
+
+/* 768px 1000px 1440px */
+@media screen and (min-width: 768px) {
+  .descriptionBlock p {
+    font-size: 20px;
+  }
+
+  .price {
+    font-size: 40px;
+  }
+
+  .priceBlock span {
+    font-size: 20px;
+  }
+
+  .icon {
+    width: 48px;
+  }
+
+  .discount {
+    font-size: 20px;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .cardBlock {
+    width: 354px;
+  }
+
+  .cardBlock img {
+    height: 350px;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) and (max-width: 1439px) {
+  .cardBlock {
+   width: 225px;
+  }
+
+  .cardBlock img {
+    height: 250px;
+  }
+}
+
+/* 1440px */
+@media screen and (min-width: 1440px) {
+  .cardBlock img {
+    height: 284px;
+  }
+
+    .descriptionBlock {
+      padding: 20px 32px 32px;
+      height: 118px;
+    }
+
+  .priceBlock {
+    margin-top: 16px;
+  }
+}
