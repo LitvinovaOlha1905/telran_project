@@ -34,7 +34,9 @@
   gap: 32px;
   min-width: 170px;
 }
-
+.nav_menu li{
+  list-style: none;
+}
 .nav_menu a {
   font-weight: 500;
   font-size: 18px;
@@ -61,16 +63,15 @@
 /* Night_mode */
 .night_mode.modal_content {
   background: var(--black);
-  ;
 }
 
-.night_mode.nav_menu>a {
+.night_mode.nav_menu > li > a {
   color: var(--white);
 }
 
 .night_mode.icon {
   stroke: var(--black);
-  ;
+  
 }
 
 @media screen and (min-width: 480px) {

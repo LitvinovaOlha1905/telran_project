@@ -138,7 +138,7 @@ const CartPage = () => {
                 <div className={classes.totalBlock}>
                   <h4 className={classes.greyTitle}>Total</h4>
 
-                  <TitleH2 text={`$${totalSum.toFixed()}`} />
+                  <TitleH2 text={`$${totalSum?.toFixed()}`} />
                 </div>
                 {/* CartForm */}
                 <CartForm cart={{ handleClearCart, setModalActive }} />

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import classes from './GoodsCategoriesTitle.module.css';
-import { useSelector } from 'react-redux';
 import { Context } from '../../context';
 
 const GoodsCategoriesTitle = ({ text, footer, none }) => {

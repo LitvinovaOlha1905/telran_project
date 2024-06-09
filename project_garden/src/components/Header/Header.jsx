@@ -24,93 +24,95 @@ const Header = () => {
   const { productsInCart = [] } = useSelector((store) => store.cart);
   const likedProducts = useSelector((store) => store.favorites.favorites) || [];
 
+   const totalQuantity = productsInCart.reduce((total, product) => {
+     return total + product.quantity;
+   }, 0);
+
 
 
   return (
-		<header className={styles.wrapper}>
-			<div className='container'>
-				<div className={styles.header_container}>
-					<div className={styles.logoBlock}>
-						<img src={iconTree} alt='Logo' className={styles.logo} />
+    <header className={styles.wrapper}>
+      <div className="container">
+        <div className={styles.header_container}>
+          <div className={styles.logoBlock}>
+            <img src={iconTree} alt="Logo" className={styles.logo} />
 
-						{nightMode ? (
-							<ModeNight
-								onClick={() => dispatch(toggleTheme())}
-								className={styles.iconMode}
-							/>
-						) : (
-							<ModeDay
-								onClick={() => dispatch(toggleTheme())}
-								className={styles.iconMode}
-							/>
-						)}
-					</div>
-					<div>
-						{navMenuActive ? (
-							<ModalNavMenu
-								navMenuActive={navMenuActive}
-								setNavMenuActive={setNavMenuActive}
-							/>
-						) : (
-							<NavMenu />
-						)}
-					</div>
+            {nightMode ? (
+              <ModeNight
+                onClick={() => dispatch(toggleTheme())}
+                className={styles.iconMode}
+              />
+            ) : (
+              <ModeDay
+                onClick={() => dispatch(toggleTheme())}
+                className={styles.iconMode}
+              />
+            )}
+          </div>
+          <div>
+            {navMenuActive ? (
+              <ModalNavMenu
+                navMenuActive={navMenuActive}
+                setNavMenuActive={setNavMenuActive}
+              />
+            ) : (
+              <NavMenu />
+            )}
+          </div>
 
-					<div className={styles.cartFlex}>
-						<div className={styles.cartBlock}>
-							<Link to='/favorites_products' className={styles.iconLink}>
-								{nightMode ? (
-									<IconHeartNight
-										className={`${styles.iconNight} ${styles.icon}`}
-									/>
-								) : (
-									<IconHeart className={`${styles.iconDay} ${styles.icon}`} />
-								)}
+          <div className={styles.cartFlex}>
+            <div className={styles.cartBlock}>
+              <Link to="/favorites_products" className={styles.iconLink}>
+                {nightMode ? (
+                  <IconHeartNight
+                    className={`${styles.iconNight} ${styles.icon}`}
+                  />
+                ) : (
+                  <IconHeart className={`${styles.iconDay} ${styles.icon}`} />
+                )}
 
-								{likedProducts.length > 0 && (
-									<span className={styles.badgeCount}>
-										{likedProducts.length}
-									</span>
-								)}
-							</Link>
+                {likedProducts.length > 0 && (
+                  <span className={styles.badgeCount}>
+                    {likedProducts.length}
+                  </span>
+                )}
+              </Link>
 
-							<Link to='/cart' className={styles.iconLink}>
-								{nightMode ? (
-									<IconBagNight
-										className={`${styles.iconNight} ${styles.icon}`}
-									/>
-								) : (
-									<IconBag className={`${styles.iconDay} ${styles.icon}`} />
-								)}
+              <Link to="/cart" className={styles.iconLink}>
+                {nightMode ? (
+                  <IconBagNight
+                    className={`${styles.iconNight} ${styles.icon}`}
+                  />
+                ) : (
+                  <IconBag className={`${styles.iconDay} ${styles.icon}`} />
+                )}
 
-								{productsInCart.length > 0 && (
-									<span className={styles.badgeCount}>
-										{productsInCart.length}
-									</span>
-								)}
-							</Link>
-						</div>
+                {productsInCart.length > 0 && (
+                  <span className={styles.badgeCount}>{totalQuantity}</span>
+                )}
+              </Link>
+            </div>
 
-						{nightMode ? (
-							<BurgerNight
-								onClick={() => setNavMenuActive(true)}
-								className={`${styles.burger} ${
-									navMenuActive ? styles.nav_menu_active : ""
-								}`}
-							/>
-						) : (
-							<BurgerDay
-								onClick={() => setNavMenuActive(true)}
-								className={`${styles.burger} ${
-									navMenuActive ? styles.nav_menu_active : ""
-								}`}
-							/>
-						)}
-					</div>
-				</div>
-			</div>
-		</header>
-	);
+            {nightMode ? (
+              <BurgerNight
+                onClick={() => setNavMenuActive(true)}
+                className={`${styles.burger} ${
+                  navMenuActive ? styles.nav_menu_active : ""
+                }`}
+              />
+            ) : (
+              <BurgerDay
+                onClick={() => setNavMenuActive(true)}
+                className={`${styles.burger} ${
+                  navMenuActive ? styles.nav_menu_active : ""
+                }`}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;

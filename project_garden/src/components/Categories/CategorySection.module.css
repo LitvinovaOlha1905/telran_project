@@ -112,6 +112,11 @@
 
 /* 1000px */
 @media screen and (min-width: 1000px) {
+
+  .cardContainer .categoryCard {
+      width: 225px;
+    }
+
   .title {
     font-size: 64px;
   }
