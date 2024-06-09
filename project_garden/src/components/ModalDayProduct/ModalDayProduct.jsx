@@ -87,7 +87,7 @@ export default function ModalDayProduct() {
 							<div className={styles.priceBlock}>
 								<p className={styles.price}>
 									{"\u0024"}
-									{(price / 2).toFixed(2)}
+									{(price / 2)?.toFixed()}
 								</p>
 								<span>
 									{"\u0024"}

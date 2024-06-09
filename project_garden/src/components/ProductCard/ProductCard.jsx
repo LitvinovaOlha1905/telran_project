@@ -99,13 +99,13 @@ export default function ProductCard({
 						>
 							{"\u0024"}
 							{discont_price === null
-								? price.toFixed()
-								: discont_price.toFixed()}
+								? price?.toFixed()
+								: discont_price?.toFixed()}
 						</p>
 						{discont_price ? (
 							<span>
 								{"\u0024"}
-								{price.toFixed()}
+								{price?.toFixed()}
 							</span>
 						) : null}
 					</div>
@@ -136,7 +136,7 @@ export default function ProductCard({
 							}`}
 						>
 							{"\u002d"}
-							{(((price - discont_price) / price) * 100).toFixed()}%
+							{(((price - discont_price) / price) * 100)?.toFixed()}%
 						</p>
 					)}
 				</div>

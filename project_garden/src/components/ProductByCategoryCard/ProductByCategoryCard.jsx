@@ -96,13 +96,13 @@ export default function ProductByCategoryCard({
             >
               {"\u0024"}
               {discont_price === null
-                ? price.toFixed()
-                : discont_price.toFixed()}
+                ? price?.toFixed()
+                : discont_price?.toFixed()}
             </p>
             {discont_price ? (
               <span>
                 {"\u0024"}
-                {price.toFixed()}
+                {price?.toFixed()}
               </span>
             ) : null}
           </div>
@@ -138,7 +138,7 @@ export default function ProductByCategoryCard({
         {/* Sale Block */}
         {discont_price && (
           <p className={styles.discount}>
-            {(((price - discont_price) / price) * 100).toFixed()}%
+            {(((price - discont_price) / price) * 100)?.toFixed()}%
           </p>
         )}
       </Link>
