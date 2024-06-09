@@ -99,13 +99,13 @@ export default function ProductCard({
 						>
 							{"\u0024"}
 							{discont_price === null
-								? price.toFixed()
-								: discont_price.toFixed()}
+								? price?.toFixed()
+								: discont_price?.toFixed()}
 						</p>
 						{discont_price ? (
 							<span>
 								{"\u0024"}
-								{price.toFixed()}
+								{price?.toFixed()}
 							</span>
 						) : null}
 					</div>
