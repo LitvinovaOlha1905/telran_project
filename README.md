@@ -125,6 +125,7 @@ Git и GitHub: Система контроля версий и хостинг к
 
 # Anna Tkachenko
 
+Ссылка на [LinkedIn](https://www.linkedin.com/in/anna-tkachenko-52824a277?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 Ссылка на [GitHub](https://github.com/acroanny?tab=repositories)
 
 Реализованные фичи:
