@@ -6,7 +6,7 @@ import { ReactComponent as IconHeart } from "../../images/Icons/heart.svg";
 import { ReactComponent as IconHertActive } from "../../images/Icons/heartActive.svg";
 import { ReactComponent as IconBagActive } from "../../images/Icons/bagActive.svg";
 import { addProduct, countTotalSum } from "../../store/slices/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { Context } from "../../context";
 
 export default function ProductByCategoryCard({
