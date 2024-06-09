@@ -10,7 +10,7 @@
 
 Техническое задание (ТЗ): [Google Docs](https://docs.google.com/document/d/1j4GO3_P2-h80rrrUuVHan2i8saFXPJlk/edit)
 
-Задеплоенная реализация: GardenStore
+Задеплоенная реализация: [GardenStore](https://project-garden.onrender.com)
 
 # Общее описание
 
