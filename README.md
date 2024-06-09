@@ -90,8 +90,8 @@ Git и GitHub: Система контроля версий и хостинг к
 
 # Olha Litvinova
 
-Ссылка на LinkedIn: https://www.linkedin.com/in/olha-litvinova-830318287/
-Ссылка на GitHub: https://github.com/LitvinovaOlha1905?tab=repositories
+Ссылка на [LinkedIn](https://www.linkedin.com/in/olha-litvinova-830318287/)
+Ссылка на [GitHub](https://github.com/LitvinovaOlha1905?tab=repositories)
 
 Реализованные фичи:
  - Главная страница: Реализация логики для отображения 4 случайных товаров со скидкой.
@@ -103,7 +103,7 @@ Git и GitHub: Система контроля версий и хостинг к
 
 # Irina Kaschkarov
 
-Ссылка на GitHub: https://github.com/IKaschkarov?tab=repositories
+Ссылка на [GitHub](https://github.com/IKaschkarov?tab=repositories)
 
 Реализованные фичи:
  - Главная страница: Отображение списка из 4-х категорий.
@@ -116,7 +116,7 @@ Git и GitHub: Система контроля версий и хостинг к
 
 # Olena Mykhaylenko
 
-Ссылка на GitHub: https://github.com/OlenaMykhaylenko?tab=repositories
+Ссылка на [GitHub](https://github.com/OlenaMykhaylenko?tab=repositories)
 
 Реализованные фичи:
  - Главная страница: Создание формы для получения скидки 5%
@@ -125,7 +125,7 @@ Git и GitHub: Система контроля версий и хостинг к
 
 # Anna Tkachenko
 
-Ссылка на GitHub: https://github.com/acroanny?tab=repositories
+Ссылка на [GitHub](https://github.com/acroanny?tab=repositories)
 
 Реализованные фичи:
  - Хедер
