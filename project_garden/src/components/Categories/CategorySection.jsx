@@ -12,7 +12,6 @@ export default function CategorySection() {
   const { categories } = useSelector((state) => state.categories);
 
     const limitedCategories = categories ? categories.slice(0, 4):[];
-  // Создаем новый массив, содержащий только первые 4 категории
 
     return (
 			<div className={styles.wrapper}>
@@ -39,14 +38,16 @@ export default function CategorySection() {
 
 					<div className={styles.cardContainer}>
 						{limitedCategories.map(el => (
-							<CategoriesCard key={el.id} {...el} />
+							<CategoriesCard
+								key={el.id}
+								{...el}
+								className={styles.categoryCard}
+							/>
 						))}
 					</div>
 
 					<Link to='/categories/all'>
-						<button className={styles.btnPhone}>
-							All categories
-						</button>
+						<button className={styles.btnPhone}>All categories</button>
 					</Link>
 				</div>
 			</div>

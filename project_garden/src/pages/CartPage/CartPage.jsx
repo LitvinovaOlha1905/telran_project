@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import classes from "./CartPage.module.css";
-// import { ROUTES } from "./../../utils/routes";
 import { useSelector, useDispatch } from "react-redux";
 import ProductInCart from "../../components/ProductInCart/ProductInCart";
 import {
@@ -10,13 +9,11 @@ import {
   decreaseProduct,
   deleteProduct,
 } from "../../store/slices/cartSlice";
-import { Link } from "react-router-dom";
 import ProductAndCartTitle from "../../components/ProductAndCartTitle/ProductAndCartTitle";
 import TitleH2 from "../../components/Cart/TitleH2/TitleH2";
 import ProductModal from "../../components/ProductModal/ProductModal";
 import whiteCross from "../../images/Icons/whiteCross.svg";
 import CartForm from "../../components/CartForm/CartForm";
-// import MainBannerButton from "./../../UI/MainBannerButton";
 import { useContext } from "react";
 import { Context } from "../../context";
 import TitleBlockWithLine from '../../components/Cart/TitleBlockWithLine/TitleBlockWithLine'
@@ -63,12 +60,12 @@ const CartPage = () => {
     dispatch(deleteProduct(product));
     dispatch(countTotalSum());
   };
-  console.log(ProductInCart);
+  // console.log(ProductInCart);
 
   const totalQuantity = productsInCart.reduce((total, product) => {
     return total + product.quantity;
   }, 0);
-  console.log(totalQuantity);
+  // console.log(totalQuantity);
 
   return (
     <div className={theme === "dark" ? classes.dark : ""}>
@@ -94,7 +91,6 @@ const CartPage = () => {
           <TitleBlockWithLine
             text="Shopping cart"
             textSmallBtn="Back to the store"
-            // link={ROUTES.HOME}
           />
 
           {productsInCart.length === 0 ? (
@@ -142,7 +138,7 @@ const CartPage = () => {
                 <div className={classes.totalBlock}>
                   <h4 className={classes.greyTitle}>Total</h4>
 
-                  <TitleH2 text={`$${totalSum.toFixed(2)}`} />
+                  <TitleH2 text={`$${totalSum.toFixed()}`} />
                 </div>
                 {/* CartForm */}
                 <CartForm cart={{ handleClearCart, setModalActive }} />

@@ -6,7 +6,6 @@ import ProductCard from "../ProductCard/ProductCard";
 import { Context } from "../../context";
 
 export default function SalesContainer() {
-
 	const { nightMode } = useContext(Context);
 
 	const products = useSelector(state => state.products.products);
@@ -16,10 +15,6 @@ export default function SalesContainer() {
 		?.map(product => {
 			return {
 				...product,
-				title:
-					product.title.length > 20
-						? `${product.title.substring(0, 17)}...`
-						: product.title,
 			};
 		})
 		.sort(() => Math.random() - 0.5);
@@ -45,14 +40,16 @@ export default function SalesContainer() {
 				</div>
 				<div className={styles.cardBlock}>
 					{shuffledProducts?.slice(0, 4).map(product => (
-						<ProductCard key={product.id} {...product} />
+						<ProductCard
+							key={product.id}
+							{...product}
+							descriptionClassName={styles.description}
+						/>
 					))}
 				</div>
 
 				<Link to='/sales/all'>
-					<button className={styles.btnPhone}>
-						All sales
-					</button>
+					<button className={styles.btnPhone}>All sales</button>
 				</Link>
 			</div>
 		</div>

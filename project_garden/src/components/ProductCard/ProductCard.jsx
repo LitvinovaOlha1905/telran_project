@@ -20,6 +20,7 @@ export default function ProductCard({
 	title,
 	price,
 	discont_price,
+	descriptionClassName,
 }) {
 	const { nightMode } = useContext(Context);
 
@@ -69,7 +70,10 @@ export default function ProductCard({
 	return (
 		<div className={styles.cardBlock}>
 			<Link to={`/product/${id}`}>
-				<img src={`http://localhost:3333${image}`} alt={title} />
+				<img
+					src={`https://project-backend-hvmn.onrender.com${image}`}
+					alt={title}
+				/>
 				{/* Description Block */}
 				<div
 					className={`${styles.descriptionBlock} ${
@@ -77,7 +81,7 @@ export default function ProductCard({
 					}`}
 				>
 					<p
-						className={`${styles.description} ${
+						className={`${styles.description} ${descriptionClassName} ${
 							nightMode ? styles.night_mode : ""
 						}`}
 					>
@@ -120,7 +124,7 @@ export default function ProductCard({
 							{bagActive ? (
 								<IconBagActive className={styles.icon} />
 							) : (
-								<IconBag className={styles.icon}  />
+								<IconBag className={styles.icon} />
 							)}
 						</div>
 					</div>

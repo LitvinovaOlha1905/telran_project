@@ -11,14 +11,6 @@
    gap: 20px;
 }
 
-.description {
-   margin-top: 40px;
-   font-weight: 500;
-   font-size: 20px;
-   line-height: 130%;
-   color: var(--black);
-}
-
 /* 480 px */
 @media screen and (min-width: 480px) and (max-width: 767px) {
    .cardBlock {

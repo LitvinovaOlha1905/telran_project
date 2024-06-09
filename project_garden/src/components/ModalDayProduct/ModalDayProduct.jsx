@@ -75,7 +75,10 @@ export default function ModalDayProduct() {
 
 				<div className={styles.product_card}>
 					<div className={styles.cardBlock}>
-						<img src={`http://localhost:3333${image}`} alt={title} />
+						<img
+							src={`https://project-backend-hvmn.onrender.com${image}`}
+							alt={title}
+						/>
 
 						<div className={styles.descriptionBlock}>
 							<p className={styles.description}>
@@ -108,8 +111,6 @@ export default function ModalDayProduct() {
 							<p className={styles.discount}>50%</p>
 						</div>
 					</div>
-
-          
 
 					<button className={styles.btn} onClick={handleAddToCart}>
 						Add to cart

@@ -127,6 +127,10 @@
     margin-top: 80px;
   }
 
+  .cardContainer .categoryCard {
+    width: 316px;
+  }
+
   .line::before {
     width: 60%;
   }

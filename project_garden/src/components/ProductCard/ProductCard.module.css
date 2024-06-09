@@ -163,13 +163,16 @@
 
 /* 1440px */
 @media screen and (min-width: 1440px) {
-
    .cardBlock {
       width: 316px;
    }
 
    .cardBlock img {
       height: 284px;
+   }
+
+   .descriptionBlock {
+      padding: 20px 32px 32px;
    }
 
    .priceBlock {
