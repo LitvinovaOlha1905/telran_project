@@ -11,6 +11,7 @@
 Техническое задание (ТЗ): [Google Docs](https://docs.google.com/document/d/1j4GO3_P2-h80rrrUuVHan2i8saFXPJlk/edit)
 
 Задеплоенная реализация (render.com) : [GardenStore](https://project-garden.onrender.com) 
+
 Задеплоенная реализация (vercel.com) : [GardenStore](https://gardenproducts-d049ba0xx-litvinovaolha1905s-projects.vercel.app/) 
 
 # Общее описание
